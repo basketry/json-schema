@@ -77,21 +77,29 @@ class JsonSchemaParser {
       return schema.title.asLiteral;
     }
 
-    const [, penultimate, ...rest] = schema._pointer.split('/').reverse();
-    const name = getName(this.source.node, schema._pointer);
+    const [last, penultimate, ...rest] = schema._pointer.split('/').reverse();
 
     if (penultimate === 'definitions' || penultimate === '$defs') {
-      return name;
+      return getName(this.source.node, schema._pointer);
     }
 
-    const previousPointer = rest.reverse().join('/');
-    const previous = resolve(this.source.node, previousPointer, AST.SchemaNode);
+    const previousPointer = () => {
+      if (penultimate === 'properties') return rest.reverse().join('/');
+      if (last === 'items') return [...rest.reverse(), penultimate].join('/');
+      if (penultimate === 'oneOf') return rest.reverse().join('/');
+      if (penultimate === 'allOf') return rest.reverse().join('/');
+      return rest.reverse().join('/');
+    };
+
+    const previous = resolve(
+      this.source.node,
+      previousPointer(),
+      AST.SchemaNode,
+    );
 
     const previousName = this.parseTypeName(previous);
 
-    const value = [previousName?.value, name?.value]
-      .filter((x) => !!x)
-      .join('_');
+    const value = [previousName?.value, last].filter((x) => !!x).join('_');
 
     return { value };
   }

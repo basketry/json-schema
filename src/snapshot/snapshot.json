@@ -279,7 +279,9 @@
           "loc": "520;9;527;10;11712;11934"
         },
         {
-          "typeName": { "value": "definitions_properties_items" },
+          "typeName": {
+            "value": "exhaustiveSubObject_requiredStringEnumArray_items"
+          },
           "isArray": true,
           "isPrimitive": false,
           "rules": [],
@@ -290,7 +292,9 @@
           "loc": "528;9;541;10;11944;12326"
         },
         {
-          "typeName": { "value": "definitions_properties_items" },
+          "typeName": {
+            "value": "exhaustiveSubObject_optionalStringEnumArray_items"
+          },
           "isArray": true,
           "isPrimitive": false,
           "rules": [],
@@ -1186,7 +1190,7 @@
           "loc": "79;5;86;6;1811;2005"
         },
         {
-          "typeName": { "value": "properties_items" },
+          "typeName": { "value": "exhaustive_requiredStringEnumArray_items" },
           "isArray": true,
           "isPrimitive": false,
           "rules": [],
@@ -1197,7 +1201,7 @@
           "loc": "87;5;100;6;2011;2341"
         },
         {
-          "typeName": { "value": "properties_items" },
+          "typeName": { "value": "exhaustive_optionalStringEnumArray_items" },
           "isArray": true,
           "isPrimitive": false,
           "rules": [],
@@ -1908,7 +1912,15 @@
       ]
     },
     {
-      "name": { "value": "definitions_properties_items" },
+      "name": { "value": "exhaustiveSubObject_requiredStringEnumArray_items" },
+      "loc": "530;20;537;12;12019;12233",
+      "values": [
+        { "value": "VALUE_E", "loc": "532;22;31;12072;12081" },
+        { "value": "VALUE_F", "loc": "532;33;42;12083;12092" }
+      ]
+    },
+    {
+      "name": { "value": "exhaustiveSubObject_optionalStringEnumArray_items" },
       "loc": "544;20;551;12;12411;12625",
       "values": [
         { "value": "VALUE_G", "loc": "546;22;31;12464;12473" },
@@ -1932,7 +1944,15 @@
       ]
     },
     {
-      "name": { "value": "properties_items" },
+      "name": { "value": "exhaustive_requiredStringEnumArray_items" },
+      "loc": "89;16;96;8;2078;2264",
+      "values": [
+        { "value": "VALUE_E", "loc": "91;18;27;2123;2132" },
+        { "value": "VALUE_F", "loc": "91;29;38;2134;2143" }
+      ]
+    },
+    {
+      "name": { "value": "exhaustive_optionalStringEnumArray_items" },
       "loc": "103;16;110;8;2414;2600",
       "values": [
         { "value": "VALUE_G", "loc": "105;18;27;2459;2468" },
