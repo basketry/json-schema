@@ -327,17 +327,19 @@ class JsonSchemaParser {
       const typeName = this.parseTypeName(schema);
       if (!typeName) return untyped();
 
-      const properties: Property[] | undefined = schema.properties?.children
-        .map((child) => this.parseProperty(child))
-        .filter((prop): prop is Property => !!prop);
+      if (!this.types.has(typeName.value)) {
+        const properties: Property[] | undefined = schema.properties?.children
+          .map((child) => this.parseProperty(child))
+          .filter((prop): prop is Property => !!prop);
 
-      this.types.set(typeName.value, {
-        name: typeName,
-        description: schema.description?.asLiteral,
-        properties: properties || [],
-        rules: Array.from(parseObjectValidationRules(schema)),
-        loc,
-      });
+        this.types.set(typeName.value, {
+          name: typeName,
+          description: schema.description?.asLiteral,
+          properties: properties || [],
+          rules: Array.from(parseObjectValidationRules(schema)),
+          loc,
+        });
+      }
 
       return {
         typeName,
