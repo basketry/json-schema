@@ -1,0 +1,1969 @@
+{
+  "basketry": "1",
+  "title": { "value": "exhaustive", "loc": "3;12;24;68;80" },
+  "loc": "1;1;835;2;0;19466",
+  "majorVersion": { "value": 0 },
+  "interfaces": [],
+  "types": [
+    {
+      "name": { "value": "customObjectA", "loc": "401;5;20;8576;8591" },
+      "properties": [
+        {
+          "typeName": { "value": "string", "loc": "404;9;40;8649;8680" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customA", "loc": "404;9;18;8649;8658" },
+          "loc": "404;9;40;8649;8680"
+        }
+      ],
+      "rules": [],
+      "loc": "428;9;50;9203;9244"
+    },
+    {
+      "name": { "value": "customObjectB", "loc": "407;5;20;8700;8715" },
+      "properties": [
+        {
+          "typeName": { "value": "string", "loc": "410;9;40;8773;8804" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customB", "loc": "410;9;18;8773;8782" },
+          "loc": "410;9;40;8773;8804"
+        }
+      ],
+      "rules": [],
+      "loc": "429;9;50;9254;9295"
+    },
+    {
+      "name": { "value": "customObjectC", "loc": "413;5;20;8824;8839" },
+      "properties": [
+        {
+          "typeName": { "value": "string", "loc": "416;9;40;8897;8928" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customC", "loc": "416;9;18;8897;8906" },
+          "loc": "416;9;40;8897;8928"
+        }
+      ],
+      "rules": [],
+      "loc": "430;9;50;9305;9346"
+    },
+    {
+      "name": { "value": "exampleItersection", "loc": "419;5;25;8948;8968" },
+      "properties": [
+        {
+          "typeName": { "value": "string", "loc": "404;9;40;8649;8680" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customA", "loc": "404;9;18;8649;8658" },
+          "loc": "404;9;40;8649;8680"
+        },
+        {
+          "typeName": { "value": "string", "loc": "410;9;40;8773;8804" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customB", "loc": "410;9;18;8773;8782" },
+          "loc": "410;9;40;8773;8804"
+        },
+        {
+          "typeName": { "value": "string", "loc": "416;9;40;8897;8928" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customC", "loc": "416;9;18;8897;8906" },
+          "loc": "416;9;40;8897;8928"
+        }
+      ],
+      "rules": [],
+      "loc": "419;5;425;6;8948;9154"
+    },
+    {
+      "name": { "value": "typeWithIntersection_optionalIntersection" },
+      "properties": [
+        {
+          "typeName": { "value": "string", "loc": "404;9;40;8649;8680" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customA", "loc": "404;9;18;8649;8658" },
+          "loc": "404;9;40;8649;8680"
+        },
+        {
+          "typeName": { "value": "string", "loc": "410;9;40;8773;8804" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customB", "loc": "410;9;18;8773;8782" },
+          "loc": "410;9;40;8773;8804"
+        },
+        {
+          "typeName": { "value": "string", "loc": "416;9;40;8897;8928" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customC", "loc": "416;9;18;8897;8906" },
+          "loc": "416;9;40;8897;8928"
+        }
+      ],
+      "rules": [],
+      "loc": "437;9;443;10;9484;9716"
+    },
+    {
+      "name": { "value": "typeWithIntersection", "loc": "433;5;27;9366;9388" },
+      "properties": [
+        {
+          "typeName": { "value": "string", "loc": "436;9;37;9446;9474" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "asdf", "loc": "436;9;15;9446;9452" },
+          "loc": "436;9;37;9446;9474"
+        },
+        {
+          "typeName": { "value": "typeWithIntersection_optionalIntersection" },
+          "isArray": false,
+          "isPrimitive": false,
+          "rules": [],
+          "name": {
+            "value": "optionalIntersection",
+            "loc": "437;9;31;9484;9506"
+          },
+          "loc": "437;9;443;10;9484;9716"
+        }
+      ],
+      "rules": [],
+      "loc": "433;5;445;6;9366;9730"
+    },
+    {
+      "name": { "value": "exhaustiveSubObject", "loc": "446;5;26;9736;9757" },
+      "properties": [
+        {
+          "typeName": { "value": "string", "loc": "471;9;477;10;10419;10595" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "474;24;27;10516;10519" },
+              "loc": "474;11;27;10503;10519"
+            },
+            {
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "473;24;25;10490;10491" },
+              "loc": "473;11;25;10477;10491"
+            },
+            {
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[9-0a-zA-Z]*",
+                "loc": "475;22;36;10542;10556"
+              },
+              "loc": "475;11;36;10531;10556"
+            }
+          ],
+          "name": { "value": "requiredString", "loc": "471;9;25;10419;10435" },
+          "loc": "471;9;477;10;10419;10595"
+        },
+        {
+          "typeName": { "value": "string", "loc": "478;9;484;10;10605;10781" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "481;24;27;10702;10705" },
+              "loc": "481;11;27;10689;10705"
+            },
+            {
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "480;24;25;10676;10677" },
+              "loc": "480;11;25;10663;10677"
+            },
+            {
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[9-0a-zA-Z]*",
+                "loc": "482;22;36;10728;10742"
+              },
+              "loc": "482;11;36;10717;10742"
+            }
+          ],
+          "name": { "value": "optionalString", "loc": "478;9;25;10605;10621" },
+          "loc": "478;9;484;10;10605;10781"
+        },
+        {
+          "typeName": { "value": "string", "loc": "487;20;493;12;10862;11032" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "490;26;29;10947;10950" },
+              "loc": "490;13;29;10934;10950"
+            },
+            {
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "489;26;27;10919;10920" },
+              "loc": "489;13;27;10906;10920"
+            },
+            {
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[9-0a-zA-Z]*",
+                "loc": "491;24;38;10975;10989"
+              },
+              "loc": "491;13;38;10964;10989"
+            }
+          ],
+          "name": {
+            "value": "requiredStringArray",
+            "loc": "485;9;30;10791;10812"
+          },
+          "loc": "485;9;497;10;10791;11125"
+        },
+        {
+          "typeName": { "value": "string", "loc": "500;20;506;12;11206;11376" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "503;26;29;11291;11294" },
+              "loc": "503;13;29;11278;11294"
+            },
+            {
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "502;26;27;11263;11264" },
+              "loc": "502;13;27;11250;11264"
+            },
+            {
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[9-0a-zA-Z]*",
+                "loc": "504;24;38;11319;11333"
+              },
+              "loc": "504;13;38;11308;11333"
+            }
+          ],
+          "name": {
+            "value": "optionalStringArray",
+            "loc": "498;9;30;11135;11156"
+          },
+          "loc": "498;9;510;10;11135;11469"
+        },
+        {
+          "typeName": { "value": "exhaustiveSubObject_requiredStringEnum" },
+          "isArray": false,
+          "isPrimitive": false,
+          "rules": [],
+          "name": {
+            "value": "requiredStringEnum",
+            "loc": "512;9;29;11480;11500"
+          },
+          "loc": "512;9;519;10;11480;11702"
+        },
+        {
+          "typeName": { "value": "exhaustiveSubObject_optionalStringEnum" },
+          "isArray": false,
+          "isPrimitive": false,
+          "rules": [],
+          "name": {
+            "value": "optionalStringEnum",
+            "loc": "520;9;29;11712;11732"
+          },
+          "loc": "520;9;527;10;11712;11934"
+        },
+        {
+          "typeName": { "value": "definitions_properties_items" },
+          "isArray": true,
+          "isPrimitive": false,
+          "rules": [],
+          "name": {
+            "value": "requiredStringEnumArray",
+            "loc": "528;9;34;11944;11969"
+          },
+          "loc": "528;9;541;10;11944;12326"
+        },
+        {
+          "typeName": { "value": "definitions_properties_items" },
+          "isArray": true,
+          "isPrimitive": false,
+          "rules": [],
+          "name": {
+            "value": "optionalStringEnumArray",
+            "loc": "542;9;34;12336;12361"
+          },
+          "loc": "542;9;555;10;12336;12718"
+        },
+        {
+          "typeName": { "value": "boolean", "loc": "557;9;49;12729;12769" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [{ "id": "required" }],
+          "name": { "value": "requiredBoolean", "loc": "557;9;26;12729;12746" },
+          "loc": "557;9;49;12729;12769"
+        },
+        {
+          "typeName": { "value": "boolean", "loc": "558;9;49;12779;12819" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "optionalBoolean", "loc": "558;9;26;12779;12796" },
+          "loc": "558;9;49;12779;12819"
+        },
+        {
+          "typeName": {
+            "value": "boolean",
+            "loc": "561;20;563;12;12901;12944"
+          },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [],
+          "name": {
+            "value": "requiredBooleanArray",
+            "loc": "559;9;31;12829;12851"
+          },
+          "loc": "559;9;567;10;12829;13037"
+        },
+        {
+          "typeName": {
+            "value": "boolean",
+            "loc": "570;20;572;12;13119;13162"
+          },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [],
+          "name": {
+            "value": "optionalBooleanArray",
+            "loc": "568;9;31;13047;13069"
+          },
+          "loc": "568;9;576;10;13047;13255"
+        },
+        {
+          "typeName": { "value": "number", "loc": "578;9;583;10;13266;13400" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "582;25;26;13389;13390" },
+              "loc": "582;11;26;13375;13390"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "580;22;24;13335;13337" },
+              "loc": "580;11;24;13324;13337"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "581;22;25;13360;13363" },
+              "loc": "581;11;25;13349;13363"
+            }
+          ],
+          "name": { "value": "requiredNumber", "loc": "578;9;25;13266;13282" },
+          "loc": "578;9;583;10;13266;13400"
+        },
+        {
+          "typeName": { "value": "number", "loc": "584;9;589;10;13410;13544" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "588;25;26;13533;13534" },
+              "loc": "588;11;26;13519;13534"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "586;22;24;13479;13481" },
+              "loc": "586;11;24;13468;13481"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "587;22;25;13504;13507" },
+              "loc": "587;11;25;13493;13507"
+            }
+          ],
+          "name": { "value": "optionalNumber", "loc": "584;9;25;13410;13426" },
+          "loc": "584;9;589;10;13410;13544"
+        },
+        {
+          "typeName": { "value": "number", "loc": "592;20;597;12;13625;13751" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "596;27;28;13738;13739" },
+              "loc": "596;13;28;13724;13739"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "594;24;26;13680;13682" },
+              "loc": "594;13;26;13669;13682"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "595;24;27;13707;13710" },
+              "loc": "595;13;27;13696;13710"
+            }
+          ],
+          "name": {
+            "value": "requiredNumberArray",
+            "loc": "590;9;30;13554;13575"
+          },
+          "loc": "590;9;601;10;13554;13844"
+        },
+        {
+          "typeName": { "value": "number", "loc": "604;20;609;12;13925;14051" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "608;27;28;14038;14039" },
+              "loc": "608;13;28;14024;14039"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "606;24;26;13980;13982" },
+              "loc": "606;13;26;13969;13982"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "607;24;27;14007;14010" },
+              "loc": "607;13;27;13996;14010"
+            }
+          ],
+          "name": {
+            "value": "optionalNumberArray",
+            "loc": "602;9;30;13854;13875"
+          },
+          "loc": "602;9;613;10;13854;14144"
+        },
+        {
+          "typeName": { "value": "integer", "loc": "615;9;620;10;14155;14291" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "619;25;26;14280;14281" },
+              "loc": "619;11;26;14266;14281"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "617;22;24;14226;14228" },
+              "loc": "617;11;24;14215;14228"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "618;22;25;14251;14254" },
+              "loc": "618;11;25;14240;14254"
+            }
+          ],
+          "name": { "value": "requiredInteger", "loc": "615;9;26;14155;14172" },
+          "loc": "615;9;620;10;14155;14291"
+        },
+        {
+          "typeName": { "value": "integer", "loc": "621;9;626;10;14301;14437" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "625;25;26;14426;14427" },
+              "loc": "625;11;26;14412;14427"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "623;22;24;14372;14374" },
+              "loc": "623;11;24;14361;14374"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "624;22;25;14397;14400" },
+              "loc": "624;11;25;14386;14400"
+            }
+          ],
+          "name": { "value": "optionalInteger", "loc": "621;9;26;14301;14318" },
+          "loc": "621;9;626;10;14301;14437"
+        },
+        {
+          "typeName": {
+            "value": "integer",
+            "loc": "629;20;634;12;14519;14646"
+          },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "633;27;28;14633;14634" },
+              "loc": "633;13;28;14619;14634"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "631;24;26;14575;14577" },
+              "loc": "631;13;26;14564;14577"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "632;24;27;14602;14605" },
+              "loc": "632;13;27;14591;14605"
+            }
+          ],
+          "name": {
+            "value": "requiredIntegerArray",
+            "loc": "627;9;31;14447;14469"
+          },
+          "loc": "627;9;638;10;14447;14739"
+        },
+        {
+          "typeName": {
+            "value": "integer",
+            "loc": "641;20;646;12;14821;14948"
+          },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "645;27;28;14935;14936" },
+              "loc": "645;13;28;14921;14936"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "643;24;26;14877;14879" },
+              "loc": "643;13;26;14866;14879"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "644;24;27;14904;14907" },
+              "loc": "644;13;27;14893;14907"
+            }
+          ],
+          "name": {
+            "value": "optionalIntegerArray",
+            "loc": "639;9;31;14749;14771"
+          },
+          "loc": "639;9;650;10;14749;15041"
+        },
+        {
+          "typeName": { "value": "long", "loc": "652;9;658;10;15052;15214" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "657;25;26;15203;15204" },
+              "loc": "657;11;26;15189;15204"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "655;22;24;15149;15151" },
+              "loc": "655;11;24;15138;15151"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "656;22;25;15174;15177" },
+              "loc": "656;11;25;15163;15177"
+            }
+          ],
+          "name": { "value": "requiredLong", "loc": "652;9;23;15052;15066" },
+          "loc": "652;9;658;10;15052;15214"
+        },
+        {
+          "typeName": { "value": "long", "loc": "659;9;665;10;15224;15386" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "664;25;26;15375;15376" },
+              "loc": "664;11;26;15361;15376"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "662;22;24;15321;15323" },
+              "loc": "662;11;24;15310;15323"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "663;22;25;15346;15349" },
+              "loc": "663;11;25;15335;15349"
+            }
+          ],
+          "name": { "value": "optionalLong", "loc": "659;9;23;15224;15238" },
+          "loc": "659;9;665;10;15224;15386"
+        },
+        {
+          "typeName": { "value": "long", "loc": "668;20;674;12;15465;15623" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "673;27;28;15610;15611" },
+              "loc": "673;13;28;15596;15611"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "671;24;26;15552;15554" },
+              "loc": "671;13;26;15541;15554"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "672;24;27;15579;15582" },
+              "loc": "672;13;27;15568;15582"
+            }
+          ],
+          "name": {
+            "value": "requiredLongArray",
+            "loc": "666;9;28;15396;15415"
+          },
+          "loc": "666;9;678;10;15396;15716"
+        },
+        {
+          "typeName": { "value": "long", "loc": "681;20;687;12;15795;15953" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "686;27;28;15940;15941" },
+              "loc": "686;13;28;15926;15941"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "684;24;26;15882;15884" },
+              "loc": "684;13;26;15871;15884"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "685;24;27;15909;15912" },
+              "loc": "685;13;27;15898;15912"
+            }
+          ],
+          "name": {
+            "value": "optionalLongArray",
+            "loc": "679;9;28;15726;15745"
+          },
+          "loc": "679;9;691;10;15726;16046"
+        },
+        {
+          "typeName": { "value": "float", "loc": "693;9;699;10;16057;16219" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "698;25;26;16208;16209" },
+              "loc": "698;11;26;16194;16209"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "696;22;24;16154;16156" },
+              "loc": "696;11;24;16143;16156"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "697;22;25;16179;16182" },
+              "loc": "697;11;25;16168;16182"
+            }
+          ],
+          "name": { "value": "requiredFloat", "loc": "693;9;24;16057;16072" },
+          "loc": "693;9;699;10;16057;16219"
+        },
+        {
+          "typeName": { "value": "float", "loc": "700;9;706;10;16229;16391" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "705;25;26;16380;16381" },
+              "loc": "705;11;26;16366;16381"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "703;22;24;16326;16328" },
+              "loc": "703;11;24;16315;16328"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "704;22;25;16351;16354" },
+              "loc": "704;11;25;16340;16354"
+            }
+          ],
+          "name": { "value": "optionalFloat", "loc": "700;9;24;16229;16244" },
+          "loc": "700;9;706;10;16229;16391"
+        },
+        {
+          "typeName": { "value": "float", "loc": "709;20;715;12;16471;16628" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "714;27;28;16615;16616" },
+              "loc": "714;13;28;16601;16616"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "712;24;26;16557;16559" },
+              "loc": "712;13;26;16546;16559"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "713;24;27;16584;16587" },
+              "loc": "713;13;27;16573;16587"
+            }
+          ],
+          "name": {
+            "value": "requiredFloatArray",
+            "loc": "707;9;29;16401;16421"
+          },
+          "loc": "707;9;719;10;16401;16721"
+        },
+        {
+          "typeName": { "value": "float", "loc": "722;20;728;12;16801;16958" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "727;27;28;16945;16946" },
+              "loc": "727;13;28;16931;16946"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "725;24;26;16887;16889" },
+              "loc": "725;13;26;16876;16889"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "726;24;27;16914;16917" },
+              "loc": "726;13;27;16903;16917"
+            }
+          ],
+          "name": {
+            "value": "optionalFloatArray",
+            "loc": "720;9;29;16731;16751"
+          },
+          "loc": "720;9;732;10;16731;17051"
+        },
+        {
+          "typeName": { "value": "double", "loc": "734;9;740;10;17062;17226" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "739;25;26;17215;17216" },
+              "loc": "739;11;26;17201;17216"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "737;22;24;17161;17163" },
+              "loc": "737;11;24;17150;17163"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "738;22;25;17186;17189" },
+              "loc": "738;11;25;17175;17189"
+            }
+          ],
+          "name": { "value": "requiredDouble", "loc": "734;9;25;17062;17078" },
+          "loc": "734;9;740;10;17062;17226"
+        },
+        {
+          "typeName": { "value": "double", "loc": "741;9;747;10;17236;17400" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "746;25;26;17389;17390" },
+              "loc": "746;11;26;17375;17390"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "744;22;24;17335;17337" },
+              "loc": "744;11;24;17324;17337"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "745;22;25;17360;17363" },
+              "loc": "745;11;25;17349;17363"
+            }
+          ],
+          "name": { "value": "optionalDouble", "loc": "741;9;25;17236;17252" },
+          "loc": "741;9;747;10;17236;17400"
+        },
+        {
+          "typeName": { "value": "double", "loc": "750;20;756;12;17481;17639" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "755;27;28;17626;17627" },
+              "loc": "755;13;28;17612;17627"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "753;24;26;17568;17570" },
+              "loc": "753;13;26;17557;17570"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "754;24;27;17595;17598" },
+              "loc": "754;13;27;17584;17598"
+            }
+          ],
+          "name": {
+            "value": "requiredDoubleArray",
+            "loc": "748;9;30;17410;17431"
+          },
+          "loc": "748;9;760;10;17410;17732"
+        },
+        {
+          "typeName": { "value": "double", "loc": "763;20;769;12;17813;17971" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "768;27;28;17958;17959" },
+              "loc": "768;13;28;17944;17959"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "766;24;26;17900;17902" },
+              "loc": "766;13;26;17889;17902"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "767;24;27;17927;17930" },
+              "loc": "767;13;27;17916;17930"
+            }
+          ],
+          "name": {
+            "value": "optionalDoubleArray",
+            "loc": "761;9;30;17742;17763"
+          },
+          "loc": "761;9;773;10;17742;18064"
+        },
+        {
+          "typeName": { "value": "date", "loc": "775;9;778;10;18075;18157" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "string-format",
+              "format": { "value": "date", "loc": "777;21;27;18141;18147" },
+              "loc": "777;11;27;18131;18147"
+            }
+          ],
+          "name": { "value": "requiredDate", "loc": "775;9;23;18075;18089" },
+          "loc": "775;9;778;10;18075;18157"
+        },
+        {
+          "typeName": { "value": "date", "loc": "779;9;782;10;18167;18249" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": { "value": "date", "loc": "781;21;27;18233;18239" },
+              "loc": "781;11;27;18223;18239"
+            }
+          ],
+          "name": { "value": "optionalDate", "loc": "779;9;23;18167;18181" },
+          "loc": "779;9;782;10;18167;18249"
+        },
+        {
+          "typeName": { "value": "date", "loc": "785;20;788;12;18328;18400" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": { "value": "date", "loc": "787;23;29;18382;18388" },
+              "loc": "787;13;29;18372;18388"
+            }
+          ],
+          "name": {
+            "value": "requiredDateArray",
+            "loc": "783;9;28;18259;18278"
+          },
+          "loc": "783;9;792;10;18259;18493"
+        },
+        {
+          "typeName": { "value": "date", "loc": "795;20;798;12;18572;18644" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": { "value": "date", "loc": "797;23;29;18626;18632" },
+              "loc": "797;13;29;18616;18632"
+            }
+          ],
+          "name": {
+            "value": "optionalDateArray",
+            "loc": "793;9;28;18503;18522"
+          },
+          "loc": "793;9;802;10;18503;18737"
+        },
+        {
+          "typeName": {
+            "value": "date-time",
+            "loc": "804;9;807;10;18748;18839"
+          },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "string-format",
+              "format": {
+                "value": "date-time",
+                "loc": "806;21;32;18818;18829"
+              },
+              "loc": "806;11;32;18808;18829"
+            }
+          ],
+          "name": {
+            "value": "requiredDateTime",
+            "loc": "804;9;27;18748;18766"
+          },
+          "loc": "804;9;807;10;18748;18839"
+        },
+        {
+          "typeName": {
+            "value": "date-time",
+            "loc": "808;9;811;10;18849;18940"
+          },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": {
+                "value": "date-time",
+                "loc": "810;21;32;18919;18930"
+              },
+              "loc": "810;11;32;18909;18930"
+            }
+          ],
+          "name": {
+            "value": "optionalDateTime",
+            "loc": "808;9;27;18849;18867"
+          },
+          "loc": "808;9;811;10;18849;18940"
+        },
+        {
+          "typeName": {
+            "value": "date-time",
+            "loc": "814;20;817;12;19023;19100"
+          },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": {
+                "value": "date-time",
+                "loc": "816;23;34;19077;19088"
+              },
+              "loc": "816;13;34;19067;19088"
+            }
+          ],
+          "name": {
+            "value": "requiredDateTimeArray",
+            "loc": "812;9;32;18950;18973"
+          },
+          "loc": "812;9;821;10;18950;19193"
+        },
+        {
+          "typeName": {
+            "value": "date-time",
+            "loc": "824;20;827;12;19276;19353"
+          },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": {
+                "value": "date-time",
+                "loc": "826;23;34;19330;19341"
+              },
+              "loc": "826;13;34;19320;19341"
+            }
+          ],
+          "name": {
+            "value": "optionalDateTimeArray",
+            "loc": "822;9;32;19203;19226"
+          },
+          "loc": "822;9;831;10;19203;19446"
+        }
+      ],
+      "rules": [],
+      "loc": "446;5;833;6;9736;19460"
+    },
+    {
+      "name": { "value": "exhaustive_optionalItersection" },
+      "properties": [
+        {
+          "typeName": { "value": "string", "loc": "404;9;40;8649;8680" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customA", "loc": "404;9;18;8649;8658" },
+          "loc": "404;9;40;8649;8680"
+        },
+        {
+          "typeName": { "value": "string", "loc": "410;9;40;8773;8804" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customB", "loc": "410;9;18;8773;8782" },
+          "loc": "410;9;40;8773;8804"
+        },
+        {
+          "typeName": { "value": "string", "loc": "416;9;40;8897;8928" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "customC", "loc": "416;9;18;8897;8906" },
+          "loc": "416;9;40;8897;8928"
+        }
+      ],
+      "rules": [],
+      "loc": "392;5;398;6;8340;8547"
+    },
+    {
+      "name": { "value": "exhaustive", "loc": "3;12;24;68;80" },
+      "description": { "value": "Some description", "loc": "6;18;36;152;170" },
+      "properties": [
+        {
+          "typeName": { "value": "string", "loc": "30;5;36;6;710;862" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "33;20;23;795;798" },
+              "loc": "33;7;23;782;798"
+            },
+            {
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "32;20;21;773;774" },
+              "loc": "32;7;21;760;774"
+            },
+            {
+              "id": "string-pattern",
+              "pattern": { "value": "[9-0a-zA-Z]*", "loc": "34;18;32;817;831" },
+              "loc": "34;7;32;806;831"
+            }
+          ],
+          "name": { "value": "requiredString", "loc": "30;5;21;710;726" },
+          "loc": "30;5;36;6;710;862"
+        },
+        {
+          "typeName": { "value": "string", "loc": "37;5;43;6;868;1020" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "40;20;23;953;956" },
+              "loc": "40;7;23;940;956"
+            },
+            {
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "39;20;21;931;932" },
+              "loc": "39;7;21;918;932"
+            },
+            {
+              "id": "string-pattern",
+              "pattern": { "value": "[9-0a-zA-Z]*", "loc": "41;18;32;975;989" },
+              "loc": "41;7;32;964;989"
+            }
+          ],
+          "name": { "value": "optionalString", "loc": "37;5;21;868;884" },
+          "loc": "37;5;43;6;868;1020"
+        },
+        {
+          "typeName": { "value": "string", "loc": "46;16;52;8;1089;1235" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "49;22;25;1162;1165" },
+              "loc": "49;9;25;1149;1165"
+            },
+            {
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "48;22;23;1138;1139" },
+              "loc": "48;9;23;1125;1139"
+            },
+            {
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[9-0a-zA-Z]*",
+                "loc": "50;20;34;1186;1200"
+              },
+              "loc": "50;9;34;1175;1200"
+            }
+          ],
+          "name": {
+            "value": "requiredStringArray",
+            "loc": "44;5;26;1026;1047"
+          },
+          "loc": "44;5;56;6;1026;1312"
+        },
+        {
+          "typeName": { "value": "string", "loc": "59;16;65;8;1381;1527" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "62;22;25;1454;1457" },
+              "loc": "62;9;25;1441;1457"
+            },
+            {
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "61;22;23;1430;1431" },
+              "loc": "61;9;23;1417;1431"
+            },
+            {
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[9-0a-zA-Z]*",
+                "loc": "63;20;34;1478;1492"
+              },
+              "loc": "63;9;34;1467;1492"
+            }
+          ],
+          "name": {
+            "value": "optionalStringArray",
+            "loc": "57;5;26;1318;1339"
+          },
+          "loc": "57;5;69;6;1318;1604"
+        },
+        {
+          "typeName": { "value": "exhaustive_requiredStringEnum" },
+          "isArray": false,
+          "isPrimitive": false,
+          "rules": [],
+          "name": { "value": "requiredStringEnum", "loc": "71;5;25;1611;1631" },
+          "loc": "71;5;78;6;1611;1805"
+        },
+        {
+          "typeName": { "value": "exhaustive_optionalStringEnum" },
+          "isArray": false,
+          "isPrimitive": false,
+          "rules": [],
+          "name": { "value": "optionalStringEnum", "loc": "79;5;25;1811;1831" },
+          "loc": "79;5;86;6;1811;2005"
+        },
+        {
+          "typeName": { "value": "properties_items" },
+          "isArray": true,
+          "isPrimitive": false,
+          "rules": [],
+          "name": {
+            "value": "requiredStringEnumArray",
+            "loc": "87;5;30;2011;2036"
+          },
+          "loc": "87;5;100;6;2011;2341"
+        },
+        {
+          "typeName": { "value": "properties_items" },
+          "isArray": true,
+          "isPrimitive": false,
+          "rules": [],
+          "name": {
+            "value": "optionalStringEnumArray",
+            "loc": "101;5;30;2347;2372"
+          },
+          "loc": "101;5;114;6;2347;2677"
+        },
+        {
+          "typeName": { "value": "boolean", "loc": "116;5;45;2684;2724" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [{ "id": "required" }],
+          "name": { "value": "requiredBoolean", "loc": "116;5;22;2684;2701" },
+          "loc": "116;5;45;2684;2724"
+        },
+        {
+          "typeName": { "value": "boolean", "loc": "117;5;45;2730;2770" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [],
+          "name": { "value": "optionalBoolean", "loc": "117;5;22;2730;2747" },
+          "loc": "117;5;45;2730;2770"
+        },
+        {
+          "typeName": { "value": "boolean", "loc": "120;16;122;8;2840;2875" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [],
+          "name": {
+            "value": "requiredBooleanArray",
+            "loc": "118;5;27;2776;2798"
+          },
+          "loc": "118;5;126;6;2776;2952"
+        },
+        {
+          "typeName": { "value": "boolean", "loc": "129;16;131;8;3022;3057" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [],
+          "name": {
+            "value": "optionalBooleanArray",
+            "loc": "127;5;27;2958;2980"
+          },
+          "loc": "127;5;135;6;2958;3134"
+        },
+        {
+          "typeName": { "value": "number", "loc": "137;5;142;6;3141;3255" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "141;21;22;3248;3249" },
+              "loc": "141;7;22;3234;3249"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "139;18;20;3202;3204" },
+              "loc": "139;7;20;3191;3204"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "140;18;21;3223;3226" },
+              "loc": "140;7;21;3212;3226"
+            }
+          ],
+          "name": { "value": "requiredNumber", "loc": "137;5;21;3141;3157" },
+          "loc": "137;5;142;6;3141;3255"
+        },
+        {
+          "typeName": { "value": "number", "loc": "143;5;148;6;3261;3375" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "147;21;22;3368;3369" },
+              "loc": "147;7;22;3354;3369"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "145;18;20;3322;3324" },
+              "loc": "145;7;20;3311;3324"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "146;18;21;3343;3346" },
+              "loc": "146;7;21;3332;3346"
+            }
+          ],
+          "name": { "value": "optionalNumber", "loc": "143;5;21;3261;3277" },
+          "loc": "143;5;148;6;3261;3375"
+        },
+        {
+          "typeName": { "value": "number", "loc": "151;16;156;8;3444;3550" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "155;23;24;3541;3542" },
+              "loc": "155;9;24;3527;3542"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "153;20;22;3491;3493" },
+              "loc": "153;9;22;3480;3493"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "154;20;23;3514;3517" },
+              "loc": "154;9;23;3503;3517"
+            }
+          ],
+          "name": {
+            "value": "requiredNumberArray",
+            "loc": "149;5;26;3381;3402"
+          },
+          "loc": "149;5;160;6;3381;3627"
+        },
+        {
+          "typeName": { "value": "number", "loc": "163;16;168;8;3696;3802" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "167;23;24;3793;3794" },
+              "loc": "167;9;24;3779;3794"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "165;20;22;3743;3745" },
+              "loc": "165;9;22;3732;3745"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "166;20;23;3766;3769" },
+              "loc": "166;9;23;3755;3769"
+            }
+          ],
+          "name": {
+            "value": "optionalNumberArray",
+            "loc": "161;5;26;3633;3654"
+          },
+          "loc": "161;5;172;6;3633;3879"
+        },
+        {
+          "typeName": { "value": "integer", "loc": "174;5;179;6;3886;4002" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "178;21;22;3995;3996" },
+              "loc": "178;7;22;3981;3996"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "176;18;20;3949;3951" },
+              "loc": "176;7;20;3938;3951"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "177;18;21;3970;3973" },
+              "loc": "177;7;21;3959;3973"
+            }
+          ],
+          "name": { "value": "requiredInteger", "loc": "174;5;22;3886;3903" },
+          "loc": "174;5;179;6;3886;4002"
+        },
+        {
+          "typeName": { "value": "integer", "loc": "180;5;185;6;4008;4124" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "184;21;22;4117;4118" },
+              "loc": "184;7;22;4103;4118"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "182;18;20;4071;4073" },
+              "loc": "182;7;20;4060;4073"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "183;18;21;4092;4095" },
+              "loc": "183;7;21;4081;4095"
+            }
+          ],
+          "name": { "value": "optionalInteger", "loc": "180;5;22;4008;4025" },
+          "loc": "180;5;185;6;4008;4124"
+        },
+        {
+          "typeName": { "value": "integer", "loc": "188;16;193;8;4194;4301" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "192;23;24;4292;4293" },
+              "loc": "192;9;24;4278;4293"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "190;20;22;4242;4244" },
+              "loc": "190;9;22;4231;4244"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "191;20;23;4265;4268" },
+              "loc": "191;9;23;4254;4268"
+            }
+          ],
+          "name": {
+            "value": "requiredIntegerArray",
+            "loc": "186;5;27;4130;4152"
+          },
+          "loc": "186;5;197;6;4130;4378"
+        },
+        {
+          "typeName": { "value": "integer", "loc": "200;16;205;8;4448;4555" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "204;23;24;4546;4547" },
+              "loc": "204;9;24;4532;4547"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "202;20;22;4496;4498" },
+              "loc": "202;9;22;4485;4498"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "203;20;23;4519;4522" },
+              "loc": "203;9;23;4508;4522"
+            }
+          ],
+          "name": {
+            "value": "optionalIntegerArray",
+            "loc": "198;5;27;4384;4406"
+          },
+          "loc": "198;5;209;6;4384;4632"
+        },
+        {
+          "typeName": { "value": "long", "loc": "211;5;217;6;4639;4777" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "216;21;22;4770;4771" },
+              "loc": "216;7;22;4756;4771"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "214;18;20;4724;4726" },
+              "loc": "214;7;20;4713;4726"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "215;18;21;4745;4748" },
+              "loc": "215;7;21;4734;4748"
+            }
+          ],
+          "name": { "value": "requiredLong", "loc": "211;5;19;4639;4653" },
+          "loc": "211;5;217;6;4639;4777"
+        },
+        {
+          "typeName": { "value": "long", "loc": "218;5;224;6;4783;4921" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "223;21;22;4914;4915" },
+              "loc": "223;7;22;4900;4915"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "221;18;20;4868;4870" },
+              "loc": "221;7;20;4857;4870"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "222;18;21;4889;4892" },
+              "loc": "222;7;21;4878;4892"
+            }
+          ],
+          "name": { "value": "optionalLong", "loc": "218;5;19;4783;4797" },
+          "loc": "218;5;224;6;4783;4921"
+        },
+        {
+          "typeName": { "value": "long", "loc": "227;16;233;8;4988;5122" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "232;23;24;5113;5114" },
+              "loc": "232;9;24;5099;5114"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "230;20;22;5063;5065" },
+              "loc": "230;9;22;5052;5065"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "231;20;23;5086;5089" },
+              "loc": "231;9;23;5075;5089"
+            }
+          ],
+          "name": { "value": "requiredLongArray", "loc": "225;5;24;4927;4946" },
+          "loc": "225;5;237;6;4927;5199"
+        },
+        {
+          "typeName": { "value": "long", "loc": "240;16;246;8;5266;5400" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "245;23;24;5391;5392" },
+              "loc": "245;9;24;5377;5392"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "243;20;22;5341;5343" },
+              "loc": "243;9;22;5330;5343"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "244;20;23;5364;5367" },
+              "loc": "244;9;23;5353;5367"
+            }
+          ],
+          "name": { "value": "optionalLongArray", "loc": "238;5;24;5205;5224" },
+          "loc": "238;5;250;6;5205;5477"
+        },
+        {
+          "typeName": { "value": "float", "loc": "252;5;258;6;5484;5622" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "257;21;22;5615;5616" },
+              "loc": "257;7;22;5601;5616"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "255;18;20;5569;5571" },
+              "loc": "255;7;20;5558;5571"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "256;18;21;5590;5593" },
+              "loc": "256;7;21;5579;5593"
+            }
+          ],
+          "name": { "value": "requiredFloat", "loc": "252;5;20;5484;5499" },
+          "loc": "252;5;258;6;5484;5622"
+        },
+        {
+          "typeName": { "value": "float", "loc": "259;5;265;6;5628;5766" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "264;21;22;5759;5760" },
+              "loc": "264;7;22;5745;5760"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "262;18;20;5713;5715" },
+              "loc": "262;7;20;5702;5715"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "263;18;21;5734;5737" },
+              "loc": "263;7;21;5723;5737"
+            }
+          ],
+          "name": { "value": "optionalFloat", "loc": "259;5;20;5628;5643" },
+          "loc": "259;5;265;6;5628;5766"
+        },
+        {
+          "typeName": { "value": "float", "loc": "268;16;274;8;5834;5967" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "273;23;24;5958;5959" },
+              "loc": "273;9;24;5944;5959"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "271;20;22;5908;5910" },
+              "loc": "271;9;22;5897;5910"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "272;20;23;5931;5934" },
+              "loc": "272;9;23;5920;5934"
+            }
+          ],
+          "name": {
+            "value": "requiredFloatArray",
+            "loc": "266;5;25;5772;5792"
+          },
+          "loc": "266;5;278;6;5772;6044"
+        },
+        {
+          "typeName": { "value": "float", "loc": "281;16;287;8;6112;6245" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "286;23;24;6236;6237" },
+              "loc": "286;9;24;6222;6237"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "284;20;22;6186;6188" },
+              "loc": "284;9;22;6175;6188"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "285;20;23;6209;6212" },
+              "loc": "285;9;23;6198;6212"
+            }
+          ],
+          "name": {
+            "value": "optionalFloatArray",
+            "loc": "279;5;25;6050;6070"
+          },
+          "loc": "279;5;291;6;6050;6322"
+        },
+        {
+          "typeName": { "value": "double", "loc": "293;5;299;6;6329;6469" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "298;21;22;6462;6463" },
+              "loc": "298;7;22;6448;6463"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "296;18;20;6416;6418" },
+              "loc": "296;7;20;6405;6418"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "297;18;21;6437;6440" },
+              "loc": "297;7;21;6426;6440"
+            }
+          ],
+          "name": { "value": "requiredDouble", "loc": "293;5;21;6329;6345" },
+          "loc": "293;5;299;6;6329;6469"
+        },
+        {
+          "typeName": { "value": "double", "loc": "300;5;306;6;6475;6615" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "305;21;22;6608;6609" },
+              "loc": "305;7;22;6594;6609"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "303;18;20;6562;6564" },
+              "loc": "303;7;20;6551;6564"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "304;18;21;6583;6586" },
+              "loc": "304;7;21;6572;6586"
+            }
+          ],
+          "name": { "value": "optionalDouble", "loc": "300;5;21;6475;6491" },
+          "loc": "300;5;306;6;6475;6615"
+        },
+        {
+          "typeName": { "value": "double", "loc": "309;16;315;8;6684;6818" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "314;23;24;6809;6810" },
+              "loc": "314;9;24;6795;6810"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "312;20;22;6759;6761" },
+              "loc": "312;9;22;6748;6761"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "313;20;23;6782;6785" },
+              "loc": "313;9;23;6771;6785"
+            }
+          ],
+          "name": {
+            "value": "requiredDoubleArray",
+            "loc": "307;5;26;6621;6642"
+          },
+          "loc": "307;5;319;6;6621;6895"
+        },
+        {
+          "typeName": { "value": "double", "loc": "322;16;328;8;6964;7098" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "number-multiple-of",
+              "value": { "value": 3, "loc": "327;23;24;7089;7090" },
+              "loc": "327;9;24;7075;7090"
+            },
+            {
+              "id": "number-gte",
+              "value": { "value": -2, "loc": "325;20;22;7039;7041" },
+              "loc": "325;9;22;7028;7041"
+            },
+            {
+              "id": "number-lte",
+              "value": { "value": 100, "loc": "326;20;23;7062;7065" },
+              "loc": "326;9;23;7051;7065"
+            }
+          ],
+          "name": {
+            "value": "optionalDoubleArray",
+            "loc": "320;5;26;6901;6922"
+          },
+          "loc": "320;5;332;6;6901;7175"
+        },
+        {
+          "typeName": { "value": "date", "loc": "334;5;337;6;7182;7252" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "string-format",
+              "format": { "value": "date", "loc": "336;17;23;7240;7246" },
+              "loc": "336;7;23;7230;7246"
+            }
+          ],
+          "name": { "value": "requiredDate", "loc": "334;5;19;7182;7196" },
+          "loc": "334;5;337;6;7182;7252"
+        },
+        {
+          "typeName": { "value": "date", "loc": "338;5;341;6;7258;7328" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": { "value": "date", "loc": "340;17;23;7316;7322" },
+              "loc": "340;7;23;7306;7322"
+            }
+          ],
+          "name": { "value": "optionalDate", "loc": "338;5;19;7258;7272" },
+          "loc": "338;5;341;6;7258;7328"
+        },
+        {
+          "typeName": { "value": "date", "loc": "344;16;347;8;7395;7455" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": { "value": "date", "loc": "346;19;25;7441;7447" },
+              "loc": "346;9;25;7431;7447"
+            }
+          ],
+          "name": { "value": "requiredDateArray", "loc": "342;5;24;7334;7353" },
+          "loc": "342;5;351;6;7334;7532"
+        },
+        {
+          "typeName": { "value": "date", "loc": "354;16;357;8;7599;7659" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": { "value": "date", "loc": "356;19;25;7645;7651" },
+              "loc": "356;9;25;7635;7651"
+            }
+          ],
+          "name": { "value": "optionalDateArray", "loc": "352;5;24;7538;7557" },
+          "loc": "352;5;361;6;7538;7736"
+        },
+        {
+          "typeName": { "value": "date-time", "loc": "363;5;366;6;7743;7822" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            { "id": "required" },
+            {
+              "id": "string-format",
+              "format": { "value": "date-time", "loc": "365;17;28;7805;7816" },
+              "loc": "365;7;28;7795;7816"
+            }
+          ],
+          "name": { "value": "requiredDateTime", "loc": "363;5;23;7743;7761" },
+          "loc": "363;5;366;6;7743;7822"
+        },
+        {
+          "typeName": { "value": "date-time", "loc": "367;5;370;6;7828;7907" },
+          "isArray": false,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": { "value": "date-time", "loc": "369;17;28;7890;7901" },
+              "loc": "369;7;28;7880;7901"
+            }
+          ],
+          "name": { "value": "optionalDateTime", "loc": "367;5;23;7828;7846" },
+          "loc": "367;5;370;6;7828;7907"
+        },
+        {
+          "typeName": { "value": "date-time", "loc": "373;16;376;8;7978;8043" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": { "value": "date-time", "loc": "375;19;30;8024;8035" },
+              "loc": "375;9;30;8014;8035"
+            }
+          ],
+          "name": {
+            "value": "requiredDateTimeArray",
+            "loc": "371;5;28;7913;7936"
+          },
+          "loc": "371;5;380;6;7913;8120"
+        },
+        {
+          "typeName": { "value": "date-time", "loc": "383;16;386;8;8191;8256" },
+          "isArray": true,
+          "isPrimitive": true,
+          "rules": [
+            {
+              "id": "string-format",
+              "format": { "value": "date-time", "loc": "385;19;30;8237;8248" },
+              "loc": "385;9;30;8227;8248"
+            }
+          ],
+          "name": {
+            "value": "optionalDateTimeArray",
+            "loc": "381;5;28;8126;8149"
+          },
+          "loc": "381;5;390;6;8126;8333"
+        },
+        {
+          "typeName": { "value": "exhaustive_optionalItersection" },
+          "isArray": false,
+          "isPrimitive": false,
+          "rules": [],
+          "name": {
+            "value": "optionalItersection",
+            "loc": "392;5;26;8340;8361"
+          },
+          "loc": "392;5;398;6;8340;8547"
+        }
+      ],
+      "rules": [],
+      "loc": "1;1;835;2;0;19466"
+    }
+  ],
+  "enums": [
+    {
+      "name": { "value": "exhaustiveSubObject_requiredStringEnum" },
+      "loc": "512;9;519;10;11480;11702",
+      "values": [
+        { "value": "VALUE_A", "loc": "514;20;29;11551;11560" },
+        { "value": "VALUE_B", "loc": "514;31;40;11562;11571" }
+      ]
+    },
+    {
+      "name": { "value": "exhaustiveSubObject_optionalStringEnum" },
+      "loc": "520;9;527;10;11712;11934",
+      "values": [
+        { "value": "VALUE_C", "loc": "522;20;29;11783;11792" },
+        { "value": "VALUE_D", "loc": "522;31;40;11794;11803" }
+      ]
+    },
+    {
+      "name": { "value": "definitions_properties_items" },
+      "loc": "544;20;551;12;12411;12625",
+      "values": [
+        { "value": "VALUE_G", "loc": "546;22;31;12464;12473" },
+        { "value": "VALUE_H", "loc": "546;33;42;12475;12484" }
+      ]
+    },
+    {
+      "name": { "value": "exhaustive_requiredStringEnum" },
+      "loc": "71;5;78;6;1611;1805",
+      "values": [
+        { "value": "VALUE_A", "loc": "73;16;25;1674;1683" },
+        { "value": "VALUE_B", "loc": "73;27;36;1685;1694" }
+      ]
+    },
+    {
+      "name": { "value": "exhaustive_optionalStringEnum" },
+      "loc": "79;5;86;6;1811;2005",
+      "values": [
+        { "value": "VALUE_C", "loc": "81;16;25;1874;1883" },
+        { "value": "VALUE_D", "loc": "81;27;36;1885;1894" }
+      ]
+    },
+    {
+      "name": { "value": "properties_items" },
+      "loc": "103;16;110;8;2414;2600",
+      "values": [
+        { "value": "VALUE_G", "loc": "105;18;27;2459;2468" },
+        { "value": "VALUE_H", "loc": "105;29;38;2470;2479" }
+      ]
+    }
+  ],
+  "unions": [
+    {
+      "name": { "value": "exampleUnion", "loc": "426;5;19;9160;9174" },
+      "loc": "426;5;432;6;9160;9360",
+      "members": [
+        {
+          "typeName": { "value": "customObjectA", "loc": "401;5;20;8576;8591" },
+          "isArray": false,
+          "isPrimitive": false,
+          "rules": []
+        },
+        {
+          "typeName": { "value": "customObjectB", "loc": "407;5;20;8700;8715" },
+          "isArray": false,
+          "isPrimitive": false,
+          "rules": []
+        },
+        {
+          "typeName": { "value": "customObjectC", "loc": "413;5;20;8824;8839" },
+          "isArray": false,
+          "isPrimitive": false,
+          "rules": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,835 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "exhaustive",
+  "type": "object",
+  "additionalProperties": false,
+  "description": "Some description",
+  "required": [
+    "requiredString",
+    "requiredStringArray",
+    "requiredStringEnum",
+    "requiredStringEnumArray",
+    "requiredBoolean",
+    "requiredBooleanArray",
+    "requiredNumber",
+    "requiredNumberArray",
+    "requiredInteger",
+    "requiredIntegerArray",
+    "requiredLong",
+    "requiredLongArray",
+    "requiredFloat",
+    "requiredFloatArray",
+    "requiredDouble",
+    "requiredDoubleArray",
+    "requiredDate",
+    "requiredDateArray",
+    "requiredDateTime",
+    "requiredDateTimeArray"
+  ],
+  "properties": {
+    "requiredString": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "[9-0a-zA-Z]*",
+      "default": "asdf"
+    },
+    "optionalString": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "[9-0a-zA-Z]*",
+      "default": "asdf"
+    },
+    "requiredStringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100,
+        "pattern": "[9-0a-zA-Z]*",
+        "default": "asdf"
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "optionalStringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100,
+        "pattern": "[9-0a-zA-Z]*",
+        "default": "asdf"
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+
+    "requiredStringEnum": {
+      "type": "string",
+      "enum": ["VALUE_A", "VALUE_B"],
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "[9-0a-zA-Z]*",
+      "default": "asdf"
+    },
+    "optionalStringEnum": {
+      "type": "string",
+      "enum": ["VALUE_C", "VALUE_D"],
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "[9-0a-zA-Z]*",
+      "default": "asdf"
+    },
+    "requiredStringEnumArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["VALUE_E", "VALUE_F"],
+        "minLength": 1,
+        "maxLength": 100,
+        "pattern": "[9-0a-zA-Z]*",
+        "default": "asdf"
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "optionalStringEnumArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["VALUE_G", "VALUE_H"],
+        "minLength": 1,
+        "maxLength": 100,
+        "pattern": "[9-0a-zA-Z]*",
+        "default": "asdf"
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+
+    "requiredBoolean": { "type": "boolean" },
+    "optionalBoolean": { "type": "boolean" },
+    "requiredBooleanArray": {
+      "type": "array",
+      "items": {
+        "type": "boolean"
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "optionalBooleanArray": {
+      "type": "array",
+      "items": {
+        "type": "boolean"
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+
+    "requiredNumber": {
+      "type": "number",
+      "minimum": -2,
+      "maximum": 100,
+      "multipleOf": 3
+    },
+    "optionalNumber": {
+      "type": "number",
+      "minimum": -2,
+      "maximum": 100,
+      "multipleOf": 3
+    },
+    "requiredNumberArray": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": -2,
+        "maximum": 100,
+        "multipleOf": 3
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "optionalNumberArray": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": -2,
+        "maximum": 100,
+        "multipleOf": 3
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+
+    "requiredInteger": {
+      "type": "integer",
+      "minimum": -2,
+      "maximum": 100,
+      "multipleOf": 3
+    },
+    "optionalInteger": {
+      "type": "integer",
+      "minimum": -2,
+      "maximum": 100,
+      "multipleOf": 3
+    },
+    "requiredIntegerArray": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": -2,
+        "maximum": 100,
+        "multipleOf": 3
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "optionalIntegerArray": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": -2,
+        "maximum": 100,
+        "multipleOf": 3
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+
+    "requiredLong": {
+      "type": "integer",
+      "format": "int64",
+      "minimum": -2,
+      "maximum": 100,
+      "multipleOf": 3
+    },
+    "optionalLong": {
+      "type": "integer",
+      "format": "int64",
+      "minimum": -2,
+      "maximum": 100,
+      "multipleOf": 3
+    },
+    "requiredLongArray": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int64",
+        "minimum": -2,
+        "maximum": 100,
+        "multipleOf": 3
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "optionalLongArray": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int64",
+        "minimum": -2,
+        "maximum": 100,
+        "multipleOf": 3
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+
+    "requiredFloat": {
+      "type": "number",
+      "format": "float",
+      "minimum": -2,
+      "maximum": 100,
+      "multipleOf": 3
+    },
+    "optionalFloat": {
+      "type": "number",
+      "format": "float",
+      "minimum": -2,
+      "maximum": 100,
+      "multipleOf": 3
+    },
+    "requiredFloatArray": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "format": "float",
+        "minimum": -2,
+        "maximum": 100,
+        "multipleOf": 3
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "optionalFloatArray": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "format": "float",
+        "minimum": -2,
+        "maximum": 100,
+        "multipleOf": 3
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+
+    "requiredDouble": {
+      "type": "number",
+      "format": "double",
+      "minimum": -2,
+      "maximum": 100,
+      "multipleOf": 3
+    },
+    "optionalDouble": {
+      "type": "number",
+      "format": "double",
+      "minimum": -2,
+      "maximum": 100,
+      "multipleOf": 3
+    },
+    "requiredDoubleArray": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "format": "double",
+        "minimum": -2,
+        "maximum": 100,
+        "multipleOf": 3
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "optionalDoubleArray": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "format": "double",
+        "minimum": -2,
+        "maximum": 100,
+        "multipleOf": 3
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+
+    "requiredDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "optionalDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "requiredDateArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date"
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "optionalDateArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date"
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+
+    "requiredDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "optionalDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "requiredDateTimeArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "optionalDateTimeArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+
+    "optionalItersection": {
+      "allOf": [
+        { "$ref": "#/definitions/customObjectA" },
+        { "$ref": "#/definitions/customObjectB" },
+        { "$ref": "#/definitions/customObjectC" }
+      ]
+    }
+  },
+  "definitions": {
+    "customObjectA": {
+      "type": "object",
+      "properties": {
+        "customA": { "type": "string" }
+      }
+    },
+    "customObjectB": {
+      "type": "object",
+      "properties": {
+        "customB": { "type": "string" }
+      }
+    },
+    "customObjectC": {
+      "type": "object",
+      "properties": {
+        "customC": { "type": "string" }
+      }
+    },
+    "exampleItersection": {
+      "allOf": [
+        { "$ref": "#/definitions/customObjectA" },
+        { "$ref": "#/definitions/customObjectB" },
+        { "$ref": "#/definitions/customObjectC" }
+      ]
+    },
+    "exampleUnion": {
+      "oneOf": [
+        { "$ref": "#/definitions/customObjectA" },
+        { "$ref": "#/definitions/customObjectB" },
+        { "$ref": "#/definitions/customObjectC" }
+      ]
+    },
+    "typeWithIntersection": {
+      "type": "object",
+      "properties": {
+        "asdf": { "type": "string" },
+        "optionalIntersection": {
+          "allOf": [
+            { "$ref": "#/definitions/customObjectA" },
+            { "$ref": "#/definitions/customObjectB" },
+            { "$ref": "#/definitions/customObjectC" }
+          ]
+        }
+      }
+    },
+    "exhaustiveSubObject": {
+      "type": "object",
+      "required": [
+        "requiredString",
+        "requiredStringArray",
+        "requiredStringEnum",
+        "requiredStringEnumArray",
+        "requiredBoolean",
+        "requiredBooleanArray",
+        "requiredNumber",
+        "requiredNumberArray",
+        "requiredInteger",
+        "requiredIntegerArray",
+        "requiredLong",
+        "requiredLongArray",
+        "requiredFloat",
+        "requiredFloatArray",
+        "requiredDouble",
+        "requiredDoubleArray",
+        "requiredDate",
+        "requiredDateArray",
+        "requiredDateTime",
+        "requiredDateTimeArray"
+      ],
+      "properties": {
+        "requiredString": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "[9-0a-zA-Z]*",
+          "default": "asdf"
+        },
+        "optionalString": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "[9-0a-zA-Z]*",
+          "default": "asdf"
+        },
+        "requiredStringArray": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "[9-0a-zA-Z]*",
+            "default": "asdf"
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "optionalStringArray": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "[9-0a-zA-Z]*",
+            "default": "asdf"
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+
+        "requiredStringEnum": {
+          "type": "string",
+          "enum": ["VALUE_A", "VALUE_B"],
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "[9-0a-zA-Z]*",
+          "default": "asdf"
+        },
+        "optionalStringEnum": {
+          "type": "string",
+          "enum": ["VALUE_C", "VALUE_D"],
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "[9-0a-zA-Z]*",
+          "default": "asdf"
+        },
+        "requiredStringEnumArray": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["VALUE_E", "VALUE_F"],
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "[9-0a-zA-Z]*",
+            "default": "asdf"
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "optionalStringEnumArray": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["VALUE_G", "VALUE_H"],
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "[9-0a-zA-Z]*",
+            "default": "asdf"
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+
+        "requiredBoolean": { "type": "boolean" },
+        "optionalBoolean": { "type": "boolean" },
+        "requiredBooleanArray": {
+          "type": "array",
+          "items": {
+            "type": "boolean"
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "optionalBooleanArray": {
+          "type": "array",
+          "items": {
+            "type": "boolean"
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+
+        "requiredNumber": {
+          "type": "number",
+          "minimum": -2,
+          "maximum": 100,
+          "multipleOf": 3
+        },
+        "optionalNumber": {
+          "type": "number",
+          "minimum": -2,
+          "maximum": 100,
+          "multipleOf": 3
+        },
+        "requiredNumberArray": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": -2,
+            "maximum": 100,
+            "multipleOf": 3
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "optionalNumberArray": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": -2,
+            "maximum": 100,
+            "multipleOf": 3
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+
+        "requiredInteger": {
+          "type": "integer",
+          "minimum": -2,
+          "maximum": 100,
+          "multipleOf": 3
+        },
+        "optionalInteger": {
+          "type": "integer",
+          "minimum": -2,
+          "maximum": 100,
+          "multipleOf": 3
+        },
+        "requiredIntegerArray": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": -2,
+            "maximum": 100,
+            "multipleOf": 3
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "optionalIntegerArray": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": -2,
+            "maximum": 100,
+            "multipleOf": 3
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+
+        "requiredLong": {
+          "type": "integer",
+          "format": "int64",
+          "minimum": -2,
+          "maximum": 100,
+          "multipleOf": 3
+        },
+        "optionalLong": {
+          "type": "integer",
+          "format": "int64",
+          "minimum": -2,
+          "maximum": 100,
+          "multipleOf": 3
+        },
+        "requiredLongArray": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64",
+            "minimum": -2,
+            "maximum": 100,
+            "multipleOf": 3
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "optionalLongArray": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64",
+            "minimum": -2,
+            "maximum": 100,
+            "multipleOf": 3
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+
+        "requiredFloat": {
+          "type": "number",
+          "format": "float",
+          "minimum": -2,
+          "maximum": 100,
+          "multipleOf": 3
+        },
+        "optionalFloat": {
+          "type": "number",
+          "format": "float",
+          "minimum": -2,
+          "maximum": 100,
+          "multipleOf": 3
+        },
+        "requiredFloatArray": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "float",
+            "minimum": -2,
+            "maximum": 100,
+            "multipleOf": 3
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "optionalFloatArray": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "float",
+            "minimum": -2,
+            "maximum": 100,
+            "multipleOf": 3
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+
+        "requiredDouble": {
+          "type": "number",
+          "format": "double",
+          "minimum": -2,
+          "maximum": 100,
+          "multipleOf": 3
+        },
+        "optionalDouble": {
+          "type": "number",
+          "format": "double",
+          "minimum": -2,
+          "maximum": 100,
+          "multipleOf": 3
+        },
+        "requiredDoubleArray": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double",
+            "minimum": -2,
+            "maximum": 100,
+            "multipleOf": 3
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "optionalDoubleArray": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double",
+            "minimum": -2,
+            "maximum": 100,
+            "multipleOf": 3
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+
+        "requiredDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "optionalDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "requiredDateArray": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date"
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "optionalDateArray": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date"
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+
+        "requiredDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "optionalDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "requiredDateTimeArray": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        },
+        "optionalDateTimeArray": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "minItems": 1,
+          "maxItems": 100,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
