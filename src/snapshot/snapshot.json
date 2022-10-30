@@ -1,6 +1,7 @@
 {
   "basketry": "1",
   "title": { "value": "exhaustive", "loc": "3;12;24;68;80" },
+  "sourcePath": "source.ext",
   "loc": "1;1;835;2;0;19466",
   "majorVersion": { "value": 0 },
   "interfaces": [],

@@ -49,6 +49,7 @@ class JsonSchemaParser {
       service: {
         basketry: '1',
         title: this.parseTitle(),
+        sourcePath: 'source.ext',
         loc: encodeRange(this.source.loc),
         majorVersion: this.parseMajorVersion(),
         interfaces: [],
