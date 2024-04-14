@@ -54,6 +54,7 @@ export const stringMaxLengthFactory: ValidationRuleFactory = (node) => {
     typeof node.maxLength?.value === 'number'
   ) {
     return {
+      kind: 'ValidationRule',
       id: 'string-max-length',
       length: node.maxLength.asLiteral,
       loc: node._propertyRange('maxLength')!,
@@ -69,6 +70,7 @@ export const stringMinLengthFactory: ValidationRuleFactory = (node) => {
     typeof node.minLength?.value === 'number'
   ) {
     return {
+      kind: 'ValidationRule',
       id: 'string-min-length',
       length: node.minLength.asLiteral,
       loc: node._propertyRange('minLength')!,
@@ -81,6 +83,7 @@ export const stringMinLengthFactory: ValidationRuleFactory = (node) => {
 export const stringPatternFactory: ValidationRuleFactory = (node) => {
   if (AST.isStringType(node.type) && typeof node.pattern?.value === 'string') {
     return {
+      kind: 'ValidationRule',
       id: 'string-pattern',
       pattern: node.pattern.asLiteral,
       loc: node._propertyRange('pattern')!,
@@ -93,6 +96,7 @@ export const stringPatternFactory: ValidationRuleFactory = (node) => {
 export const stringFormatFactory: ValidationRuleFactory = (node) => {
   if (AST.isStringType(node.type) && typeof node.format?.value === 'string') {
     return {
+      kind: 'ValidationRule',
       id: 'string-format',
       format: node.format.asLiteral,
       loc: node._propertyRange('format')!,
@@ -111,6 +115,7 @@ export const stringEnumFactory: ValidationRuleFactory = (node) => {
     )
   ) {
     return {
+      kind: 'ValidationRule',
       id: 'string-enum',
       values: node.enum.map((e) => e.asLiteral),
       loc: node._propertyRange('enum')!,
@@ -126,6 +131,7 @@ export const numberMultipleOfFactory: ValidationRuleFactory = (node) => {
     typeof node.multipleOf?.value === 'number'
   ) {
     return {
+      kind: 'ValidationRule',
       id: 'number-multiple-of',
       value: node.multipleOf.asLiteral,
       loc: node._propertyRange('multipleOf')!,
@@ -138,6 +144,7 @@ export const numberMultipleOfFactory: ValidationRuleFactory = (node) => {
 export const numberGreaterThanFactory: ValidationRuleFactory = (node) => {
   if (AST.isNumericType(node.type) && typeof node.minimum?.value === 'number') {
     return {
+      kind: 'ValidationRule',
       id: node.exclusiveMinimum?.value ? 'number-gt' : 'number-gte',
       value: node.minimum.asLiteral,
       loc: node._propertyRange('minimum')!,
@@ -150,6 +157,7 @@ export const numberGreaterThanFactory: ValidationRuleFactory = (node) => {
 export const numberLessThanFactory: ValidationRuleFactory = (node) => {
   if (AST.isNumericType(node.type) && typeof node.maximum?.value === 'number') {
     return {
+      kind: 'ValidationRule',
       id: node.exclusiveMaximum?.value ? 'number-lt' : 'number-lte',
       value: node.maximum.asLiteral,
       loc: node._propertyRange('maximum')!,
@@ -162,6 +170,7 @@ export const numberLessThanFactory: ValidationRuleFactory = (node) => {
 export const arrayMinItemsFactory: ValidationRuleFactory = (node) => {
   if (AST.isArrayType(node.type) && typeof node.minItems?.value === 'number') {
     return {
+      kind: 'ValidationRule',
       id: 'array-min-items',
       min: node.minItems.asLiteral,
       loc: node._propertyRange('minItems')!,
@@ -174,6 +183,7 @@ export const arrayMinItemsFactory: ValidationRuleFactory = (node) => {
 export const arrayMaxItemsFactory: ValidationRuleFactory = (node) => {
   if (AST.isArrayType(node.type) && typeof node.maxItems?.value === 'number') {
     return {
+      kind: 'ValidationRule',
       id: 'array-max-items',
       max: node.maxItems.asLiteral,
       loc: node._propertyRange('maxItems')!,
@@ -186,6 +196,7 @@ export const arrayMaxItemsFactory: ValidationRuleFactory = (node) => {
 export const arrayUniqueItemsFactory: ValidationRuleFactory = (node) => {
   if (AST.isArrayType(node.type) && node.uniqueItems?.value) {
     return {
+      kind: 'ValidationRule',
       id: 'array-unique-items',
       required: true,
       loc: node._propertyRange('uniqueItems')!,
@@ -203,6 +214,7 @@ export const objectMinPropertiesFactory: ObjectValidationRuleFactory = (
     typeof node.minProperties?.value === 'number'
   ) {
     return {
+      kind: 'ObjectValidationRule',
       id: 'object-min-properties',
       min: node.minProperties.asLiteral,
       loc: node._propertyRange('minProperties')!,
@@ -220,6 +232,7 @@ export const objectMaxPropertiesFactory: ObjectValidationRuleFactory = (
     typeof node.maxProperties?.value === 'number'
   ) {
     return {
+      kind: 'ObjectValidationRule',
       id: 'object-max-properties',
       max: node.maxProperties.asLiteral,
       loc: node._propertyRange('maxProperties')!,
