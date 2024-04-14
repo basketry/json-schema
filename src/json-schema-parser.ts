@@ -2,10 +2,10 @@ import {
   decodeRange,
   encodeRange,
   Enum,
-  Literal,
   Parser,
   Primitive,
   Property,
+  Scalar,
   Service,
   Type,
   TypedValue,
@@ -47,7 +47,8 @@ class JsonSchemaParser {
 
     return {
       service: {
-        basketry: '1',
+        kind: 'Service',
+        basketry: '1.1-rc',
         title: this.parseTitle(),
         sourcePath: 'source.ext',
         loc: encodeRange(this.source.loc),
@@ -61,18 +62,18 @@ class JsonSchemaParser {
     };
   }
 
-  parseTitle(): Literal<string> {
+  parseTitle(): Scalar<string> {
     const name = this.parseTypeName(this.source);
     return name || { value: 'TODO' };
   }
 
-  parseMajorVersion(): Literal<number> {
+  parseMajorVersion(): Scalar<number> {
     return { value: 0 };
   }
 
   parseTypeName(
     schema: AST.AbstractSchemaNode | undefined,
-  ): Literal<string> | undefined {
+  ): Scalar<string> | undefined {
     if (!schema) return;
     if (schema.title) {
       return schema.title.asLiteral;
@@ -148,7 +149,7 @@ class JsonSchemaParser {
 
   parseType(
     schema: AST.AbstractSchemaNode | undefined,
-    loc: string,
+    loc: string | undefined,
   ): TypedValue {
     if (!schema) return untyped();
 
@@ -179,7 +180,10 @@ class JsonSchemaParser {
     }
   }
 
-  parseRef(schema: AST.AbstractSchemaNode, loc: string): TypedValue {
+  parseRef(
+    schema: AST.AbstractSchemaNode,
+    loc: string | undefined,
+  ): TypedValue {
     if (schema.ref) {
       const resolved = resolve(
         this.source.node,
@@ -203,7 +207,10 @@ class JsonSchemaParser {
     return untyped();
   }
 
-  parseOneOfUnion(schema: AST.AbstractSchemaNode, loc: string): TypedValue {
+  parseOneOfUnion(
+    schema: AST.AbstractSchemaNode,
+    loc: string | undefined,
+  ): TypedValue {
     if (schema.oneOf) {
       const members: TypedValue[] = schema.oneOf.map((member) =>
         this.parseType(member, encodeRange(member.loc)),
@@ -214,6 +221,7 @@ class JsonSchemaParser {
       if (!name) return untyped(); // TODO
 
       this.unions.set(name.value, {
+        kind: 'Union',
         name,
         loc,
         members,
@@ -230,7 +238,10 @@ class JsonSchemaParser {
     return untyped();
   }
 
-  parseTypeArrayUnion(schema: AST.AbstractSchemaNode, loc: string): TypedValue {
+  parseTypeArrayUnion(
+    schema: AST.AbstractSchemaNode,
+    loc: string | undefined,
+  ): TypedValue {
     if (Array.isArray(schema.type)) {
       // TODO
     }
@@ -238,7 +249,10 @@ class JsonSchemaParser {
     return untyped();
   }
 
-  parseAnyOfUnion(schema: AST.AbstractSchemaNode, loc: string): TypedValue {
+  parseAnyOfUnion(
+    schema: AST.AbstractSchemaNode,
+    loc: string | undefined,
+  ): TypedValue {
     if (schema.anyOf) {
       // TODO
     }
@@ -246,7 +260,10 @@ class JsonSchemaParser {
     return untyped();
   }
 
-  parseIntersection(schema: AST.AbstractSchemaNode, loc: string): TypedValue {
+  parseIntersection(
+    schema: AST.AbstractSchemaNode,
+    loc: string | undefined,
+  ): TypedValue {
     if (schema.allOf) {
       const typeName = this.parseTypeName(schema);
 
@@ -275,6 +292,7 @@ class JsonSchemaParser {
           );
 
           return {
+            kind: 'Property',
             ...typedValue,
             name: child.key.asLiteral,
             description: child.value.description?.asLiteral,
@@ -287,6 +305,7 @@ class JsonSchemaParser {
       );
 
       this.types.set(typeName.value, {
+        kind: 'Type',
         name: typeName,
         description: schema.description?.asLiteral,
         properties: properties || [],
@@ -305,7 +324,10 @@ class JsonSchemaParser {
     return untyped();
   }
 
-  parseArray(schema: AST.AbstractSchemaNode, loc: string): TypedValue {
+  parseArray(
+    schema: AST.AbstractSchemaNode,
+    loc: string | undefined,
+  ): TypedValue {
     if (!Array.isArray(schema.type) && schema.type?.value === 'array') {
       if (Array.isArray(schema.items)) {
         // TODO: union
@@ -323,7 +345,10 @@ class JsonSchemaParser {
     return untypedArray();
   }
 
-  parseObject(schema: AST.AbstractSchemaNode, loc: string): TypedValue {
+  parseObject(
+    schema: AST.AbstractSchemaNode,
+    loc: string | undefined,
+  ): TypedValue {
     if (!Array.isArray(schema.type) && schema.type?.value === 'object') {
       const typeName = this.parseTypeName(schema);
       if (!typeName) return untyped();
@@ -334,6 +359,7 @@ class JsonSchemaParser {
           .filter((prop): prop is Property => !!prop);
 
         this.types.set(typeName.value, {
+          kind: 'Type',
           name: typeName,
           description: schema.description?.asLiteral,
           properties: properties || [],
@@ -357,6 +383,7 @@ class JsonSchemaParser {
     const typedValue = this.parseType(child.value, encodeRange(child.loc));
 
     return {
+      kind: 'Property',
       ...typedValue,
       name: child.key.asLiteral,
       description: child.value.description?.asLiteral,
@@ -364,7 +391,10 @@ class JsonSchemaParser {
     };
   }
 
-  parsePrimitive(schema: AST.AbstractSchemaNode, loc: string): TypedValue {
+  parsePrimitive(
+    schema: AST.AbstractSchemaNode,
+    loc: string | undefined,
+  ): TypedValue {
     if (!Array.isArray(schema.type)) {
       const rules = Array.from(this.parseRules(schema));
 
@@ -414,7 +444,10 @@ class JsonSchemaParser {
     return untyped();
   }
 
-  parseEnum(schema: AST.AbstractSchemaNode, loc: string): TypedValue {
+  parseEnum(
+    schema: AST.AbstractSchemaNode,
+    loc: string | undefined,
+  ): TypedValue {
     if (schema.enum) {
       if (Array.isArray(schema.type) || schema.type?.value !== 'string') {
         // TODO: support non-string enums
@@ -428,10 +461,11 @@ class JsonSchemaParser {
         .map((value) => value.asLiteral)
         .filter(
           // TODO: support non-string enums
-          (value): value is Literal<string> => typeof value.value === 'string',
-        );
+          (value): value is Scalar<string> => typeof value.value === 'string',
+        )
+        .map((value) => ({ kind: 'EnumValue', content: value }));
 
-      this.enums.set(name.value, { name, loc, values });
+      this.enums.set(name.value, { kind: 'Enum', name, loc, values });
 
       return {
         typeName: name,
@@ -447,7 +481,7 @@ class JsonSchemaParser {
     const rules: ValidationRule[] = [];
 
     if (this.parseIsRequired(schema)) {
-      rules.push({ id: 'required' });
+      rules.push({ kind: 'ValidationRule', id: 'required' });
     }
 
     rules.push(...parseValidationRules(schema));

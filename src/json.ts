@@ -170,7 +170,7 @@ export function getName(
   return name;
 }
 
-export function range(node: parse.ASTNode | JsonNode): string {
+export function range(node: parse.ASTNode | JsonNode): string | undefined {
   const loc = node.loc;
 
   return encodeRange(loc);
