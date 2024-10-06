@@ -1,4 +1,5 @@
 import {
+  CustomValue,
   decodeRange,
   encodeRange,
   Enum,
@@ -14,7 +15,7 @@ import {
   Violation,
 } from 'basketry';
 import parse = require('json-to-ast');
-import { getName, resolve } from './json';
+import { getName, resolve, LiteralNode } from './json';
 import * as AST from './json-schema';
 import {
   parseObjectValidationRules,
@@ -22,7 +23,9 @@ import {
 } from './rule-factories';
 
 export const jsonSchemaParser: Parser = (sourceContent, sourcePath) => {
-  return new JsonSchemaParser(sourceContent, sourcePath).parse();
+  const x = new JsonSchemaParser(sourceContent, sourcePath).parse();
+  // console.log(JSON.stringify(x));
+  return x;
 };
 
 export type TypeKind = 'enum' | 'intersection' | 'union' | 'type' | 'primitive';
@@ -207,6 +210,7 @@ class JsonSchemaParser {
     return untyped();
   }
 
+  // TODO: support intersected unions
   parseOneOfUnion(
     schema: AST.AbstractSchemaNode,
     loc: string | undefined,
@@ -215,17 +219,58 @@ class JsonSchemaParser {
       const members: TypedValue[] = schema.oneOf.map((member) =>
         this.parseType(member, encodeRange(member.loc)),
       );
-
       const name = this.parseTypeName(schema);
 
       if (!name) return untyped(); // TODO
 
-      this.unions.set(name.value, {
-        kind: 'Union',
-        name,
-        loc,
-        members,
-      });
+      if (schema.discriminator) {
+        const { propertyName, mapping } = schema.discriminator;
+
+        if (mapping) {
+          this.violations.push({
+            code: 'json-schema/unsupported-feature',
+            message:
+              'Discriminator mapping is not yet supported and will have no effect.',
+            range: decodeRange(encodeRange(mapping.loc)),
+            severity: 'info',
+            sourcePath: this.sourcePath,
+          });
+        }
+
+        // TODO: validate that the discriminator definition is compatable with the referenced types
+
+        const customTypes: CustomValue[] = [];
+        for (const member of members) {
+          if (member.isPrimitive) {
+            this.violations.push({
+              code: 'openapi-3/misconfigured-discriminator',
+              message: 'Discriminators may not reference primitive types.',
+              range: decodeRange(encodeRange(schema.discriminator.loc)),
+              severity: 'error',
+              sourcePath: this.sourcePath,
+            });
+          } else {
+            customTypes.push(member);
+          }
+        }
+
+        const union: Union = {
+          kind: 'Union',
+          name,
+          discriminator: toScalar(propertyName),
+          members: customTypes,
+          loc,
+        };
+
+        this.unions.set(name.value, union);
+      } else {
+        this.unions.set(name.value, {
+          kind: 'Union',
+          name,
+          loc,
+          members,
+        });
+      }
 
       return {
         typeName: name,
@@ -282,23 +327,7 @@ class JsonSchemaParser {
 
       // TODO: handle intersected unions
 
-      const properties: Property[] | undefined = objects
-        .flatMap((node) => node.properties?.children)
-        .filter((node): node is AST.SchemaRecordItem => !!node)
-        .map((child) => {
-          const typedValue = this.parseType(
-            child.value,
-            encodeRange(child.loc),
-          );
-
-          return {
-            kind: 'Property',
-            ...typedValue,
-            name: child.key.asLiteral,
-            description: child.value.description?.asLiteral,
-            loc: encodeRange(child.loc),
-          };
-        });
+      const properties = this.parseIntersectionProperties(schema);
 
       const rules = objects.flatMap((object) =>
         Array.from(parseObjectValidationRules(object)),
@@ -322,6 +351,26 @@ class JsonSchemaParser {
     }
 
     return untyped();
+  }
+
+  parseIntersectionProperties(schema: AST.AbstractSchemaNode): Property[] {
+    const objects = schema.allOf
+      ?.map((node) =>
+        node.ref
+          ? resolve(this.source.node, node.ref.value, AST.SchemaNode)
+          : node,
+      )
+      .filter(
+        (node): node is AST.SchemaNode =>
+          !Array.isArray(node?.type) && node?.type?.value === 'object',
+      );
+
+    const properties: Property[] | undefined = objects
+      ?.flatMap((node) => node.properties?.children)
+      .filter((node): node is AST.SchemaRecordItem => !!node)
+      .map((child) => this.parseProperty(child));
+
+    return properties ?? [];
   }
 
   parseArray(
@@ -379,16 +428,29 @@ class JsonSchemaParser {
     return untyped();
   }
 
-  parseProperty(child: AST.SchemaRecordItem): Property | undefined {
+  parseProperty(child: AST.SchemaRecordItem): Property {
     const typedValue = this.parseType(child.value, encodeRange(child.loc));
 
-    return {
-      kind: 'Property',
-      ...typedValue,
-      name: child.key.asLiteral,
-      description: child.value.description?.asLiteral,
-      loc: encodeRange(child.loc),
-    };
+    if (typedValue.isPrimitive) {
+      return {
+        kind: 'Property',
+        ...typedValue,
+        name: child.key.asLiteral,
+        description: child.value.description?.asLiteral,
+        constant: child.value.const?.asLiteral,
+        loc: encodeRange(child.loc),
+        rules: this.parseRules(child.value),
+      };
+    } else {
+      return {
+        kind: 'Property',
+        ...typedValue,
+        name: child.key.asLiteral,
+        description: child.value.description?.asLiteral,
+        loc: encodeRange(child.loc),
+        rules: this.parseRules(child.value),
+      };
+    }
   }
 
   parsePrimitive(
@@ -505,5 +567,24 @@ function untypedArray(): TypedValue {
     isArray: true,
     isPrimitive: true,
     rules: [],
+  };
+}
+
+function toScalar<T extends string | number | boolean | null>(
+  node: LiteralNode<T>,
+): Scalar<T>;
+// eslint-disable-next-line no-redeclare
+function toScalar<T extends string | number | boolean | null>(
+  node: LiteralNode<T> | undefined,
+): Scalar<T> | undefined;
+// eslint-disable-next-line no-redeclare
+function toScalar<T extends string | number | boolean | null>(
+  node: LiteralNode<T> | undefined,
+): Scalar<T> | undefined {
+  if (!node) return undefined;
+
+  return {
+    value: node.value,
+    loc: encodeRange(node.loc),
   };
 }

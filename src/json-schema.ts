@@ -112,6 +112,34 @@ export abstract class AbstractSchemaNode extends JsonNode {
   get oneOf() {
     return this._array('oneOf', SchemaNode);
   }
+
+  get discriminator() {
+    return this._child('discriminator', DiscriminatorNode);
+  }
+
+  get const() {
+    return this._literal<string | number | boolean>('const');
+  }
+}
+
+export class DiscriminatorNode extends JsonNode {
+  public readonly nodeType = 'Discriminator';
+
+  get propertyName() {
+    return this._literal<string>('propertyName');
+  }
+
+  get mapping() {
+    return this._child('mapping', StringMappingNode);
+  }
+}
+
+export class StringMappingNode extends AbstractSchemaNode {
+  public readonly nodeType = 'StringMapping';
+
+  read(key: string) {
+    return this._literal<string>(key);
+  }
 }
 
 export class DocumentNode extends AbstractSchemaNode {
