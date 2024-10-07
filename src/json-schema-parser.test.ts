@@ -1,8 +1,7 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import * as https from 'https';
 
-import { ReturnType, validate } from 'basketry';
+import { ReturnValue, validate } from 'basketry';
 import parser from '.';
 
 describe('parser', () => {
@@ -40,26 +39,26 @@ describe('parser', () => {
         .reduce((a, b) => a.concat(b), [])
         .map((i) => i.parameters)
         .reduce((a, b) => a.concat(b), [])
-        .filter((p) => !p.isPrimitive)
-        .map((p) => p.typeName.value),
+        .filter((p) => p.value.kind === 'ComplexValue')
+        .map((p) => p.value.typeName.value),
     );
 
-    const fromMethodReturnTypes = new Set(
+    const fromMethodReturnValues = new Set(
       result.interfaces
         .map((i) => i.methods)
         .reduce((a, b) => a.concat(b), [])
-        .map((i) => i.returnType)
-        .filter((t): t is ReturnType => !!t)
-        .filter((p) => !p.isPrimitive)
-        .map((p) => p.typeName.value),
+        .map((i) => i.returns)
+        .filter((t): t is ReturnValue => !!t)
+        .filter((p) => p.value.kind === 'ComplexValue')
+        .map((p) => p.value.typeName.value),
     );
 
     const fromTypes = new Set(
       result.types
         .map((t) => t.properties)
         .reduce((a, b) => a.concat(b), [])
-        .filter((p) => !p.isPrimitive)
-        .map((p) => p.typeName.value),
+        .filter((p) => p.value.kind === 'ComplexValue')
+        .map((p) => p.value.typeName.value),
     );
 
     const typeNames = new Set([
@@ -69,7 +68,7 @@ describe('parser', () => {
 
     for (const localTypeName of [
       ...fromMethodParameters,
-      ...fromMethodReturnTypes,
+      ...fromMethodReturnValues,
       ...fromTypes,
     ]) {
       expect(typeNames.has(localTypeName)).toEqual(true);

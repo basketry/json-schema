@@ -1,34 +1,36 @@
 import {
-  CustomValue,
+  ComplexValue,
   decodeRange,
   encodeRange,
   Enum,
+  EnumMember,
+  IntegerLiteral,
+  MemberValue,
   Parser,
   Primitive,
+  PrimitiveValue,
+  PrimitiveValueConstant,
   Property,
-  Scalar,
   Service,
+  StringLiteral,
   Type,
-  TypedValue,
   Union,
   ValidationRule,
   Violation,
 } from 'basketry';
 import parse = require('json-to-ast');
-import { getName, resolve, LiteralNode } from './json';
+import { getName, resolve, LiteralNode, Literal } from './json';
 import * as AST from './json-schema';
 import {
   parseObjectValidationRules,
   parseValidationRules,
 } from './rule-factories';
+import { toDescription, toStringLiteral } from './utils';
 
 export const jsonSchemaParser: Parser = (sourceContent, sourcePath) => {
   const x = new JsonSchemaParser(sourceContent, sourcePath).parse();
-  // console.log(JSON.stringify(x));
   return x;
 };
-
-export type TypeKind = 'enum' | 'intersection' | 'union' | 'type' | 'primitive';
 
 class JsonSchemaParser {
   constructor(sourceContent: string, private readonly sourcePath: string) {
@@ -51,7 +53,7 @@ class JsonSchemaParser {
     return {
       service: {
         kind: 'Service',
-        basketry: '1.1-rc',
+        basketry: '0.2',
         title: this.parseTitle(),
         sourcePath: 'source.ext',
         loc: encodeRange(this.source.loc),
@@ -65,27 +67,27 @@ class JsonSchemaParser {
     };
   }
 
-  parseTitle(): Scalar<string> {
+  parseTitle(): StringLiteral {
     const name = this.parseTypeName(this.source);
-    return name || { value: 'TODO' };
+    return name || { kind: 'StringLiteral', value: 'TODO' };
   }
 
-  parseMajorVersion(): Scalar<number> {
-    return { value: 0 };
+  parseMajorVersion(): IntegerLiteral {
+    return { kind: 'IntegerLiteral', value: 0 };
   }
 
   parseTypeName(
     schema: AST.AbstractSchemaNode | undefined,
-  ): Scalar<string> | undefined {
+  ): StringLiteral | undefined {
     if (!schema) return;
     if (schema.title) {
-      return schema.title.asLiteral;
+      return toStringLiteral(schema.title);
     }
 
     const [last, penultimate, ...rest] = schema._pointer.split('/').reverse();
 
     if (penultimate === 'definitions' || penultimate === '$defs') {
-      return getName(this.source.node, schema._pointer);
+      return toStringLiteral(getName(this.source.node, schema._pointer));
     }
 
     const previousPointer = () => {
@@ -106,7 +108,7 @@ class JsonSchemaParser {
 
     const value = [previousName?.value, last].filter((x) => !!x).join('_');
 
-    return { value };
+    return { kind: 'StringLiteral', value };
   }
 
   parseIsRequired(schema: AST.AbstractSchemaNode | undefined): boolean {
@@ -121,39 +123,10 @@ class JsonSchemaParser {
     return !!parent?.required?.some((name) => name.value === last);
   }
 
-  parseKind(schema: AST.AbstractSchemaNode | undefined): TypeKind | undefined {
-    if (!schema) return;
-
-    if (schema.ref) {
-      return this.parseKind(
-        resolve(this.source.node, schema.ref.value, AST.SchemaNode),
-      );
-    } else if (schema.allOf) {
-      return 'intersection';
-    } else if (schema.anyOf) {
-      return 'union';
-    } else if (schema.oneOf) {
-      return 'union';
-    } else if (Array.isArray(schema.type)) {
-      return 'union';
-    } else if (schema.enum) {
-      return 'enum';
-    } else if (schema.type?.value === 'object') {
-      return 'type';
-    } else if (schema.type?.value === 'array') {
-      return this.parseKind(
-        // TODO: handle tuples
-        Array.isArray(schema.items) ? schema.items[0] : schema.items,
-      );
-    } else {
-      return 'primitive';
-    }
-  }
-
   parseType(
     schema: AST.AbstractSchemaNode | undefined,
     loc: string | undefined,
-  ): TypedValue {
+  ): MemberValue {
     if (!schema) return untyped();
 
     if (schema.definitions) {
@@ -186,7 +159,7 @@ class JsonSchemaParser {
   parseRef(
     schema: AST.AbstractSchemaNode,
     loc: string | undefined,
-  ): TypedValue {
+  ): MemberValue {
     if (schema.ref) {
       const resolved = resolve(
         this.source.node,
@@ -214,16 +187,16 @@ class JsonSchemaParser {
   parseOneOfUnion(
     schema: AST.AbstractSchemaNode,
     loc: string | undefined,
-  ): TypedValue {
+  ): MemberValue {
     if (schema.oneOf) {
-      const members: TypedValue[] = schema.oneOf.map((member) =>
+      const members: MemberValue[] = schema.oneOf.map((member) =>
         this.parseType(member, encodeRange(member.loc)),
       );
       const name = this.parseTypeName(schema);
 
       if (!name) return untyped(); // TODO
 
-      if (schema.discriminator) {
+      if (schema.discriminator?.propertyName) {
         const { propertyName, mapping } = schema.discriminator;
 
         if (mapping) {
@@ -239,9 +212,9 @@ class JsonSchemaParser {
 
         // TODO: validate that the discriminator definition is compatable with the referenced types
 
-        const customTypes: CustomValue[] = [];
+        const complexTypes: ComplexValue[] = [];
         for (const member of members) {
-          if (member.isPrimitive) {
+          if (member.kind === 'PrimitiveValue') {
             this.violations.push({
               code: 'openapi-3/misconfigured-discriminator',
               message: 'Discriminators may not reference primitive types.',
@@ -250,32 +223,56 @@ class JsonSchemaParser {
               sourcePath: this.sourcePath,
             });
           } else {
-            customTypes.push(member);
+            complexTypes.push(member);
           }
         }
 
         const union: Union = {
-          kind: 'Union',
+          kind: 'DiscriminatedUnion',
           name,
-          discriminator: toScalar(propertyName),
-          members: customTypes,
+          discriminator: toStringLiteral(propertyName),
+          members: complexTypes,
           loc,
         };
 
         this.unions.set(name.value, union);
       } else {
-        this.unions.set(name.value, {
-          kind: 'Union',
-          name,
-          loc,
-          members,
-        });
+        const primitiveMemebers = members.filter(
+          (member) => member.kind === 'PrimitiveValue',
+        );
+        const complexMembers = members.filter(
+          (member) => member.kind === 'ComplexValue',
+        );
+
+        if (primitiveMemebers.length === members.length) {
+          this.unions.set(name.value, {
+            kind: 'PrimitiveUnion',
+            name,
+            members: primitiveMemebers,
+            loc,
+          });
+        } else if (complexMembers.length === members.length) {
+          this.unions.set(name.value, {
+            kind: 'ComplexUnion',
+            name,
+            members: complexMembers,
+            loc,
+          });
+        } else {
+          this.violations.push({
+            code: 'json-schema/unsupported-feature',
+            message:
+              'Unions with a mix of primitive and complex members is not supported.',
+            range: decodeRange(loc),
+            severity: 'info',
+            sourcePath: this.sourcePath,
+          });
+        }
       }
 
       return {
+        kind: 'ComplexValue',
         typeName: name,
-        isArray: false,
-        isPrimitive: false,
         rules: [], // TODO
       };
     }
@@ -286,7 +283,7 @@ class JsonSchemaParser {
   parseTypeArrayUnion(
     schema: AST.AbstractSchemaNode,
     loc: string | undefined,
-  ): TypedValue {
+  ): MemberValue {
     if (Array.isArray(schema.type)) {
       // TODO
     }
@@ -297,7 +294,7 @@ class JsonSchemaParser {
   parseAnyOfUnion(
     schema: AST.AbstractSchemaNode,
     loc: string | undefined,
-  ): TypedValue {
+  ): MemberValue {
     if (schema.anyOf) {
       // TODO
     }
@@ -308,7 +305,7 @@ class JsonSchemaParser {
   parseIntersection(
     schema: AST.AbstractSchemaNode,
     loc: string | undefined,
-  ): TypedValue {
+  ): MemberValue {
     if (schema.allOf) {
       const typeName = this.parseTypeName(schema);
 
@@ -336,16 +333,15 @@ class JsonSchemaParser {
       this.types.set(typeName.value, {
         kind: 'Type',
         name: typeName,
-        description: schema.description?.asLiteral,
+        description: toDescription(schema.description),
         properties: properties || [],
         rules,
         loc,
       });
 
       return {
+        kind: 'ComplexValue',
         typeName,
-        isArray: false,
-        isPrimitive: false,
         rules: [], // TODO
       };
     }
@@ -376,7 +372,7 @@ class JsonSchemaParser {
   parseArray(
     schema: AST.AbstractSchemaNode,
     loc: string | undefined,
-  ): TypedValue {
+  ): MemberValue {
     if (!Array.isArray(schema.type) && schema.type?.value === 'array') {
       if (Array.isArray(schema.items)) {
         // TODO: union
@@ -387,7 +383,14 @@ class JsonSchemaParser {
           encodeRange(schema.items?.loc),
         );
 
-        return { ...items, isArray: true };
+        return {
+          ...items,
+          isArray: {
+            kind: 'TrueLiteral',
+            value: true,
+            loc: encodeRange(schema.type.loc),
+          },
+        };
       }
     }
 
@@ -397,20 +400,21 @@ class JsonSchemaParser {
   parseObject(
     schema: AST.AbstractSchemaNode,
     loc: string | undefined,
-  ): TypedValue {
+  ): MemberValue {
     if (!Array.isArray(schema.type) && schema.type?.value === 'object') {
       const typeName = this.parseTypeName(schema);
       if (!typeName) return untyped();
 
       if (!this.types.has(typeName.value)) {
         const properties: Property[] | undefined = schema.properties?.children
+          .filter((c) => !c.key.value.startsWith('$'))
           .map((child) => this.parseProperty(child))
           .filter((prop): prop is Property => !!prop);
 
         this.types.set(typeName.value, {
           kind: 'Type',
           name: typeName,
-          description: schema.description?.asLiteral,
+          description: toDescription(schema.description),
           properties: properties || [],
           rules: Array.from(parseObjectValidationRules(schema)),
           loc,
@@ -418,9 +422,8 @@ class JsonSchemaParser {
       }
 
       return {
+        kind: 'ComplexValue',
         typeName,
-        isArray: false,
-        isPrimitive: false,
         rules: [], // TODO
       };
     }
@@ -429,26 +432,30 @@ class JsonSchemaParser {
   }
 
   parseProperty(child: AST.SchemaRecordItem): Property {
-    const typedValue = this.parseType(child.value, encodeRange(child.loc));
+    const memberValue = this.parseType(child.value, encodeRange(child.loc));
 
-    if (typedValue.isPrimitive) {
+    if (memberValue.kind === 'PrimitiveValue') {
       return {
         kind: 'Property',
-        ...typedValue,
-        name: child.key.asLiteral,
-        description: child.value.description?.asLiteral,
-        constant: child.value.const?.asLiteral,
+        name: toStringLiteral(child.key),
+        description: toDescription(child.value.description),
+        value: {
+          ...memberValue,
+          constant: toPrimitiveValueConstant(child.value.const),
+          rules: this.parseRules(child.value),
+        },
         loc: encodeRange(child.loc),
-        rules: this.parseRules(child.value),
       };
     } else {
       return {
         kind: 'Property',
-        ...typedValue,
-        name: child.key.asLiteral,
-        description: child.value.description?.asLiteral,
+        name: toStringLiteral(child.key),
+        description: toDescription(child.value.description),
+        value: {
+          ...memberValue,
+          rules: this.parseRules(child.value),
+        },
         loc: encodeRange(child.loc),
-        rules: this.parseRules(child.value),
       };
     }
   }
@@ -456,15 +463,16 @@ class JsonSchemaParser {
   parsePrimitive(
     schema: AST.AbstractSchemaNode,
     loc: string | undefined,
-  ): TypedValue {
+  ): MemberValue {
     if (!Array.isArray(schema.type)) {
       const rules = Array.from(this.parseRules(schema));
 
       // const loc = encodeRange(schema.type?.loc); // TODO
-      const fromPrimitive = (primitive: Primitive) => ({
-        typeName: { value: primitive, loc },
-        isArray: false,
-        isPrimitive: true,
+      const fromPrimitive = (primitive: Primitive): PrimitiveValue => ({
+        kind: 'PrimitiveValue',
+        typeName: { kind: 'PrimitiveLiteral', value: primitive, loc },
+        // constant: schema.const?.asLiteral, // TODO
+        // default: schema.default?.asLiteral, // TODO
         rules,
       });
 
@@ -479,8 +487,6 @@ class JsonSchemaParser {
             default:
               return fromPrimitive('integer');
           }
-        case 'null':
-          return fromPrimitive('null');
         case 'number':
           switch (schema.format?.value) {
             case 'float':
@@ -499,6 +505,8 @@ class JsonSchemaParser {
             default:
               return fromPrimitive('string');
           }
+        case 'null':
+        // return fromPrimitive('null'); // TODO
         default:
           return untyped();
       }
@@ -509,7 +517,7 @@ class JsonSchemaParser {
   parseEnum(
     schema: AST.AbstractSchemaNode,
     loc: string | undefined,
-  ): TypedValue {
+  ): MemberValue {
     if (schema.enum) {
       if (Array.isArray(schema.type) || schema.type?.value !== 'string') {
         // TODO: support non-string enums
@@ -519,21 +527,23 @@ class JsonSchemaParser {
       const name = this.parseTypeName(schema);
       if (!name) return untyped();
 
-      const values: Enum['values'] = schema.enum
+      const members: EnumMember[] = schema.enum
         .map((value) => value.asLiteral)
         .filter(
           // TODO: support non-string enums
-          (value): value is Scalar<string> => typeof value.value === 'string',
+          (value): value is Literal<string> => typeof value.value === 'string',
         )
-        .map((value) => ({ kind: 'EnumValue', content: value }));
+        .map((value) => ({
+          kind: 'EnumMember',
+          content: toStringLiteral(value),
+        }));
 
-      this.enums.set(name.value, { kind: 'Enum', name, loc, values });
+      this.enums.set(name.value, { kind: 'Enum', name, loc, members });
 
       return {
+        kind: 'ComplexValue',
         typeName: name,
-        isArray: false,
-        isPrimitive: false,
-        rules: [],
+        rules: [], // TODO
       };
     }
     return untyped();
@@ -543,7 +553,7 @@ class JsonSchemaParser {
     const rules: ValidationRule[] = [];
 
     if (this.parseIsRequired(schema)) {
-      rules.push({ kind: 'ValidationRule', id: 'required' });
+      rules.push({ kind: 'ValidationRule', id: 'Required' });
     }
 
     rules.push(...parseValidationRules(schema));
@@ -552,39 +562,38 @@ class JsonSchemaParser {
   }
 }
 
-function untyped(): TypedValue {
+function untyped(): MemberValue {
   return {
-    typeName: { value: 'untyped' },
-    isArray: false,
-    isPrimitive: true,
+    kind: 'PrimitiveValue',
+    typeName: { kind: 'PrimitiveLiteral', value: 'untyped' },
     rules: [],
   };
 }
 
-function untypedArray(): TypedValue {
+function untypedArray(): MemberValue {
   return {
-    typeName: { value: 'untyped' },
-    isArray: true,
-    isPrimitive: true,
+    kind: 'PrimitiveValue',
+    typeName: { kind: 'PrimitiveLiteral', value: 'untyped' },
+    isArray: { kind: 'TrueLiteral', value: true },
     rules: [],
   };
 }
 
-function toScalar<T extends string | number | boolean | null>(
-  node: LiteralNode<T>,
-): Scalar<T>;
-// eslint-disable-next-line no-redeclare
-function toScalar<T extends string | number | boolean | null>(
+export function toPrimitiveValueConstant<T extends string | number | boolean>(
   node: LiteralNode<T> | undefined,
-): Scalar<T> | undefined;
-// eslint-disable-next-line no-redeclare
-function toScalar<T extends string | number | boolean | null>(
-  node: LiteralNode<T> | undefined,
-): Scalar<T> | undefined {
+): PrimitiveValueConstant | undefined {
   if (!node) return undefined;
 
-  return {
-    value: node.value,
-    loc: encodeRange(node.loc),
-  };
+  const { value, loc } = node.asLiteral;
+
+  switch (typeof value) {
+    case 'string':
+      return { kind: 'StringLiteral', value, loc };
+    case 'number':
+      return { kind: 'NumberLiteral', value, loc };
+    case 'boolean':
+      return { kind: 'BooleanLiteral', value, loc };
+    default:
+      throw new Error(`Unexpected constant value type: ${typeof value}`);
+  }
 }
