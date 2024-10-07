@@ -1,6 +1,17 @@
-import { ObjectValidationRule, ValidationRule } from 'basketry';
-import { LiteralNode } from './json';
+import {
+  NonNegativeIntegerLiteral,
+  ObjectValidationRule,
+  StringLiteral,
+  ValidationRule,
+} from 'basketry';
+import { Literal, LiteralNode } from './json';
 import * as AST from './json-schema';
+import {
+  toNonEmptyStringLiteral,
+  toNonNegativeNumberLiteral,
+  toNumberLiteral,
+  toStringLiteral,
+} from './utils';
 
 export interface ValidationRuleFactory {
   (node: AST.AbstractSchemaNode): ValidationRule | undefined;
@@ -55,9 +66,9 @@ export const stringMaxLengthFactory: ValidationRuleFactory = (node) => {
   ) {
     return {
       kind: 'ValidationRule',
-      id: 'string-max-length',
-      length: node.maxLength.asLiteral,
-      loc: node._propertyRange('maxLength')!,
+      id: 'StringMaxLength',
+      length: toNonNegativeIntegerLiteral(node.maxLength),
+      loc: node._propertyRange('maxLength'),
     };
   } else {
     return;
@@ -71,9 +82,9 @@ export const stringMinLengthFactory: ValidationRuleFactory = (node) => {
   ) {
     return {
       kind: 'ValidationRule',
-      id: 'string-min-length',
-      length: node.minLength.asLiteral,
-      loc: node._propertyRange('minLength')!,
+      id: 'StringMinLength',
+      length: toNonNegativeIntegerLiteral(node.minLength),
+      loc: node._propertyRange('minLength'),
     };
   } else {
     return;
@@ -84,9 +95,9 @@ export const stringPatternFactory: ValidationRuleFactory = (node) => {
   if (AST.isStringType(node.type) && typeof node.pattern?.value === 'string') {
     return {
       kind: 'ValidationRule',
-      id: 'string-pattern',
-      pattern: node.pattern.asLiteral,
-      loc: node._propertyRange('pattern')!,
+      id: 'StringPattern',
+      pattern: toNonEmptyStringLiteral(node.pattern),
+      loc: node._propertyRange('pattern'),
     };
   } else {
     return;
@@ -97,9 +108,9 @@ export const stringFormatFactory: ValidationRuleFactory = (node) => {
   if (AST.isStringType(node.type) && typeof node.format?.value === 'string') {
     return {
       kind: 'ValidationRule',
-      id: 'string-format',
-      format: node.format.asLiteral,
-      loc: node._propertyRange('format')!,
+      id: 'StringFormat',
+      format: toNonEmptyStringLiteral(node.format),
+      loc: node._propertyRange('format'),
     };
   } else {
     return;
@@ -116,9 +127,9 @@ export const stringEnumFactory: ValidationRuleFactory = (node) => {
   ) {
     return {
       kind: 'ValidationRule',
-      id: 'string-enum',
-      values: node.enum.map((e) => e.asLiteral),
-      loc: node._propertyRange('enum')!,
+      id: 'StringEnum',
+      values: node.enum.map<StringLiteral>(toStringLiteral),
+      loc: node._propertyRange('enum'),
     };
   } else {
     return;
@@ -132,9 +143,9 @@ export const numberMultipleOfFactory: ValidationRuleFactory = (node) => {
   ) {
     return {
       kind: 'ValidationRule',
-      id: 'number-multiple-of',
-      value: node.multipleOf.asLiteral,
-      loc: node._propertyRange('multipleOf')!,
+      id: 'NumberMultipleOf',
+      value: toNonNegativeNumberLiteral(node.multipleOf),
+      loc: node._propertyRange('multipleOf'),
     };
   } else {
     return;
@@ -145,9 +156,9 @@ export const numberGreaterThanFactory: ValidationRuleFactory = (node) => {
   if (AST.isNumericType(node.type) && typeof node.minimum?.value === 'number') {
     return {
       kind: 'ValidationRule',
-      id: node.exclusiveMinimum?.value ? 'number-gt' : 'number-gte',
-      value: node.minimum.asLiteral,
-      loc: node._propertyRange('minimum')!,
+      id: node.exclusiveMinimum?.value ? 'NumberGT' : 'NumberGTE',
+      value: toNumberLiteral(node.minimum),
+      loc: node._propertyRange('minimum'),
     };
   } else {
     return;
@@ -158,9 +169,9 @@ export const numberLessThanFactory: ValidationRuleFactory = (node) => {
   if (AST.isNumericType(node.type) && typeof node.maximum?.value === 'number') {
     return {
       kind: 'ValidationRule',
-      id: node.exclusiveMaximum?.value ? 'number-lt' : 'number-lte',
-      value: node.maximum.asLiteral,
-      loc: node._propertyRange('maximum')!,
+      id: node.exclusiveMaximum?.value ? 'NumberLT' : 'NumberLTE',
+      value: toNumberLiteral(node.maximum),
+      loc: node._propertyRange('maximum'),
     };
   } else {
     return;
@@ -171,9 +182,9 @@ export const arrayMinItemsFactory: ValidationRuleFactory = (node) => {
   if (AST.isArrayType(node.type) && typeof node.minItems?.value === 'number') {
     return {
       kind: 'ValidationRule',
-      id: 'array-min-items',
-      min: node.minItems.asLiteral,
-      loc: node._propertyRange('minItems')!,
+      id: 'ArrayMinItems',
+      min: toNonNegativeNumberLiteral(node.minItems),
+      loc: node._propertyRange('minItems'),
     };
   } else {
     return;
@@ -184,9 +195,9 @@ export const arrayMaxItemsFactory: ValidationRuleFactory = (node) => {
   if (AST.isArrayType(node.type) && typeof node.maxItems?.value === 'number') {
     return {
       kind: 'ValidationRule',
-      id: 'array-max-items',
-      max: node.maxItems.asLiteral,
-      loc: node._propertyRange('maxItems')!,
+      id: 'ArrayMaxItems',
+      max: toNonNegativeNumberLiteral(node.maxItems),
+      loc: node._propertyRange('maxItems'),
     };
   } else {
     return;
@@ -197,9 +208,9 @@ export const arrayUniqueItemsFactory: ValidationRuleFactory = (node) => {
   if (AST.isArrayType(node.type) && node.uniqueItems?.value) {
     return {
       kind: 'ValidationRule',
-      id: 'array-unique-items',
+      id: 'ArrayUniqueItems',
       required: true,
-      loc: node._propertyRange('uniqueItems')!,
+      loc: node._propertyRange('uniqueItems'),
     };
   } else {
     return;
@@ -215,8 +226,8 @@ export const objectMinPropertiesFactory: ObjectValidationRuleFactory = (
   ) {
     return {
       kind: 'ObjectValidationRule',
-      id: 'object-min-properties',
-      min: node.minProperties.asLiteral,
+      id: 'ObjectMinProperties',
+      min: toNonNegativeIntegerLiteral(node.minProperties),
       loc: node._propertyRange('minProperties')!,
     };
   } else {
@@ -233,9 +244,9 @@ export const objectMaxPropertiesFactory: ObjectValidationRuleFactory = (
   ) {
     return {
       kind: 'ObjectValidationRule',
-      id: 'object-max-properties',
-      max: node.maxProperties.asLiteral,
-      loc: node._propertyRange('maxProperties')!,
+      id: 'ObjectMaxProperties',
+      max: toNonNegativeIntegerLiteral(node.maxProperties),
+      loc: node._propertyRange('maxProperties'),
     };
   } else {
     return;
@@ -259,3 +270,11 @@ export const objectAdditionalPropertiesFactory: ObjectValidationRuleFactory = (
   //   return;
   // }
 };
+
+function toNonNegativeIntegerLiteral(
+  node: Literal<number> | LiteralNode<number>,
+): NonNegativeIntegerLiteral {
+  return 'nodeType' in node
+    ? { kind: 'NonNegativeIntegerLiteral', ...node.asLiteral }
+    : { kind: 'NonNegativeIntegerLiteral', ...node };
+}

@@ -1,5 +1,10 @@
-import { encodeRange, Literal } from 'basketry';
+import { encodeRange } from 'basketry';
 import * as parse from 'json-to-ast';
+
+export type Literal<T extends string | number | boolean | null> = {
+  value: T;
+  loc?: string;
+};
 
 export type NodeConstructor<T extends JsonNode> = new (
   n: parse.ASTNode,
