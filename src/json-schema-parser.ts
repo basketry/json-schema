@@ -126,8 +126,11 @@ class JsonSchemaParser {
   parseType(
     schema: AST.AbstractSchemaNode | undefined,
     loc: string | undefined,
-  ): MemberValue {
-    if (!schema) return untyped();
+  ): {
+    memberValue: MemberValue;
+    inheritedDescription: StringLiteral[];
+  } {
+    if (!schema) return { memberValue: untyped(), inheritedDescription: [] };
 
     if (schema.definitions) {
       for (const child of schema.definitions.children) {
@@ -135,31 +138,70 @@ class JsonSchemaParser {
       }
     }
 
+    const inheritedDescription: StringLiteral[] =
+      toDescription(schema.description) ?? [];
+
     if (schema.ref) {
-      return this.parseRef(schema, loc);
+      const parsedRef = this.parseRef(schema, loc);
+
+      if (parsedRef.inheritedDescription) {
+        inheritedDescription.push(...parsedRef.inheritedDescription);
+      }
+      if (schema.description) {
+        inheritedDescription.push(...toDescription(schema.description));
+      }
+
+      return {
+        memberValue: parsedRef.memberValue,
+        inheritedDescription,
+      };
     } else if (schema.allOf) {
-      return this.parseIntersection(schema, loc);
+      return {
+        memberValue: this.parseIntersection(schema, loc),
+        inheritedDescription,
+      };
     } else if (schema.anyOf) {
-      return this.parseAnyOfUnion(schema, loc);
+      return {
+        memberValue: this.parseAnyOfUnion(schema, loc),
+        inheritedDescription,
+      };
     } else if (schema.oneOf) {
-      return this.parseOneOfUnion(schema, loc);
+      if (schema.description) {
+        inheritedDescription.push(...toDescription(schema.description));
+      }
+      return {
+        memberValue: this.parseOneOfUnion(schema, loc),
+        inheritedDescription,
+      };
     } else if (Array.isArray(schema.type)) {
-      return this.parseTypeArrayUnion(schema, loc);
+      return {
+        memberValue: this.parseTypeArrayUnion(schema, loc),
+        inheritedDescription,
+      };
     } else if (schema.enum) {
-      return this.parseEnum(schema, loc);
+      return { memberValue: this.parseEnum(schema, loc), inheritedDescription };
     } else if (schema.type?.value === 'object') {
-      return this.parseObject(schema, loc);
+      return {
+        memberValue: this.parseObject(schema, loc),
+        inheritedDescription,
+      };
     } else if (schema.type?.value === 'array') {
-      return this.parseArray(schema, loc);
+      return {
+        memberValue: this.parseArray(schema, loc),
+        inheritedDescription,
+      };
     } else {
-      return this.parsePrimitive(schema, loc);
+      return {
+        memberValue: this.parsePrimitive(schema, loc),
+        inheritedDescription,
+      };
     }
   }
 
   parseRef(
     schema: AST.AbstractSchemaNode,
     loc: string | undefined,
-  ): MemberValue {
+  ): { memberValue: MemberValue; inheritedDescription: StringLiteral[] } {
     if (schema.ref) {
       const resolved = resolve(
         this.source.node,
@@ -180,7 +222,7 @@ class JsonSchemaParser {
       }
     }
 
-    return untyped();
+    return { memberValue: untyped(), inheritedDescription: [] };
   }
 
   // TODO: support intersected unions
@@ -189,8 +231,8 @@ class JsonSchemaParser {
     loc: string | undefined,
   ): MemberValue {
     if (schema.oneOf) {
-      const members: MemberValue[] = schema.oneOf.map((member) =>
-        this.parseType(member, encodeRange(member.loc)),
+      const members: MemberValue[] = schema.oneOf.map(
+        (member) => this.parseType(member, encodeRange(member.loc)).memberValue,
       );
       const name = this.parseTypeName(schema);
 
@@ -230,6 +272,7 @@ class JsonSchemaParser {
         const union: Union = {
           kind: 'DiscriminatedUnion',
           name,
+          description: toDescription(schema.description),
           discriminator: toStringLiteral(propertyName),
           members: complexTypes,
           loc,
@@ -248,6 +291,7 @@ class JsonSchemaParser {
           this.unions.set(name.value, {
             kind: 'PrimitiveUnion',
             name,
+            description: toDescription(schema.description),
             members: primitiveMemebers,
             loc,
           });
@@ -255,6 +299,7 @@ class JsonSchemaParser {
           this.unions.set(name.value, {
             kind: 'ComplexUnion',
             name,
+            description: toDescription(schema.description),
             members: complexMembers,
             loc,
           });
@@ -378,7 +423,7 @@ class JsonSchemaParser {
         // TODO: union
         throw new Error('Not implemented exeption');
       } else {
-        const items = this.parseType(
+        const { memberValue: items } = this.parseType(
           schema.items,
           encodeRange(schema.items?.loc),
         );
@@ -432,13 +477,27 @@ class JsonSchemaParser {
   }
 
   parseProperty(child: AST.SchemaRecordItem): Property {
-    const memberValue = this.parseType(child.value, encodeRange(child.loc));
+    const { memberValue, inheritedDescription } = this.parseType(
+      child.value,
+      encodeRange(child.loc),
+    );
+
+    const description: StringLiteral[] =
+      toDescription(child.value.description) ?? [];
+
+    if (
+      inheritedDescription &&
+      !description.length &&
+      memberValue.kind === 'PrimitiveValue'
+    ) {
+      description.push(...inheritedDescription);
+    }
 
     if (memberValue.kind === 'PrimitiveValue') {
       return {
         kind: 'Property',
         name: toStringLiteral(child.key),
-        description: toDescription(child.value.description),
+        description: description.length ? description : undefined,
         value: {
           ...memberValue,
           constant: toPrimitiveValueConstant(child.value.const),
@@ -450,7 +509,7 @@ class JsonSchemaParser {
       return {
         kind: 'Property',
         name: toStringLiteral(child.key),
-        description: toDescription(child.value.description),
+        description: description.length ? description : undefined,
         value: {
           ...memberValue,
           rules: this.parseRules(child.value),
@@ -538,7 +597,13 @@ class JsonSchemaParser {
           content: toStringLiteral(value),
         }));
 
-      this.enums.set(name.value, { kind: 'Enum', name, loc, members });
+      this.enums.set(name.value, {
+        kind: 'Enum',
+        description: toDescription(schema.description),
+        name,
+        loc,
+        members,
+      });
 
       return {
         kind: 'ComplexValue',
