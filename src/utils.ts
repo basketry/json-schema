@@ -87,5 +87,15 @@ export function toDescription(
 export function toDescription(
   node: LiteralNode<string> | undefined,
 ): StringLiteral[] | undefined {
-  return node ? [{ kind: 'StringLiteral', ...node.asLiteral }] : undefined;
+  if (!node) return undefined;
+
+  const { value, loc } = node?.asLiteral;
+
+  const paragraphs = value.split('\n\n');
+
+  return paragraphs.map((paragraph) => ({
+    kind: 'StringLiteral',
+    value: paragraph,
+    loc,
+  }));
 }
