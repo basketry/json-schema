@@ -230,26 +230,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "string-max-length",
-              "length": { "value": 100, "loc": "490;26;29;10947;10950" },
-              "loc": "490;13;29;10934;10950"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "494;23;24;11056;11057" },
+              "loc": "494;11;24;11044;11057"
             },
             {
               "kind": "ValidationRule",
-              "id": "string-min-length",
-              "length": { "value": 1, "loc": "489;26;27;10919;10920" },
-              "loc": "489;13;27;10906;10920"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "495;23;26;11081;11084" },
+              "loc": "495;11;26;11069;11084"
             },
             {
               "kind": "ValidationRule",
-              "id": "string-pattern",
-              "pattern": {
-                "value": "[9-0a-zA-Z]*",
-                "loc": "491;24;38;10975;10989"
-              },
-              "loc": "491;13;38;10964;10989"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "496;11;30;11096;11115"
             }
           ],
           "name": {
@@ -266,24 +264,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "string-max-length",
-              "length": { "value": 100, "loc": "503;26;29;11291;11294" },
-              "loc": "503;13;29;11278;11294"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "507;23;24;11400;11401" },
+              "loc": "507;11;24;11388;11401"
             },
             {
               "kind": "ValidationRule",
-              "id": "string-min-length",
-              "length": { "value": 1, "loc": "502;26;27;11263;11264" },
-              "loc": "502;13;27;11250;11264"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "508;23;26;11425;11428" },
+              "loc": "508;11;26;11413;11428"
             },
             {
               "kind": "ValidationRule",
-              "id": "string-pattern",
-              "pattern": {
-                "value": "[9-0a-zA-Z]*",
-                "loc": "504;24;38;11319;11333"
-              },
-              "loc": "504;13;38;11308;11333"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "509;11;30;11440;11459"
             }
           ],
           "name": {
@@ -297,7 +292,39 @@
           "typeName": { "value": "exhaustiveSubObject_requiredStringEnum" },
           "isArray": false,
           "isPrimitive": false,
-          "rules": [],
+          "rules": [
+            { "kind": "ValidationRule", "id": "required" },
+            {
+              "kind": "ValidationRule",
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "516;24;27;11623;11626" },
+              "loc": "516;11;27;11610;11626"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "515;24;25;11597;11598" },
+              "loc": "515;11;25;11584;11598"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[9-0a-zA-Z]*",
+                "loc": "517;22;36;11649;11663"
+              },
+              "loc": "517;11;36;11638;11663"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-enum",
+              "values": [
+                { "value": "VALUE_A", "loc": "514;20;29;11551;11560" },
+                { "value": "VALUE_B", "loc": "514;31;40;11562;11571" }
+              ],
+              "loc": "514;11;41;11542;11572"
+            }
+          ],
           "name": {
             "value": "requiredStringEnum",
             "loc": "512;9;29;11480;11500"
@@ -309,7 +336,38 @@
           "typeName": { "value": "exhaustiveSubObject_optionalStringEnum" },
           "isArray": false,
           "isPrimitive": false,
-          "rules": [],
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "524;24;27;11855;11858" },
+              "loc": "524;11;27;11842;11858"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "523;24;25;11829;11830" },
+              "loc": "523;11;25;11816;11830"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[9-0a-zA-Z]*",
+                "loc": "525;22;36;11881;11895"
+              },
+              "loc": "525;11;36;11870;11895"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-enum",
+              "values": [
+                { "value": "VALUE_C", "loc": "522;20;29;11783;11792" },
+                { "value": "VALUE_D", "loc": "522;31;40;11794;11803" }
+              ],
+              "loc": "522;11;41;11774;11804"
+            }
+          ],
           "name": {
             "value": "optionalStringEnum",
             "loc": "520;9;29;11712;11732"
@@ -323,7 +381,27 @@
           },
           "isArray": true,
           "isPrimitive": false,
-          "rules": [],
+          "rules": [
+            { "kind": "ValidationRule", "id": "required" },
+            {
+              "kind": "ValidationRule",
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "538;23;24;12257;12258" },
+              "loc": "538;11;24;12245;12258"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "539;23;26;12282;12285" },
+              "loc": "539;11;26;12270;12285"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "540;11;30;12297;12316"
+            }
+          ],
           "name": {
             "value": "requiredStringEnumArray",
             "loc": "528;9;34;11944;11969"
@@ -337,7 +415,26 @@
           },
           "isArray": true,
           "isPrimitive": false,
-          "rules": [],
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "552;23;24;12649;12650" },
+              "loc": "552;11;24;12637;12650"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "553;23;26;12674;12677" },
+              "loc": "553;11;26;12662;12677"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "554;11;30;12689;12708"
+            }
+          ],
           "name": {
             "value": "optionalStringEnumArray",
             "loc": "542;9;34;12336;12361"
@@ -370,7 +467,27 @@
           },
           "isArray": true,
           "isPrimitive": true,
-          "rules": [],
+          "rules": [
+            { "kind": "ValidationRule", "id": "required" },
+            {
+              "kind": "ValidationRule",
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "564;23;24;12968;12969" },
+              "loc": "564;11;24;12956;12969"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "565;23;26;12993;12996" },
+              "loc": "565;11;26;12981;12996"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "566;11;30;13008;13027"
+            }
+          ],
           "name": {
             "value": "requiredBooleanArray",
             "loc": "559;9;31;12829;12851"
@@ -385,7 +502,26 @@
           },
           "isArray": true,
           "isPrimitive": true,
-          "rules": [],
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "573;23;24;13186;13187" },
+              "loc": "573;11;24;13174;13187"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "574;23;26;13211;13214" },
+              "loc": "574;11;26;13199;13214"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "575;11;30;13226;13245"
+            }
+          ],
           "name": {
             "value": "optionalBooleanArray",
             "loc": "568;9;31;13047;13069"
@@ -455,23 +591,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "596;27;28;13738;13739" },
-              "loc": "596;13;28;13724;13739"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "598;23;24;13775;13776" },
+              "loc": "598;11;24;13763;13776"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "594;24;26;13680;13682" },
-              "loc": "594;13;26;13669;13682"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "599;23;26;13800;13803" },
+              "loc": "599;11;26;13788;13803"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "595;24;27;13707;13710" },
-              "loc": "595;13;27;13696;13710"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "600;11;30;13815;13834"
             }
           ],
           "name": {
@@ -488,21 +625,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "608;27;28;14038;14039" },
-              "loc": "608;13;28;14024;14039"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "610;23;24;14075;14076" },
+              "loc": "610;11;24;14063;14076"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "606;24;26;13980;13982" },
-              "loc": "606;13;26;13969;13982"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "611;23;26;14100;14103" },
+              "loc": "611;11;26;14088;14103"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "607;24;27;14007;14010" },
-              "loc": "607;13;27;13996;14010"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "612;11;30;14115;14134"
             }
           ],
           "name": {
@@ -577,23 +714,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "633;27;28;14633;14634" },
-              "loc": "633;13;28;14619;14634"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "635;23;24;14670;14671" },
+              "loc": "635;11;24;14658;14671"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "631;24;26;14575;14577" },
-              "loc": "631;13;26;14564;14577"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "636;23;26;14695;14698" },
+              "loc": "636;11;26;14683;14698"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "632;24;27;14602;14605" },
-              "loc": "632;13;27;14591;14605"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "637;11;30;14710;14729"
             }
           ],
           "name": {
@@ -613,21 +751,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "645;27;28;14935;14936" },
-              "loc": "645;13;28;14921;14936"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "647;23;24;14972;14973" },
+              "loc": "647;11;24;14960;14973"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "643;24;26;14877;14879" },
-              "loc": "643;13;26;14866;14879"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "648;23;26;14997;15000" },
+              "loc": "648;11;26;14985;15000"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "644;24;27;14904;14907" },
-              "loc": "644;13;27;14893;14907"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "649;11;30;15012;15031"
             }
           ],
           "name": {
@@ -699,23 +837,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "673;27;28;15610;15611" },
-              "loc": "673;13;28;15596;15611"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "675;23;24;15647;15648" },
+              "loc": "675;11;24;15635;15648"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "671;24;26;15552;15554" },
-              "loc": "671;13;26;15541;15554"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "676;23;26;15672;15675" },
+              "loc": "676;11;26;15660;15675"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "672;24;27;15579;15582" },
-              "loc": "672;13;27;15568;15582"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "677;11;30;15687;15706"
             }
           ],
           "name": {
@@ -732,21 +871,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "686;27;28;15940;15941" },
-              "loc": "686;13;28;15926;15941"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "688;23;24;15977;15978" },
+              "loc": "688;11;24;15965;15978"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "684;24;26;15882;15884" },
-              "loc": "684;13;26;15871;15884"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "689;23;26;16002;16005" },
+              "loc": "689;11;26;15990;16005"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "685;24;27;15909;15912" },
-              "loc": "685;13;27;15898;15912"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "690;11;30;16017;16036"
             }
           ],
           "name": {
@@ -818,23 +957,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "714;27;28;16615;16616" },
-              "loc": "714;13;28;16601;16616"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "716;23;24;16652;16653" },
+              "loc": "716;11;24;16640;16653"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "712;24;26;16557;16559" },
-              "loc": "712;13;26;16546;16559"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "717;23;26;16677;16680" },
+              "loc": "717;11;26;16665;16680"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "713;24;27;16584;16587" },
-              "loc": "713;13;27;16573;16587"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "718;11;30;16692;16711"
             }
           ],
           "name": {
@@ -851,21 +991,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "727;27;28;16945;16946" },
-              "loc": "727;13;28;16931;16946"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "729;23;24;16982;16983" },
+              "loc": "729;11;24;16970;16983"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "725;24;26;16887;16889" },
-              "loc": "725;13;26;16876;16889"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "730;23;26;17007;17010" },
+              "loc": "730;11;26;16995;17010"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "726;24;27;16914;16917" },
-              "loc": "726;13;27;16903;16917"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "731;11;30;17022;17041"
             }
           ],
           "name": {
@@ -937,23 +1077,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "755;27;28;17626;17627" },
-              "loc": "755;13;28;17612;17627"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "757;23;24;17663;17664" },
+              "loc": "757;11;24;17651;17664"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "753;24;26;17568;17570" },
-              "loc": "753;13;26;17557;17570"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "758;23;26;17688;17691" },
+              "loc": "758;11;26;17676;17691"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "754;24;27;17595;17598" },
-              "loc": "754;13;27;17584;17598"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "759;11;30;17703;17722"
             }
           ],
           "name": {
@@ -970,21 +1111,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "768;27;28;17958;17959" },
-              "loc": "768;13;28;17944;17959"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "770;23;24;17995;17996" },
+              "loc": "770;11;24;17983;17996"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "766;24;26;17900;17902" },
-              "loc": "766;13;26;17889;17902"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "771;23;26;18020;18023" },
+              "loc": "771;11;26;18008;18023"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "767;24;27;17927;17930" },
-              "loc": "767;13;27;17916;17930"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "772;11;30;18035;18054"
             }
           ],
           "name": {
@@ -1032,11 +1173,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "string-format",
-              "format": { "value": "date", "loc": "787;23;29;18382;18388" },
-              "loc": "787;13;29;18372;18388"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "789;23;24;18424;18425" },
+              "loc": "789;11;24;18412;18425"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "790;23;26;18449;18452" },
+              "loc": "790;11;26;18437;18452"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "791;11;30;18464;18483"
             }
           ],
           "name": {
@@ -1053,9 +1207,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "string-format",
-              "format": { "value": "date", "loc": "797;23;29;18626;18632" },
-              "loc": "797;13;29;18616;18632"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "799;23;24;18668;18669" },
+              "loc": "799;11;24;18656;18669"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "800;23;26;18693;18696" },
+              "loc": "800;11;26;18681;18696"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "801;11;30;18708;18727"
             }
           ],
           "name": {
@@ -1124,14 +1290,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "string-format",
-              "format": {
-                "value": "date-time",
-                "loc": "816;23;34;19077;19088"
-              },
-              "loc": "816;13;34;19067;19088"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "818;23;24;19124;19125" },
+              "loc": "818;11;24;19112;19125"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "819;23;26;19149;19152" },
+              "loc": "819;11;26;19137;19152"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "820;11;30;19164;19183"
             }
           ],
           "name": {
@@ -1151,12 +1327,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "string-format",
-              "format": {
-                "value": "date-time",
-                "loc": "826;23;34;19330;19341"
-              },
-              "loc": "826;13;34;19320;19341"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "828;23;24;19377;19378" },
+              "loc": "828;11;24;19365;19378"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "829;23;26;19402;19405" },
+              "loc": "829;11;26;19390;19405"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "830;11;30;19417;19436"
             }
           ],
           "name": {
@@ -1272,26 +1457,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "string-max-length",
-              "length": { "value": 100, "loc": "49;22;25;1162;1165" },
-              "loc": "49;9;25;1149;1165"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "53;19;20;1255;1256" },
+              "loc": "53;7;20;1243;1256"
             },
             {
               "kind": "ValidationRule",
-              "id": "string-min-length",
-              "length": { "value": 1, "loc": "48;22;23;1138;1139" },
-              "loc": "48;9;23;1125;1139"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "54;19;22;1276;1279" },
+              "loc": "54;7;22;1264;1279"
             },
             {
               "kind": "ValidationRule",
-              "id": "string-pattern",
-              "pattern": {
-                "value": "[9-0a-zA-Z]*",
-                "loc": "50;20;34;1186;1200"
-              },
-              "loc": "50;9;34;1175;1200"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "55;7;26;1287;1306"
             }
           ],
           "name": {
@@ -1308,24 +1491,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "string-max-length",
-              "length": { "value": 100, "loc": "62;22;25;1454;1457" },
-              "loc": "62;9;25;1441;1457"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "66;19;20;1547;1548" },
+              "loc": "66;7;20;1535;1548"
             },
             {
               "kind": "ValidationRule",
-              "id": "string-min-length",
-              "length": { "value": 1, "loc": "61;22;23;1430;1431" },
-              "loc": "61;9;23;1417;1431"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "67;19;22;1568;1571" },
+              "loc": "67;7;22;1556;1571"
             },
             {
               "kind": "ValidationRule",
-              "id": "string-pattern",
-              "pattern": {
-                "value": "[9-0a-zA-Z]*",
-                "loc": "63;20;34;1478;1492"
-              },
-              "loc": "63;9;34;1467;1492"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "68;7;26;1579;1598"
             }
           ],
           "name": {
@@ -1339,7 +1519,39 @@
           "typeName": { "value": "exhaustive_requiredStringEnum" },
           "isArray": false,
           "isPrimitive": false,
-          "rules": [],
+          "rules": [
+            { "kind": "ValidationRule", "id": "required" },
+            {
+              "kind": "ValidationRule",
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "75;20;23;1738;1741" },
+              "loc": "75;7;23;1725;1741"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "74;20;21;1716;1717" },
+              "loc": "74;7;21;1703;1717"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[9-0a-zA-Z]*",
+                "loc": "76;18;32;1760;1774"
+              },
+              "loc": "76;7;32;1749;1774"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-enum",
+              "values": [
+                { "value": "VALUE_A", "loc": "73;16;25;1674;1683" },
+                { "value": "VALUE_B", "loc": "73;27;36;1685;1694" }
+              ],
+              "loc": "73;7;37;1665;1695"
+            }
+          ],
           "name": { "value": "requiredStringEnum", "loc": "71;5;25;1611;1631" },
           "loc": "71;5;78;6;1611;1805"
         },
@@ -1348,7 +1560,38 @@
           "typeName": { "value": "exhaustive_optionalStringEnum" },
           "isArray": false,
           "isPrimitive": false,
-          "rules": [],
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "string-max-length",
+              "length": { "value": 100, "loc": "83;20;23;1938;1941" },
+              "loc": "83;7;23;1925;1941"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-min-length",
+              "length": { "value": 1, "loc": "82;20;21;1916;1917" },
+              "loc": "82;7;21;1903;1917"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-pattern",
+              "pattern": {
+                "value": "[9-0a-zA-Z]*",
+                "loc": "84;18;32;1960;1974"
+              },
+              "loc": "84;7;32;1949;1974"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-enum",
+              "values": [
+                { "value": "VALUE_C", "loc": "81;16;25;1874;1883" },
+                { "value": "VALUE_D", "loc": "81;27;36;1885;1894" }
+              ],
+              "loc": "81;7;37;1865;1895"
+            }
+          ],
           "name": { "value": "optionalStringEnum", "loc": "79;5;25;1811;1831" },
           "loc": "79;5;86;6;1811;2005"
         },
@@ -1357,7 +1600,27 @@
           "typeName": { "value": "exhaustive_requiredStringEnumArray_items" },
           "isArray": true,
           "isPrimitive": false,
-          "rules": [],
+          "rules": [
+            { "kind": "ValidationRule", "id": "required" },
+            {
+              "kind": "ValidationRule",
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "97;19;20;2284;2285" },
+              "loc": "97;7;20;2272;2285"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "98;19;22;2305;2308" },
+              "loc": "98;7;22;2293;2308"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "99;7;26;2316;2335"
+            }
+          ],
           "name": {
             "value": "requiredStringEnumArray",
             "loc": "87;5;30;2011;2036"
@@ -1369,7 +1632,26 @@
           "typeName": { "value": "exhaustive_optionalStringEnumArray_items" },
           "isArray": true,
           "isPrimitive": false,
-          "rules": [],
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "111;19;20;2620;2621" },
+              "loc": "111;7;20;2608;2621"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "112;19;22;2641;2644" },
+              "loc": "112;7;22;2629;2644"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "113;7;26;2652;2671"
+            }
+          ],
           "name": {
             "value": "optionalStringEnumArray",
             "loc": "101;5;30;2347;2372"
@@ -1399,7 +1681,27 @@
           "typeName": { "value": "boolean", "loc": "120;16;122;8;2840;2875" },
           "isArray": true,
           "isPrimitive": true,
-          "rules": [],
+          "rules": [
+            { "kind": "ValidationRule", "id": "required" },
+            {
+              "kind": "ValidationRule",
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "123;19;20;2895;2896" },
+              "loc": "123;7;20;2883;2896"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "124;19;22;2916;2919" },
+              "loc": "124;7;22;2904;2919"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "125;7;26;2927;2946"
+            }
+          ],
           "name": {
             "value": "requiredBooleanArray",
             "loc": "118;5;27;2776;2798"
@@ -1411,7 +1713,26 @@
           "typeName": { "value": "boolean", "loc": "129;16;131;8;3022;3057" },
           "isArray": true,
           "isPrimitive": true,
-          "rules": [],
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "132;19;20;3077;3078" },
+              "loc": "132;7;20;3065;3078"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "133;19;22;3098;3101" },
+              "loc": "133;7;22;3086;3101"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "134;7;26;3109;3128"
+            }
+          ],
           "name": {
             "value": "optionalBooleanArray",
             "loc": "127;5;27;2958;2980"
@@ -1481,23 +1802,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "155;23;24;3541;3542" },
-              "loc": "155;9;24;3527;3542"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "157;19;20;3570;3571" },
+              "loc": "157;7;20;3558;3571"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "153;20;22;3491;3493" },
-              "loc": "153;9;22;3480;3493"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "158;19;22;3591;3594" },
+              "loc": "158;7;22;3579;3594"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "154;20;23;3514;3517" },
-              "loc": "154;9;23;3503;3517"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "159;7;26;3602;3621"
             }
           ],
           "name": {
@@ -1514,21 +1836,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "167;23;24;3793;3794" },
-              "loc": "167;9;24;3779;3794"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "169;19;20;3822;3823" },
+              "loc": "169;7;20;3810;3823"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "165;20;22;3743;3745" },
-              "loc": "165;9;22;3732;3745"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "170;19;22;3843;3846" },
+              "loc": "170;7;22;3831;3846"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "166;20;23;3766;3769" },
-              "loc": "166;9;23;3755;3769"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "171;7;26;3854;3873"
             }
           ],
           "name": {
@@ -1600,23 +1922,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "192;23;24;4292;4293" },
-              "loc": "192;9;24;4278;4293"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "194;19;20;4321;4322" },
+              "loc": "194;7;20;4309;4322"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "190;20;22;4242;4244" },
-              "loc": "190;9;22;4231;4244"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "195;19;22;4342;4345" },
+              "loc": "195;7;22;4330;4345"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "191;20;23;4265;4268" },
-              "loc": "191;9;23;4254;4268"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "196;7;26;4353;4372"
             }
           ],
           "name": {
@@ -1633,21 +1956,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "204;23;24;4546;4547" },
-              "loc": "204;9;24;4532;4547"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "206;19;20;4575;4576" },
+              "loc": "206;7;20;4563;4576"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "202;20;22;4496;4498" },
-              "loc": "202;9;22;4485;4498"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "207;19;22;4596;4599" },
+              "loc": "207;7;22;4584;4599"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "203;20;23;4519;4522" },
-              "loc": "203;9;23;4508;4522"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "208;7;26;4607;4626"
             }
           ],
           "name": {
@@ -1719,23 +2042,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "232;23;24;5113;5114" },
-              "loc": "232;9;24;5099;5114"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "234;19;20;5142;5143" },
+              "loc": "234;7;20;5130;5143"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "230;20;22;5063;5065" },
-              "loc": "230;9;22;5052;5065"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "235;19;22;5163;5166" },
+              "loc": "235;7;22;5151;5166"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "231;20;23;5086;5089" },
-              "loc": "231;9;23;5075;5089"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "236;7;26;5174;5193"
             }
           ],
           "name": { "value": "requiredLongArray", "loc": "225;5;24;4927;4946" },
@@ -1749,21 +2073,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "245;23;24;5391;5392" },
-              "loc": "245;9;24;5377;5392"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "247;19;20;5420;5421" },
+              "loc": "247;7;20;5408;5421"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "243;20;22;5341;5343" },
-              "loc": "243;9;22;5330;5343"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "248;19;22;5441;5444" },
+              "loc": "248;7;22;5429;5444"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "244;20;23;5364;5367" },
-              "loc": "244;9;23;5353;5367"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "249;7;26;5452;5471"
             }
           ],
           "name": { "value": "optionalLongArray", "loc": "238;5;24;5205;5224" },
@@ -1832,23 +2156,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "273;23;24;5958;5959" },
-              "loc": "273;9;24;5944;5959"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "275;19;20;5987;5988" },
+              "loc": "275;7;20;5975;5988"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "271;20;22;5908;5910" },
-              "loc": "271;9;22;5897;5910"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "276;19;22;6008;6011" },
+              "loc": "276;7;22;5996;6011"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "272;20;23;5931;5934" },
-              "loc": "272;9;23;5920;5934"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "277;7;26;6019;6038"
             }
           ],
           "name": {
@@ -1865,21 +2190,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "286;23;24;6236;6237" },
-              "loc": "286;9;24;6222;6237"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "288;19;20;6265;6266" },
+              "loc": "288;7;20;6253;6266"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "284;20;22;6186;6188" },
-              "loc": "284;9;22;6175;6188"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "289;19;22;6286;6289" },
+              "loc": "289;7;22;6274;6289"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "285;20;23;6209;6212" },
-              "loc": "285;9;23;6198;6212"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "290;7;26;6297;6316"
             }
           ],
           "name": {
@@ -1951,23 +2276,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "314;23;24;6809;6810" },
-              "loc": "314;9;24;6795;6810"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "316;19;20;6838;6839" },
+              "loc": "316;7;20;6826;6839"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "312;20;22;6759;6761" },
-              "loc": "312;9;22;6748;6761"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "317;19;22;6859;6862" },
+              "loc": "317;7;22;6847;6862"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "313;20;23;6782;6785" },
-              "loc": "313;9;23;6771;6785"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "318;7;26;6870;6889"
             }
           ],
           "name": {
@@ -1984,21 +2310,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "number-multiple-of",
-              "value": { "value": 3, "loc": "327;23;24;7089;7090" },
-              "loc": "327;9;24;7075;7090"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "329;19;20;7118;7119" },
+              "loc": "329;7;20;7106;7119"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-gte",
-              "value": { "value": -2, "loc": "325;20;22;7039;7041" },
-              "loc": "325;9;22;7028;7041"
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "330;19;22;7139;7142" },
+              "loc": "330;7;22;7127;7142"
             },
             {
               "kind": "ValidationRule",
-              "id": "number-lte",
-              "value": { "value": 100, "loc": "326;20;23;7062;7065" },
-              "loc": "326;9;23;7051;7065"
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "331;7;26;7150;7169"
             }
           ],
           "name": {
@@ -2046,11 +2372,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "string-format",
-              "format": { "value": "date", "loc": "346;19;25;7441;7447" },
-              "loc": "346;9;25;7431;7447"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "348;19;20;7475;7476" },
+              "loc": "348;7;20;7463;7476"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "349;19;22;7496;7499" },
+              "loc": "349;7;22;7484;7499"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "350;7;26;7507;7526"
             }
           ],
           "name": { "value": "requiredDateArray", "loc": "342;5;24;7334;7353" },
@@ -2064,9 +2403,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "string-format",
-              "format": { "value": "date", "loc": "356;19;25;7645;7651" },
-              "loc": "356;9;25;7635;7651"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "358;19;20;7679;7680" },
+              "loc": "358;7;20;7667;7680"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "359;19;22;7700;7703" },
+              "loc": "359;7;22;7688;7703"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "360;7;26;7711;7730"
             }
           ],
           "name": { "value": "optionalDateArray", "loc": "352;5;24;7538;7557" },
@@ -2111,11 +2462,24 @@
           "isArray": true,
           "isPrimitive": true,
           "rules": [
+            { "kind": "ValidationRule", "id": "required" },
             {
               "kind": "ValidationRule",
-              "id": "string-format",
-              "format": { "value": "date-time", "loc": "375;19;30;8024;8035" },
-              "loc": "375;9;30;8014;8035"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "377;19;20;8063;8064" },
+              "loc": "377;7;20;8051;8064"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "378;19;22;8084;8087" },
+              "loc": "378;7;22;8072;8087"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "379;7;26;8095;8114"
             }
           ],
           "name": {
@@ -2132,9 +2496,21 @@
           "rules": [
             {
               "kind": "ValidationRule",
-              "id": "string-format",
-              "format": { "value": "date-time", "loc": "385;19;30;8237;8248" },
-              "loc": "385;9;30;8227;8248"
+              "id": "array-min-items",
+              "min": { "value": 1, "loc": "387;19;20;8276;8277" },
+              "loc": "387;7;20;8264;8277"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-max-items",
+              "max": { "value": 100, "loc": "388;19;22;8297;8300" },
+              "loc": "388;7;22;8285;8300"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "array-unique-items",
+              "required": true,
+              "loc": "389;7;26;8308;8327"
             }
           ],
           "name": {
