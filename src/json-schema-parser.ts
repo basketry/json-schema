@@ -33,12 +33,15 @@ export const jsonSchemaParser: Parser = (sourceContent, sourcePath) => {
 };
 
 class JsonSchemaParser {
-  constructor(sourceContent: string, private readonly sourcePath: string) {
+  constructor(sourceContent: string, sourcePath: string) {
+    this.sourcePaths = [sourcePath];
     this.source = new AST.DocumentNode(
       parse(sourceContent, { loc: true }),
       '#',
     );
   }
+
+  private readonly sourcePaths: string[];
 
   private readonly source: AST.AbstractSchemaNode;
 
@@ -48,22 +51,22 @@ class JsonSchemaParser {
   private readonly violations: Violation[] = [];
 
   parse(): { service: Service; violations: Violation[] } {
-    this.parseType(this.source, encodeRange(this.source.loc));
+    this.parseType(this.source, encodeRange(0, this.source.loc));
 
     return {
       service: {
         kind: 'Service',
         basketry: '0.2',
         title: this.parseTitle(),
-        sourcePath: 'source.ext',
-        loc: encodeRange(this.source.loc),
+        sourcePaths: this.sourcePaths,
+        loc: encodeRange(0, this.source.loc),
         majorVersion: this.parseMajorVersion(),
         interfaces: [],
         types: Array.from(this.types.values()),
         enums: Array.from(this.enums.values()),
         unions: Array.from(this.unions.values()),
       },
-      violations: [],
+      violations: this.violations,
     };
   }
 
@@ -134,7 +137,7 @@ class JsonSchemaParser {
 
     if (schema.definitions) {
       for (const child of schema.definitions.children) {
-        this.parseType(child.value, encodeRange(child.loc));
+        this.parseType(child.value, encodeRange(0, child.loc));
       }
     }
 
@@ -212,12 +215,15 @@ class JsonSchemaParser {
       if (resolved) {
         return this.parseType(resolved, loc);
       } else {
+        const { range, sourceIndex } = decodeRange(
+          encodeRange(0, schema.ref.loc),
+        );
         this.violations.push({
           code: 'PARSER_ERROR',
           message: `Cannot resolve ref '${schema.ref.value}'`,
           severity: 'error',
-          sourcePath: this.sourcePath,
-          range: decodeRange(encodeRange(schema.ref.loc)),
+          range,
+          sourcePath: this.sourcePaths[sourceIndex],
         });
       }
     }
@@ -232,7 +238,8 @@ class JsonSchemaParser {
   ): MemberValue {
     if (schema.oneOf) {
       const members: MemberValue[] = schema.oneOf.map(
-        (member) => this.parseType(member, encodeRange(member.loc)).memberValue,
+        (member) =>
+          this.parseType(member, encodeRange(0, member.loc)).memberValue,
       );
       const name = this.parseTypeName(schema);
 
@@ -242,13 +249,16 @@ class JsonSchemaParser {
         const { propertyName, mapping } = schema.discriminator;
 
         if (mapping) {
+          const { range, sourceIndex } = decodeRange(
+            encodeRange(0, mapping.loc),
+          );
           this.violations.push({
             code: 'json-schema/unsupported-feature',
             message:
               'Discriminator mapping is not yet supported and will have no effect.',
-            range: decodeRange(encodeRange(mapping.loc)),
+            range,
             severity: 'info',
-            sourcePath: this.sourcePath,
+            sourcePath: this.sourcePaths[sourceIndex],
           });
         }
 
@@ -257,12 +267,15 @@ class JsonSchemaParser {
         const complexTypes: ComplexValue[] = [];
         for (const member of members) {
           if (member.kind === 'PrimitiveValue') {
+            const { range, sourceIndex } = decodeRange(
+              encodeRange(0, schema.discriminator.loc),
+            );
             this.violations.push({
               code: 'openapi-3/misconfigured-discriminator',
               message: 'Discriminators may not reference primitive types.',
-              range: decodeRange(encodeRange(schema.discriminator.loc)),
+              range,
               severity: 'error',
-              sourcePath: this.sourcePath,
+              sourcePath: this.sourcePaths[sourceIndex],
             });
           } else {
             complexTypes.push(member);
@@ -304,13 +317,14 @@ class JsonSchemaParser {
             loc,
           });
         } else {
+          const { range, sourceIndex } = decodeRange(loc);
           this.violations.push({
             code: 'json-schema/unsupported-feature',
             message:
               'Unions with a mix of primitive and complex members is not supported.',
-            range: decodeRange(loc),
+            range,
             severity: 'info',
-            sourcePath: this.sourcePath,
+            sourcePath: this.sourcePaths[sourceIndex],
           });
         }
       }
@@ -425,7 +439,7 @@ class JsonSchemaParser {
       } else {
         const { memberValue: items } = this.parseType(
           schema.items,
-          encodeRange(schema.items?.loc),
+          encodeRange(0, schema.items?.loc),
         );
 
         return {
@@ -433,7 +447,7 @@ class JsonSchemaParser {
           isArray: {
             kind: 'TrueLiteral',
             value: true,
-            loc: encodeRange(schema.type.loc),
+            loc: encodeRange(0, schema.type.loc),
           },
         };
       }
@@ -479,7 +493,7 @@ class JsonSchemaParser {
   parseProperty(child: AST.SchemaRecordItem): Property {
     const { memberValue, inheritedDescription } = this.parseType(
       child.value,
-      encodeRange(child.loc),
+      encodeRange(0, child.loc),
     );
 
     const description: StringLiteral[] =
@@ -503,7 +517,7 @@ class JsonSchemaParser {
           constant: toPrimitiveValueConstant(child.value.const),
           rules: this.parseRules(child.value),
         },
-        loc: encodeRange(child.loc),
+        loc: encodeRange(0, child.loc),
       };
     } else {
       return {
@@ -514,7 +528,7 @@ class JsonSchemaParser {
           ...memberValue,
           rules: this.parseRules(child.value),
         },
-        loc: encodeRange(child.loc),
+        loc: encodeRange(0, child.loc),
       };
     }
   }
@@ -526,7 +540,7 @@ class JsonSchemaParser {
     if (!Array.isArray(schema.type)) {
       const rules = Array.from(this.parseRules(schema));
 
-      // const loc = encodeRange(schema.type?.loc); // TODO
+      // const loc = encodeRange(0,schema.type?.loc); // TODO
       const fromPrimitive = (primitive: Primitive): PrimitiveValue => ({
         kind: 'PrimitiveValue',
         typeName: { kind: 'PrimitiveLiteral', value: primitive, loc },

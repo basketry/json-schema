@@ -4,10 +4,10 @@
   "title": {
     "kind": "StringLiteral",
     "value": "exhaustive",
-    "loc": "3;12;24;68;80"
+    "loc": "0:3;12;24;68;80"
   },
-  "sourcePath": "source.ext",
-  "loc": "1;1;835;2;0;19466",
+  "sourcePaths": ["schema.json"],
+  "loc": "0:1;1;835;2;0;19466",
   "majorVersion": { "kind": "IntegerLiteral", "value": 0 },
   "interfaces": [],
   "types": [
@@ -16,7 +16,7 @@
       "name": {
         "kind": "StringLiteral",
         "value": "customObjectA",
-        "loc": "401;5;20;8576;8591"
+        "loc": "0:401;5;20;8576;8591"
       },
       "properties": [
         {
@@ -24,29 +24,29 @@
           "name": {
             "kind": "StringLiteral",
             "value": "customA",
-            "loc": "404;9;18;8649;8658"
+            "loc": "0:404;9;18;8649;8658"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "404;9;40;8649;8680"
+              "loc": "0:404;9;40;8649;8680"
             },
             "rules": []
           },
-          "loc": "404;9;40;8649;8680"
+          "loc": "0:404;9;40;8649;8680"
         }
       ],
       "rules": [],
-      "loc": "401;5;406;6;8576;8694"
+      "loc": "0:401;5;406;6;8576;8694"
     },
     {
       "kind": "Type",
       "name": {
         "kind": "StringLiteral",
         "value": "customObjectB",
-        "loc": "407;5;20;8700;8715"
+        "loc": "0:407;5;20;8700;8715"
       },
       "properties": [
         {
@@ -54,29 +54,29 @@
           "name": {
             "kind": "StringLiteral",
             "value": "customB",
-            "loc": "410;9;18;8773;8782"
+            "loc": "0:410;9;18;8773;8782"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "410;9;40;8773;8804"
+              "loc": "0:410;9;40;8773;8804"
             },
             "rules": []
           },
-          "loc": "410;9;40;8773;8804"
+          "loc": "0:410;9;40;8773;8804"
         }
       ],
       "rules": [],
-      "loc": "407;5;412;6;8700;8818"
+      "loc": "0:407;5;412;6;8700;8818"
     },
     {
       "kind": "Type",
       "name": {
         "kind": "StringLiteral",
         "value": "customObjectC",
-        "loc": "413;5;20;8824;8839"
+        "loc": "0:413;5;20;8824;8839"
       },
       "properties": [
         {
@@ -84,29 +84,29 @@
           "name": {
             "kind": "StringLiteral",
             "value": "customC",
-            "loc": "416;9;18;8897;8906"
+            "loc": "0:416;9;18;8897;8906"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "416;9;40;8897;8928"
+              "loc": "0:416;9;40;8897;8928"
             },
             "rules": []
           },
-          "loc": "416;9;40;8897;8928"
+          "loc": "0:416;9;40;8897;8928"
         }
       ],
       "rules": [],
-      "loc": "413;5;418;6;8824;8942"
+      "loc": "0:413;5;418;6;8824;8942"
     },
     {
       "kind": "Type",
       "name": {
         "kind": "StringLiteral",
         "value": "exampleItersection",
-        "loc": "419;5;25;8948;8968"
+        "loc": "0:419;5;25;8948;8968"
       },
       "properties": [
         {
@@ -114,58 +114,58 @@
           "name": {
             "kind": "StringLiteral",
             "value": "customA",
-            "loc": "404;9;18;8649;8658"
+            "loc": "0:404;9;18;8649;8658"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "404;9;40;8649;8680"
+              "loc": "0:404;9;40;8649;8680"
             },
             "rules": []
           },
-          "loc": "404;9;40;8649;8680"
+          "loc": "0:404;9;40;8649;8680"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "customB",
-            "loc": "410;9;18;8773;8782"
+            "loc": "0:410;9;18;8773;8782"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "410;9;40;8773;8804"
+              "loc": "0:410;9;40;8773;8804"
             },
             "rules": []
           },
-          "loc": "410;9;40;8773;8804"
+          "loc": "0:410;9;40;8773;8804"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "customC",
-            "loc": "416;9;18;8897;8906"
+            "loc": "0:416;9;18;8897;8906"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "416;9;40;8897;8928"
+              "loc": "0:416;9;40;8897;8928"
             },
             "rules": []
           },
-          "loc": "416;9;40;8897;8928"
+          "loc": "0:416;9;40;8897;8928"
         }
       ],
       "rules": [],
-      "loc": "419;5;425;6;8948;9154"
+      "loc": "0:419;5;425;6;8948;9154"
     },
     {
       "kind": "Type",
@@ -179,65 +179,65 @@
           "name": {
             "kind": "StringLiteral",
             "value": "customA",
-            "loc": "404;9;18;8649;8658"
+            "loc": "0:404;9;18;8649;8658"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "404;9;40;8649;8680"
+              "loc": "0:404;9;40;8649;8680"
             },
             "rules": []
           },
-          "loc": "404;9;40;8649;8680"
+          "loc": "0:404;9;40;8649;8680"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "customB",
-            "loc": "410;9;18;8773;8782"
+            "loc": "0:410;9;18;8773;8782"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "410;9;40;8773;8804"
+              "loc": "0:410;9;40;8773;8804"
             },
             "rules": []
           },
-          "loc": "410;9;40;8773;8804"
+          "loc": "0:410;9;40;8773;8804"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "customC",
-            "loc": "416;9;18;8897;8906"
+            "loc": "0:416;9;18;8897;8906"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "416;9;40;8897;8928"
+              "loc": "0:416;9;40;8897;8928"
             },
             "rules": []
           },
-          "loc": "416;9;40;8897;8928"
+          "loc": "0:416;9;40;8897;8928"
         }
       ],
       "rules": [],
-      "loc": "437;9;443;10;9484;9716"
+      "loc": "0:437;9;443;10;9484;9716"
     },
     {
       "kind": "Type",
       "name": {
         "kind": "StringLiteral",
         "value": "typeWithIntersection",
-        "loc": "433;5;27;9366;9388"
+        "loc": "0:433;5;27;9366;9388"
       },
       "properties": [
         {
@@ -245,25 +245,25 @@
           "name": {
             "kind": "StringLiteral",
             "value": "asdf",
-            "loc": "436;9;15;9446;9452"
+            "loc": "0:436;9;15;9446;9452"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "436;9;37;9446;9474"
+              "loc": "0:436;9;37;9446;9474"
             },
             "rules": []
           },
-          "loc": "436;9;37;9446;9474"
+          "loc": "0:436;9;37;9446;9474"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalIntersection",
-            "loc": "437;9;31;9484;9506"
+            "loc": "0:437;9;31;9484;9506"
           },
           "value": {
             "kind": "ComplexValue",
@@ -273,18 +273,18 @@
             },
             "rules": []
           },
-          "loc": "437;9;443;10;9484;9716"
+          "loc": "0:437;9;443;10;9484;9716"
         }
       ],
       "rules": [],
-      "loc": "433;5;445;6;9366;9730"
+      "loc": "0:433;5;445;6;9366;9730"
     },
     {
       "kind": "Type",
       "name": {
         "kind": "StringLiteral",
         "value": "exhaustiveSubObject",
-        "loc": "446;5;26;9736;9757"
+        "loc": "0:446;5;26;9736;9757"
       },
       "properties": [
         {
@@ -292,14 +292,14 @@
           "name": {
             "kind": "StringLiteral",
             "value": "requiredString",
-            "loc": "471;9;25;10419;10435"
+            "loc": "0:471;9;25;10419;10435"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "471;9;477;10;10419;10595"
+              "loc": "0:471;9;477;10;10419;10595"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -309,9 +309,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
-                  "loc": "474;24;27;10516;10519"
+                  "loc": "0:474;24;27;10516;10519"
                 },
-                "loc": "474;11;27;10503;10519"
+                "loc": "0:474;11;27;10503;10519"
               },
               {
                 "kind": "ValidationRule",
@@ -319,9 +319,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
-                  "loc": "473;24;25;10490;10491"
+                  "loc": "0:473;24;25;10490;10491"
                 },
-                "loc": "473;11;25;10477;10491"
+                "loc": "0:473;11;25;10477;10491"
               },
               {
                 "kind": "ValidationRule",
@@ -329,27 +329,27 @@
                 "pattern": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "[9-0a-zA-Z]*",
-                  "loc": "475;22;36;10542;10556"
+                  "loc": "0:475;22;36;10542;10556"
                 },
-                "loc": "475;11;36;10531;10556"
+                "loc": "0:475;11;36;10531;10556"
               }
             ]
           },
-          "loc": "471;9;477;10;10419;10595"
+          "loc": "0:471;9;477;10;10419;10595"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalString",
-            "loc": "478;9;25;10605;10621"
+            "loc": "0:478;9;25;10605;10621"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "478;9;484;10;10605;10781"
+              "loc": "0:478;9;484;10;10605;10781"
             },
             "rules": [
               {
@@ -358,9 +358,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
-                  "loc": "481;24;27;10702;10705"
+                  "loc": "0:481;24;27;10702;10705"
                 },
-                "loc": "481;11;27;10689;10705"
+                "loc": "0:481;11;27;10689;10705"
               },
               {
                 "kind": "ValidationRule",
@@ -368,9 +368,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
-                  "loc": "480;24;25;10676;10677"
+                  "loc": "0:480;24;25;10676;10677"
                 },
-                "loc": "480;11;25;10663;10677"
+                "loc": "0:480;11;25;10663;10677"
               },
               {
                 "kind": "ValidationRule",
@@ -378,27 +378,27 @@
                 "pattern": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "[9-0a-zA-Z]*",
-                  "loc": "482;22;36;10728;10742"
+                  "loc": "0:482;22;36;10728;10742"
                 },
-                "loc": "482;11;36;10717;10742"
+                "loc": "0:482;11;36;10717;10742"
               }
             ]
           },
-          "loc": "478;9;484;10;10605;10781"
+          "loc": "0:478;9;484;10;10605;10781"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredStringArray",
-            "loc": "485;9;30;10791;10812"
+            "loc": "0:485;9;30;10791;10812"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "487;20;493;12;10862;11032"
+              "loc": "0:487;20;493;12;10862;11032"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -408,9 +408,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "494;23;24;11056;11057"
+                  "loc": "0:494;23;24;11056;11057"
                 },
-                "loc": "494;11;24;11044;11057"
+                "loc": "0:494;11;24;11044;11057"
               },
               {
                 "kind": "ValidationRule",
@@ -418,38 +418,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "495;23;26;11081;11084"
+                  "loc": "0:495;23;26;11081;11084"
                 },
-                "loc": "495;11;26;11069;11084"
+                "loc": "0:495;11;26;11069;11084"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "496;11;30;11096;11115"
+                "loc": "0:496;11;30;11096;11115"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "486;19;26;10834;10841"
+              "loc": "0:486;19;26;10834;10841"
             }
           },
-          "loc": "485;9;497;10;10791;11125"
+          "loc": "0:485;9;497;10;10791;11125"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalStringArray",
-            "loc": "498;9;30;11135;11156"
+            "loc": "0:498;9;30;11135;11156"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "500;20;506;12;11206;11376"
+              "loc": "0:500;20;506;12;11206;11376"
             },
             "rules": [
               {
@@ -458,9 +458,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "507;23;24;11400;11401"
+                  "loc": "0:507;23;24;11400;11401"
                 },
-                "loc": "507;11;24;11388;11401"
+                "loc": "0:507;11;24;11388;11401"
               },
               {
                 "kind": "ValidationRule",
@@ -468,31 +468,31 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "508;23;26;11425;11428"
+                  "loc": "0:508;23;26;11425;11428"
                 },
-                "loc": "508;11;26;11413;11428"
+                "loc": "0:508;11;26;11413;11428"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "509;11;30;11440;11459"
+                "loc": "0:509;11;30;11440;11459"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "499;19;26;11178;11185"
+              "loc": "0:499;19;26;11178;11185"
             }
           },
-          "loc": "498;9;510;10;11135;11469"
+          "loc": "0:498;9;510;10;11135;11469"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredStringEnum",
-            "loc": "512;9;29;11480;11500"
+            "loc": "0:512;9;29;11480;11500"
           },
           "value": {
             "kind": "ComplexValue",
@@ -508,9 +508,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
-                  "loc": "516;24;27;11623;11626"
+                  "loc": "0:516;24;27;11623;11626"
                 },
-                "loc": "516;11;27;11610;11626"
+                "loc": "0:516;11;27;11610;11626"
               },
               {
                 "kind": "ValidationRule",
@@ -518,9 +518,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
-                  "loc": "515;24;25;11597;11598"
+                  "loc": "0:515;24;25;11597;11598"
                 },
-                "loc": "515;11;25;11584;11598"
+                "loc": "0:515;11;25;11584;11598"
               },
               {
                 "kind": "ValidationRule",
@@ -528,9 +528,9 @@
                 "pattern": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "[9-0a-zA-Z]*",
-                  "loc": "517;22;36;11649;11663"
+                  "loc": "0:517;22;36;11649;11663"
                 },
-                "loc": "517;11;36;11638;11663"
+                "loc": "0:517;11;36;11638;11663"
               },
               {
                 "kind": "ValidationRule",
@@ -539,26 +539,26 @@
                   {
                     "kind": "StringLiteral",
                     "value": "VALUE_A",
-                    "loc": "514;20;29;11551;11560"
+                    "loc": "0:514;20;29;11551;11560"
                   },
                   {
                     "kind": "StringLiteral",
                     "value": "VALUE_B",
-                    "loc": "514;31;40;11562;11571"
+                    "loc": "0:514;31;40;11562;11571"
                   }
                 ],
-                "loc": "514;11;41;11542;11572"
+                "loc": "0:514;11;41;11542;11572"
               }
             ]
           },
-          "loc": "512;9;519;10;11480;11702"
+          "loc": "0:512;9;519;10;11480;11702"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalStringEnum",
-            "loc": "520;9;29;11712;11732"
+            "loc": "0:520;9;29;11712;11732"
           },
           "value": {
             "kind": "ComplexValue",
@@ -573,9 +573,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
-                  "loc": "524;24;27;11855;11858"
+                  "loc": "0:524;24;27;11855;11858"
                 },
-                "loc": "524;11;27;11842;11858"
+                "loc": "0:524;11;27;11842;11858"
               },
               {
                 "kind": "ValidationRule",
@@ -583,9 +583,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
-                  "loc": "523;24;25;11829;11830"
+                  "loc": "0:523;24;25;11829;11830"
                 },
-                "loc": "523;11;25;11816;11830"
+                "loc": "0:523;11;25;11816;11830"
               },
               {
                 "kind": "ValidationRule",
@@ -593,9 +593,9 @@
                 "pattern": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "[9-0a-zA-Z]*",
-                  "loc": "525;22;36;11881;11895"
+                  "loc": "0:525;22;36;11881;11895"
                 },
-                "loc": "525;11;36;11870;11895"
+                "loc": "0:525;11;36;11870;11895"
               },
               {
                 "kind": "ValidationRule",
@@ -604,26 +604,26 @@
                   {
                     "kind": "StringLiteral",
                     "value": "VALUE_C",
-                    "loc": "522;20;29;11783;11792"
+                    "loc": "0:522;20;29;11783;11792"
                   },
                   {
                     "kind": "StringLiteral",
                     "value": "VALUE_D",
-                    "loc": "522;31;40;11794;11803"
+                    "loc": "0:522;31;40;11794;11803"
                   }
                 ],
-                "loc": "522;11;41;11774;11804"
+                "loc": "0:522;11;41;11774;11804"
               }
             ]
           },
-          "loc": "520;9;527;10;11712;11934"
+          "loc": "0:520;9;527;10;11712;11934"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredStringEnumArray",
-            "loc": "528;9;34;11944;11969"
+            "loc": "0:528;9;34;11944;11969"
           },
           "value": {
             "kind": "ComplexValue",
@@ -639,9 +639,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "538;23;24;12257;12258"
+                  "loc": "0:538;23;24;12257;12258"
                 },
-                "loc": "538;11;24;12245;12258"
+                "loc": "0:538;11;24;12245;12258"
               },
               {
                 "kind": "ValidationRule",
@@ -649,31 +649,31 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "539;23;26;12282;12285"
+                  "loc": "0:539;23;26;12282;12285"
                 },
-                "loc": "539;11;26;12270;12285"
+                "loc": "0:539;11;26;12270;12285"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "540;11;30;12297;12316"
+                "loc": "0:540;11;30;12297;12316"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "529;19;26;11991;11998"
+              "loc": "0:529;19;26;11991;11998"
             }
           },
-          "loc": "528;9;541;10;11944;12326"
+          "loc": "0:528;9;541;10;11944;12326"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalStringEnumArray",
-            "loc": "542;9;34;12336;12361"
+            "loc": "0:542;9;34;12336;12361"
           },
           "value": {
             "kind": "ComplexValue",
@@ -688,9 +688,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "552;23;24;12649;12650"
+                  "loc": "0:552;23;24;12649;12650"
                 },
-                "loc": "552;11;24;12637;12650"
+                "loc": "0:552;11;24;12637;12650"
               },
               {
                 "kind": "ValidationRule",
@@ -698,74 +698,74 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "553;23;26;12674;12677"
+                  "loc": "0:553;23;26;12674;12677"
                 },
-                "loc": "553;11;26;12662;12677"
+                "loc": "0:553;11;26;12662;12677"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "554;11;30;12689;12708"
+                "loc": "0:554;11;30;12689;12708"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "543;19;26;12383;12390"
+              "loc": "0:543;19;26;12383;12390"
             }
           },
-          "loc": "542;9;555;10;12336;12718"
+          "loc": "0:542;9;555;10;12336;12718"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredBoolean",
-            "loc": "557;9;26;12729;12746"
+            "loc": "0:557;9;26;12729;12746"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "boolean",
-              "loc": "557;9;49;12729;12769"
+              "loc": "0:557;9;49;12729;12769"
             },
             "rules": [{ "kind": "ValidationRule", "id": "Required" }]
           },
-          "loc": "557;9;49;12729;12769"
+          "loc": "0:557;9;49;12729;12769"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalBoolean",
-            "loc": "558;9;26;12779;12796"
+            "loc": "0:558;9;26;12779;12796"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "boolean",
-              "loc": "558;9;49;12779;12819"
+              "loc": "0:558;9;49;12779;12819"
             },
             "rules": []
           },
-          "loc": "558;9;49;12779;12819"
+          "loc": "0:558;9;49;12779;12819"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredBooleanArray",
-            "loc": "559;9;31;12829;12851"
+            "loc": "0:559;9;31;12829;12851"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "boolean",
-              "loc": "561;20;563;12;12901;12944"
+              "loc": "0:561;20;563;12;12901;12944"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -775,9 +775,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "564;23;24;12968;12969"
+                  "loc": "0:564;23;24;12968;12969"
                 },
-                "loc": "564;11;24;12956;12969"
+                "loc": "0:564;11;24;12956;12969"
               },
               {
                 "kind": "ValidationRule",
@@ -785,38 +785,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "565;23;26;12993;12996"
+                  "loc": "0:565;23;26;12993;12996"
                 },
-                "loc": "565;11;26;12981;12996"
+                "loc": "0:565;11;26;12981;12996"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "566;11;30;13008;13027"
+                "loc": "0:566;11;30;13008;13027"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "560;19;26;12873;12880"
+              "loc": "0:560;19;26;12873;12880"
             }
           },
-          "loc": "559;9;567;10;12829;13037"
+          "loc": "0:559;9;567;10;12829;13037"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalBooleanArray",
-            "loc": "568;9;31;13047;13069"
+            "loc": "0:568;9;31;13047;13069"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "boolean",
-              "loc": "570;20;572;12;13119;13162"
+              "loc": "0:570;20;572;12;13119;13162"
             },
             "rules": [
               {
@@ -825,9 +825,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "573;23;24;13186;13187"
+                  "loc": "0:573;23;24;13186;13187"
                 },
-                "loc": "573;11;24;13174;13187"
+                "loc": "0:573;11;24;13174;13187"
               },
               {
                 "kind": "ValidationRule",
@@ -835,38 +835,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "574;23;26;13211;13214"
+                  "loc": "0:574;23;26;13211;13214"
                 },
-                "loc": "574;11;26;13199;13214"
+                "loc": "0:574;11;26;13199;13214"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "575;11;30;13226;13245"
+                "loc": "0:575;11;30;13226;13245"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "569;19;26;13091;13098"
+              "loc": "0:569;19;26;13091;13098"
             }
           },
-          "loc": "568;9;576;10;13047;13255"
+          "loc": "0:568;9;576;10;13047;13255"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredNumber",
-            "loc": "578;9;25;13266;13282"
+            "loc": "0:578;9;25;13266;13282"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "number",
-              "loc": "578;9;583;10;13266;13400"
+              "loc": "0:578;9;583;10;13266;13400"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -876,9 +876,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "582;25;26;13389;13390"
+                  "loc": "0:582;25;26;13389;13390"
                 },
-                "loc": "582;11;26;13375;13390"
+                "loc": "0:582;11;26;13375;13390"
               },
               {
                 "kind": "ValidationRule",
@@ -886,9 +886,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "580;22;24;13335;13337"
+                  "loc": "0:580;22;24;13335;13337"
                 },
-                "loc": "580;11;24;13324;13337"
+                "loc": "0:580;11;24;13324;13337"
               },
               {
                 "kind": "ValidationRule",
@@ -896,27 +896,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "581;22;25;13360;13363"
+                  "loc": "0:581;22;25;13360;13363"
                 },
-                "loc": "581;11;25;13349;13363"
+                "loc": "0:581;11;25;13349;13363"
               }
             ]
           },
-          "loc": "578;9;583;10;13266;13400"
+          "loc": "0:578;9;583;10;13266;13400"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalNumber",
-            "loc": "584;9;25;13410;13426"
+            "loc": "0:584;9;25;13410;13426"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "number",
-              "loc": "584;9;589;10;13410;13544"
+              "loc": "0:584;9;589;10;13410;13544"
             },
             "rules": [
               {
@@ -925,9 +925,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "588;25;26;13533;13534"
+                  "loc": "0:588;25;26;13533;13534"
                 },
-                "loc": "588;11;26;13519;13534"
+                "loc": "0:588;11;26;13519;13534"
               },
               {
                 "kind": "ValidationRule",
@@ -935,9 +935,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "586;22;24;13479;13481"
+                  "loc": "0:586;22;24;13479;13481"
                 },
-                "loc": "586;11;24;13468;13481"
+                "loc": "0:586;11;24;13468;13481"
               },
               {
                 "kind": "ValidationRule",
@@ -945,27 +945,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "587;22;25;13504;13507"
+                  "loc": "0:587;22;25;13504;13507"
                 },
-                "loc": "587;11;25;13493;13507"
+                "loc": "0:587;11;25;13493;13507"
               }
             ]
           },
-          "loc": "584;9;589;10;13410;13544"
+          "loc": "0:584;9;589;10;13410;13544"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredNumberArray",
-            "loc": "590;9;30;13554;13575"
+            "loc": "0:590;9;30;13554;13575"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "number",
-              "loc": "592;20;597;12;13625;13751"
+              "loc": "0:592;20;597;12;13625;13751"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -975,9 +975,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "598;23;24;13775;13776"
+                  "loc": "0:598;23;24;13775;13776"
                 },
-                "loc": "598;11;24;13763;13776"
+                "loc": "0:598;11;24;13763;13776"
               },
               {
                 "kind": "ValidationRule",
@@ -985,38 +985,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "599;23;26;13800;13803"
+                  "loc": "0:599;23;26;13800;13803"
                 },
-                "loc": "599;11;26;13788;13803"
+                "loc": "0:599;11;26;13788;13803"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "600;11;30;13815;13834"
+                "loc": "0:600;11;30;13815;13834"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "591;19;26;13597;13604"
+              "loc": "0:591;19;26;13597;13604"
             }
           },
-          "loc": "590;9;601;10;13554;13844"
+          "loc": "0:590;9;601;10;13554;13844"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalNumberArray",
-            "loc": "602;9;30;13854;13875"
+            "loc": "0:602;9;30;13854;13875"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "number",
-              "loc": "604;20;609;12;13925;14051"
+              "loc": "0:604;20;609;12;13925;14051"
             },
             "rules": [
               {
@@ -1025,9 +1025,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "610;23;24;14075;14076"
+                  "loc": "0:610;23;24;14075;14076"
                 },
-                "loc": "610;11;24;14063;14076"
+                "loc": "0:610;11;24;14063;14076"
               },
               {
                 "kind": "ValidationRule",
@@ -1035,38 +1035,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "611;23;26;14100;14103"
+                  "loc": "0:611;23;26;14100;14103"
                 },
-                "loc": "611;11;26;14088;14103"
+                "loc": "0:611;11;26;14088;14103"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "612;11;30;14115;14134"
+                "loc": "0:612;11;30;14115;14134"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "603;19;26;13897;13904"
+              "loc": "0:603;19;26;13897;13904"
             }
           },
-          "loc": "602;9;613;10;13854;14144"
+          "loc": "0:602;9;613;10;13854;14144"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredInteger",
-            "loc": "615;9;26;14155;14172"
+            "loc": "0:615;9;26;14155;14172"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "integer",
-              "loc": "615;9;620;10;14155;14291"
+              "loc": "0:615;9;620;10;14155;14291"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -1076,9 +1076,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "619;25;26;14280;14281"
+                  "loc": "0:619;25;26;14280;14281"
                 },
-                "loc": "619;11;26;14266;14281"
+                "loc": "0:619;11;26;14266;14281"
               },
               {
                 "kind": "ValidationRule",
@@ -1086,9 +1086,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "617;22;24;14226;14228"
+                  "loc": "0:617;22;24;14226;14228"
                 },
-                "loc": "617;11;24;14215;14228"
+                "loc": "0:617;11;24;14215;14228"
               },
               {
                 "kind": "ValidationRule",
@@ -1096,27 +1096,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "618;22;25;14251;14254"
+                  "loc": "0:618;22;25;14251;14254"
                 },
-                "loc": "618;11;25;14240;14254"
+                "loc": "0:618;11;25;14240;14254"
               }
             ]
           },
-          "loc": "615;9;620;10;14155;14291"
+          "loc": "0:615;9;620;10;14155;14291"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalInteger",
-            "loc": "621;9;26;14301;14318"
+            "loc": "0:621;9;26;14301;14318"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "integer",
-              "loc": "621;9;626;10;14301;14437"
+              "loc": "0:621;9;626;10;14301;14437"
             },
             "rules": [
               {
@@ -1125,9 +1125,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "625;25;26;14426;14427"
+                  "loc": "0:625;25;26;14426;14427"
                 },
-                "loc": "625;11;26;14412;14427"
+                "loc": "0:625;11;26;14412;14427"
               },
               {
                 "kind": "ValidationRule",
@@ -1135,9 +1135,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "623;22;24;14372;14374"
+                  "loc": "0:623;22;24;14372;14374"
                 },
-                "loc": "623;11;24;14361;14374"
+                "loc": "0:623;11;24;14361;14374"
               },
               {
                 "kind": "ValidationRule",
@@ -1145,27 +1145,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "624;22;25;14397;14400"
+                  "loc": "0:624;22;25;14397;14400"
                 },
-                "loc": "624;11;25;14386;14400"
+                "loc": "0:624;11;25;14386;14400"
               }
             ]
           },
-          "loc": "621;9;626;10;14301;14437"
+          "loc": "0:621;9;626;10;14301;14437"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredIntegerArray",
-            "loc": "627;9;31;14447;14469"
+            "loc": "0:627;9;31;14447;14469"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "integer",
-              "loc": "629;20;634;12;14519;14646"
+              "loc": "0:629;20;634;12;14519;14646"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -1175,9 +1175,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "635;23;24;14670;14671"
+                  "loc": "0:635;23;24;14670;14671"
                 },
-                "loc": "635;11;24;14658;14671"
+                "loc": "0:635;11;24;14658;14671"
               },
               {
                 "kind": "ValidationRule",
@@ -1185,38 +1185,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "636;23;26;14695;14698"
+                  "loc": "0:636;23;26;14695;14698"
                 },
-                "loc": "636;11;26;14683;14698"
+                "loc": "0:636;11;26;14683;14698"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "637;11;30;14710;14729"
+                "loc": "0:637;11;30;14710;14729"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "628;19;26;14491;14498"
+              "loc": "0:628;19;26;14491;14498"
             }
           },
-          "loc": "627;9;638;10;14447;14739"
+          "loc": "0:627;9;638;10;14447;14739"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalIntegerArray",
-            "loc": "639;9;31;14749;14771"
+            "loc": "0:639;9;31;14749;14771"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "integer",
-              "loc": "641;20;646;12;14821;14948"
+              "loc": "0:641;20;646;12;14821;14948"
             },
             "rules": [
               {
@@ -1225,9 +1225,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "647;23;24;14972;14973"
+                  "loc": "0:647;23;24;14972;14973"
                 },
-                "loc": "647;11;24;14960;14973"
+                "loc": "0:647;11;24;14960;14973"
               },
               {
                 "kind": "ValidationRule",
@@ -1235,38 +1235,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "648;23;26;14997;15000"
+                  "loc": "0:648;23;26;14997;15000"
                 },
-                "loc": "648;11;26;14985;15000"
+                "loc": "0:648;11;26;14985;15000"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "649;11;30;15012;15031"
+                "loc": "0:649;11;30;15012;15031"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "640;19;26;14793;14800"
+              "loc": "0:640;19;26;14793;14800"
             }
           },
-          "loc": "639;9;650;10;14749;15041"
+          "loc": "0:639;9;650;10;14749;15041"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredLong",
-            "loc": "652;9;23;15052;15066"
+            "loc": "0:652;9;23;15052;15066"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "long",
-              "loc": "652;9;658;10;15052;15214"
+              "loc": "0:652;9;658;10;15052;15214"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -1276,9 +1276,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "657;25;26;15203;15204"
+                  "loc": "0:657;25;26;15203;15204"
                 },
-                "loc": "657;11;26;15189;15204"
+                "loc": "0:657;11;26;15189;15204"
               },
               {
                 "kind": "ValidationRule",
@@ -1286,9 +1286,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "655;22;24;15149;15151"
+                  "loc": "0:655;22;24;15149;15151"
                 },
-                "loc": "655;11;24;15138;15151"
+                "loc": "0:655;11;24;15138;15151"
               },
               {
                 "kind": "ValidationRule",
@@ -1296,27 +1296,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "656;22;25;15174;15177"
+                  "loc": "0:656;22;25;15174;15177"
                 },
-                "loc": "656;11;25;15163;15177"
+                "loc": "0:656;11;25;15163;15177"
               }
             ]
           },
-          "loc": "652;9;658;10;15052;15214"
+          "loc": "0:652;9;658;10;15052;15214"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalLong",
-            "loc": "659;9;23;15224;15238"
+            "loc": "0:659;9;23;15224;15238"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "long",
-              "loc": "659;9;665;10;15224;15386"
+              "loc": "0:659;9;665;10;15224;15386"
             },
             "rules": [
               {
@@ -1325,9 +1325,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "664;25;26;15375;15376"
+                  "loc": "0:664;25;26;15375;15376"
                 },
-                "loc": "664;11;26;15361;15376"
+                "loc": "0:664;11;26;15361;15376"
               },
               {
                 "kind": "ValidationRule",
@@ -1335,9 +1335,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "662;22;24;15321;15323"
+                  "loc": "0:662;22;24;15321;15323"
                 },
-                "loc": "662;11;24;15310;15323"
+                "loc": "0:662;11;24;15310;15323"
               },
               {
                 "kind": "ValidationRule",
@@ -1345,27 +1345,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "663;22;25;15346;15349"
+                  "loc": "0:663;22;25;15346;15349"
                 },
-                "loc": "663;11;25;15335;15349"
+                "loc": "0:663;11;25;15335;15349"
               }
             ]
           },
-          "loc": "659;9;665;10;15224;15386"
+          "loc": "0:659;9;665;10;15224;15386"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredLongArray",
-            "loc": "666;9;28;15396;15415"
+            "loc": "0:666;9;28;15396;15415"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "long",
-              "loc": "668;20;674;12;15465;15623"
+              "loc": "0:668;20;674;12;15465;15623"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -1375,9 +1375,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "675;23;24;15647;15648"
+                  "loc": "0:675;23;24;15647;15648"
                 },
-                "loc": "675;11;24;15635;15648"
+                "loc": "0:675;11;24;15635;15648"
               },
               {
                 "kind": "ValidationRule",
@@ -1385,38 +1385,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "676;23;26;15672;15675"
+                  "loc": "0:676;23;26;15672;15675"
                 },
-                "loc": "676;11;26;15660;15675"
+                "loc": "0:676;11;26;15660;15675"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "677;11;30;15687;15706"
+                "loc": "0:677;11;30;15687;15706"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "667;19;26;15437;15444"
+              "loc": "0:667;19;26;15437;15444"
             }
           },
-          "loc": "666;9;678;10;15396;15716"
+          "loc": "0:666;9;678;10;15396;15716"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalLongArray",
-            "loc": "679;9;28;15726;15745"
+            "loc": "0:679;9;28;15726;15745"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "long",
-              "loc": "681;20;687;12;15795;15953"
+              "loc": "0:681;20;687;12;15795;15953"
             },
             "rules": [
               {
@@ -1425,9 +1425,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "688;23;24;15977;15978"
+                  "loc": "0:688;23;24;15977;15978"
                 },
-                "loc": "688;11;24;15965;15978"
+                "loc": "0:688;11;24;15965;15978"
               },
               {
                 "kind": "ValidationRule",
@@ -1435,38 +1435,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "689;23;26;16002;16005"
+                  "loc": "0:689;23;26;16002;16005"
                 },
-                "loc": "689;11;26;15990;16005"
+                "loc": "0:689;11;26;15990;16005"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "690;11;30;16017;16036"
+                "loc": "0:690;11;30;16017;16036"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "680;19;26;15767;15774"
+              "loc": "0:680;19;26;15767;15774"
             }
           },
-          "loc": "679;9;691;10;15726;16046"
+          "loc": "0:679;9;691;10;15726;16046"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredFloat",
-            "loc": "693;9;24;16057;16072"
+            "loc": "0:693;9;24;16057;16072"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "float",
-              "loc": "693;9;699;10;16057;16219"
+              "loc": "0:693;9;699;10;16057;16219"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -1476,9 +1476,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "698;25;26;16208;16209"
+                  "loc": "0:698;25;26;16208;16209"
                 },
-                "loc": "698;11;26;16194;16209"
+                "loc": "0:698;11;26;16194;16209"
               },
               {
                 "kind": "ValidationRule",
@@ -1486,9 +1486,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "696;22;24;16154;16156"
+                  "loc": "0:696;22;24;16154;16156"
                 },
-                "loc": "696;11;24;16143;16156"
+                "loc": "0:696;11;24;16143;16156"
               },
               {
                 "kind": "ValidationRule",
@@ -1496,27 +1496,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "697;22;25;16179;16182"
+                  "loc": "0:697;22;25;16179;16182"
                 },
-                "loc": "697;11;25;16168;16182"
+                "loc": "0:697;11;25;16168;16182"
               }
             ]
           },
-          "loc": "693;9;699;10;16057;16219"
+          "loc": "0:693;9;699;10;16057;16219"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalFloat",
-            "loc": "700;9;24;16229;16244"
+            "loc": "0:700;9;24;16229;16244"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "float",
-              "loc": "700;9;706;10;16229;16391"
+              "loc": "0:700;9;706;10;16229;16391"
             },
             "rules": [
               {
@@ -1525,9 +1525,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "705;25;26;16380;16381"
+                  "loc": "0:705;25;26;16380;16381"
                 },
-                "loc": "705;11;26;16366;16381"
+                "loc": "0:705;11;26;16366;16381"
               },
               {
                 "kind": "ValidationRule",
@@ -1535,9 +1535,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "703;22;24;16326;16328"
+                  "loc": "0:703;22;24;16326;16328"
                 },
-                "loc": "703;11;24;16315;16328"
+                "loc": "0:703;11;24;16315;16328"
               },
               {
                 "kind": "ValidationRule",
@@ -1545,27 +1545,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "704;22;25;16351;16354"
+                  "loc": "0:704;22;25;16351;16354"
                 },
-                "loc": "704;11;25;16340;16354"
+                "loc": "0:704;11;25;16340;16354"
               }
             ]
           },
-          "loc": "700;9;706;10;16229;16391"
+          "loc": "0:700;9;706;10;16229;16391"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredFloatArray",
-            "loc": "707;9;29;16401;16421"
+            "loc": "0:707;9;29;16401;16421"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "float",
-              "loc": "709;20;715;12;16471;16628"
+              "loc": "0:709;20;715;12;16471;16628"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -1575,9 +1575,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "716;23;24;16652;16653"
+                  "loc": "0:716;23;24;16652;16653"
                 },
-                "loc": "716;11;24;16640;16653"
+                "loc": "0:716;11;24;16640;16653"
               },
               {
                 "kind": "ValidationRule",
@@ -1585,38 +1585,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "717;23;26;16677;16680"
+                  "loc": "0:717;23;26;16677;16680"
                 },
-                "loc": "717;11;26;16665;16680"
+                "loc": "0:717;11;26;16665;16680"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "718;11;30;16692;16711"
+                "loc": "0:718;11;30;16692;16711"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "708;19;26;16443;16450"
+              "loc": "0:708;19;26;16443;16450"
             }
           },
-          "loc": "707;9;719;10;16401;16721"
+          "loc": "0:707;9;719;10;16401;16721"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalFloatArray",
-            "loc": "720;9;29;16731;16751"
+            "loc": "0:720;9;29;16731;16751"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "float",
-              "loc": "722;20;728;12;16801;16958"
+              "loc": "0:722;20;728;12;16801;16958"
             },
             "rules": [
               {
@@ -1625,9 +1625,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "729;23;24;16982;16983"
+                  "loc": "0:729;23;24;16982;16983"
                 },
-                "loc": "729;11;24;16970;16983"
+                "loc": "0:729;11;24;16970;16983"
               },
               {
                 "kind": "ValidationRule",
@@ -1635,38 +1635,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "730;23;26;17007;17010"
+                  "loc": "0:730;23;26;17007;17010"
                 },
-                "loc": "730;11;26;16995;17010"
+                "loc": "0:730;11;26;16995;17010"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "731;11;30;17022;17041"
+                "loc": "0:731;11;30;17022;17041"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "721;19;26;16773;16780"
+              "loc": "0:721;19;26;16773;16780"
             }
           },
-          "loc": "720;9;732;10;16731;17051"
+          "loc": "0:720;9;732;10;16731;17051"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDouble",
-            "loc": "734;9;25;17062;17078"
+            "loc": "0:734;9;25;17062;17078"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "double",
-              "loc": "734;9;740;10;17062;17226"
+              "loc": "0:734;9;740;10;17062;17226"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -1676,9 +1676,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "739;25;26;17215;17216"
+                  "loc": "0:739;25;26;17215;17216"
                 },
-                "loc": "739;11;26;17201;17216"
+                "loc": "0:739;11;26;17201;17216"
               },
               {
                 "kind": "ValidationRule",
@@ -1686,9 +1686,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "737;22;24;17161;17163"
+                  "loc": "0:737;22;24;17161;17163"
                 },
-                "loc": "737;11;24;17150;17163"
+                "loc": "0:737;11;24;17150;17163"
               },
               {
                 "kind": "ValidationRule",
@@ -1696,27 +1696,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "738;22;25;17186;17189"
+                  "loc": "0:738;22;25;17186;17189"
                 },
-                "loc": "738;11;25;17175;17189"
+                "loc": "0:738;11;25;17175;17189"
               }
             ]
           },
-          "loc": "734;9;740;10;17062;17226"
+          "loc": "0:734;9;740;10;17062;17226"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDouble",
-            "loc": "741;9;25;17236;17252"
+            "loc": "0:741;9;25;17236;17252"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "double",
-              "loc": "741;9;747;10;17236;17400"
+              "loc": "0:741;9;747;10;17236;17400"
             },
             "rules": [
               {
@@ -1725,9 +1725,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "746;25;26;17389;17390"
+                  "loc": "0:746;25;26;17389;17390"
                 },
-                "loc": "746;11;26;17375;17390"
+                "loc": "0:746;11;26;17375;17390"
               },
               {
                 "kind": "ValidationRule",
@@ -1735,9 +1735,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "744;22;24;17335;17337"
+                  "loc": "0:744;22;24;17335;17337"
                 },
-                "loc": "744;11;24;17324;17337"
+                "loc": "0:744;11;24;17324;17337"
               },
               {
                 "kind": "ValidationRule",
@@ -1745,27 +1745,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "745;22;25;17360;17363"
+                  "loc": "0:745;22;25;17360;17363"
                 },
-                "loc": "745;11;25;17349;17363"
+                "loc": "0:745;11;25;17349;17363"
               }
             ]
           },
-          "loc": "741;9;747;10;17236;17400"
+          "loc": "0:741;9;747;10;17236;17400"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDoubleArray",
-            "loc": "748;9;30;17410;17431"
+            "loc": "0:748;9;30;17410;17431"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "double",
-              "loc": "750;20;756;12;17481;17639"
+              "loc": "0:750;20;756;12;17481;17639"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -1775,9 +1775,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "757;23;24;17663;17664"
+                  "loc": "0:757;23;24;17663;17664"
                 },
-                "loc": "757;11;24;17651;17664"
+                "loc": "0:757;11;24;17651;17664"
               },
               {
                 "kind": "ValidationRule",
@@ -1785,38 +1785,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "758;23;26;17688;17691"
+                  "loc": "0:758;23;26;17688;17691"
                 },
-                "loc": "758;11;26;17676;17691"
+                "loc": "0:758;11;26;17676;17691"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "759;11;30;17703;17722"
+                "loc": "0:759;11;30;17703;17722"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "749;19;26;17453;17460"
+              "loc": "0:749;19;26;17453;17460"
             }
           },
-          "loc": "748;9;760;10;17410;17732"
+          "loc": "0:748;9;760;10;17410;17732"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDoubleArray",
-            "loc": "761;9;30;17742;17763"
+            "loc": "0:761;9;30;17742;17763"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "double",
-              "loc": "763;20;769;12;17813;17971"
+              "loc": "0:763;20;769;12;17813;17971"
             },
             "rules": [
               {
@@ -1825,9 +1825,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "770;23;24;17995;17996"
+                  "loc": "0:770;23;24;17995;17996"
                 },
-                "loc": "770;11;24;17983;17996"
+                "loc": "0:770;11;24;17983;17996"
               },
               {
                 "kind": "ValidationRule",
@@ -1835,38 +1835,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "771;23;26;18020;18023"
+                  "loc": "0:771;23;26;18020;18023"
                 },
-                "loc": "771;11;26;18008;18023"
+                "loc": "0:771;11;26;18008;18023"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "772;11;30;18035;18054"
+                "loc": "0:772;11;30;18035;18054"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "762;19;26;17785;17792"
+              "loc": "0:762;19;26;17785;17792"
             }
           },
-          "loc": "761;9;773;10;17742;18064"
+          "loc": "0:761;9;773;10;17742;18064"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDate",
-            "loc": "775;9;23;18075;18089"
+            "loc": "0:775;9;23;18075;18089"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date",
-              "loc": "775;9;778;10;18075;18157"
+              "loc": "0:775;9;778;10;18075;18157"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -1876,27 +1876,27 @@
                 "format": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "date",
-                  "loc": "777;21;27;18141;18147"
+                  "loc": "0:777;21;27;18141;18147"
                 },
-                "loc": "777;11;27;18131;18147"
+                "loc": "0:777;11;27;18131;18147"
               }
             ]
           },
-          "loc": "775;9;778;10;18075;18157"
+          "loc": "0:775;9;778;10;18075;18157"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDate",
-            "loc": "779;9;23;18167;18181"
+            "loc": "0:779;9;23;18167;18181"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date",
-              "loc": "779;9;782;10;18167;18249"
+              "loc": "0:779;9;782;10;18167;18249"
             },
             "rules": [
               {
@@ -1905,27 +1905,27 @@
                 "format": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "date",
-                  "loc": "781;21;27;18233;18239"
+                  "loc": "0:781;21;27;18233;18239"
                 },
-                "loc": "781;11;27;18223;18239"
+                "loc": "0:781;11;27;18223;18239"
               }
             ]
           },
-          "loc": "779;9;782;10;18167;18249"
+          "loc": "0:779;9;782;10;18167;18249"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDateArray",
-            "loc": "783;9;28;18259;18278"
+            "loc": "0:783;9;28;18259;18278"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date",
-              "loc": "785;20;788;12;18328;18400"
+              "loc": "0:785;20;788;12;18328;18400"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -1935,9 +1935,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "789;23;24;18424;18425"
+                  "loc": "0:789;23;24;18424;18425"
                 },
-                "loc": "789;11;24;18412;18425"
+                "loc": "0:789;11;24;18412;18425"
               },
               {
                 "kind": "ValidationRule",
@@ -1945,38 +1945,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "790;23;26;18449;18452"
+                  "loc": "0:790;23;26;18449;18452"
                 },
-                "loc": "790;11;26;18437;18452"
+                "loc": "0:790;11;26;18437;18452"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "791;11;30;18464;18483"
+                "loc": "0:791;11;30;18464;18483"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "784;19;26;18300;18307"
+              "loc": "0:784;19;26;18300;18307"
             }
           },
-          "loc": "783;9;792;10;18259;18493"
+          "loc": "0:783;9;792;10;18259;18493"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDateArray",
-            "loc": "793;9;28;18503;18522"
+            "loc": "0:793;9;28;18503;18522"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date",
-              "loc": "795;20;798;12;18572;18644"
+              "loc": "0:795;20;798;12;18572;18644"
             },
             "rules": [
               {
@@ -1985,9 +1985,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "799;23;24;18668;18669"
+                  "loc": "0:799;23;24;18668;18669"
                 },
-                "loc": "799;11;24;18656;18669"
+                "loc": "0:799;11;24;18656;18669"
               },
               {
                 "kind": "ValidationRule",
@@ -1995,38 +1995,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "800;23;26;18693;18696"
+                  "loc": "0:800;23;26;18693;18696"
                 },
-                "loc": "800;11;26;18681;18696"
+                "loc": "0:800;11;26;18681;18696"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "801;11;30;18708;18727"
+                "loc": "0:801;11;30;18708;18727"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "794;19;26;18544;18551"
+              "loc": "0:794;19;26;18544;18551"
             }
           },
-          "loc": "793;9;802;10;18503;18737"
+          "loc": "0:793;9;802;10;18503;18737"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDateTime",
-            "loc": "804;9;27;18748;18766"
+            "loc": "0:804;9;27;18748;18766"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date-time",
-              "loc": "804;9;807;10;18748;18839"
+              "loc": "0:804;9;807;10;18748;18839"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -2036,27 +2036,27 @@
                 "format": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "date-time",
-                  "loc": "806;21;32;18818;18829"
+                  "loc": "0:806;21;32;18818;18829"
                 },
-                "loc": "806;11;32;18808;18829"
+                "loc": "0:806;11;32;18808;18829"
               }
             ]
           },
-          "loc": "804;9;807;10;18748;18839"
+          "loc": "0:804;9;807;10;18748;18839"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDateTime",
-            "loc": "808;9;27;18849;18867"
+            "loc": "0:808;9;27;18849;18867"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date-time",
-              "loc": "808;9;811;10;18849;18940"
+              "loc": "0:808;9;811;10;18849;18940"
             },
             "rules": [
               {
@@ -2065,27 +2065,27 @@
                 "format": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "date-time",
-                  "loc": "810;21;32;18919;18930"
+                  "loc": "0:810;21;32;18919;18930"
                 },
-                "loc": "810;11;32;18909;18930"
+                "loc": "0:810;11;32;18909;18930"
               }
             ]
           },
-          "loc": "808;9;811;10;18849;18940"
+          "loc": "0:808;9;811;10;18849;18940"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDateTimeArray",
-            "loc": "812;9;32;18950;18973"
+            "loc": "0:812;9;32;18950;18973"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date-time",
-              "loc": "814;20;817;12;19023;19100"
+              "loc": "0:814;20;817;12;19023;19100"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -2095,9 +2095,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "818;23;24;19124;19125"
+                  "loc": "0:818;23;24;19124;19125"
                 },
-                "loc": "818;11;24;19112;19125"
+                "loc": "0:818;11;24;19112;19125"
               },
               {
                 "kind": "ValidationRule",
@@ -2105,38 +2105,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "819;23;26;19149;19152"
+                  "loc": "0:819;23;26;19149;19152"
                 },
-                "loc": "819;11;26;19137;19152"
+                "loc": "0:819;11;26;19137;19152"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "820;11;30;19164;19183"
+                "loc": "0:820;11;30;19164;19183"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "813;19;26;18995;19002"
+              "loc": "0:813;19;26;18995;19002"
             }
           },
-          "loc": "812;9;821;10;18950;19193"
+          "loc": "0:812;9;821;10;18950;19193"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDateTimeArray",
-            "loc": "822;9;32;19203;19226"
+            "loc": "0:822;9;32;19203;19226"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date-time",
-              "loc": "824;20;827;12;19276;19353"
+              "loc": "0:824;20;827;12;19276;19353"
             },
             "rules": [
               {
@@ -2145,9 +2145,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "828;23;24;19377;19378"
+                  "loc": "0:828;23;24;19377;19378"
                 },
-                "loc": "828;11;24;19365;19378"
+                "loc": "0:828;11;24;19365;19378"
               },
               {
                 "kind": "ValidationRule",
@@ -2155,28 +2155,28 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "829;23;26;19402;19405"
+                  "loc": "0:829;23;26;19402;19405"
                 },
-                "loc": "829;11;26;19390;19405"
+                "loc": "0:829;11;26;19390;19405"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "830;11;30;19417;19436"
+                "loc": "0:830;11;30;19417;19436"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "823;19;26;19248;19255"
+              "loc": "0:823;19;26;19248;19255"
             }
           },
-          "loc": "822;9;831;10;19203;19446"
+          "loc": "0:822;9;831;10;19203;19446"
         }
       ],
       "rules": [],
-      "loc": "446;5;833;6;9736;19460"
+      "loc": "0:446;5;833;6;9736;19460"
     },
     {
       "kind": "Type",
@@ -2190,71 +2190,71 @@
           "name": {
             "kind": "StringLiteral",
             "value": "customA",
-            "loc": "404;9;18;8649;8658"
+            "loc": "0:404;9;18;8649;8658"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "404;9;40;8649;8680"
+              "loc": "0:404;9;40;8649;8680"
             },
             "rules": []
           },
-          "loc": "404;9;40;8649;8680"
+          "loc": "0:404;9;40;8649;8680"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "customB",
-            "loc": "410;9;18;8773;8782"
+            "loc": "0:410;9;18;8773;8782"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "410;9;40;8773;8804"
+              "loc": "0:410;9;40;8773;8804"
             },
             "rules": []
           },
-          "loc": "410;9;40;8773;8804"
+          "loc": "0:410;9;40;8773;8804"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "customC",
-            "loc": "416;9;18;8897;8906"
+            "loc": "0:416;9;18;8897;8906"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "416;9;40;8897;8928"
+              "loc": "0:416;9;40;8897;8928"
             },
             "rules": []
           },
-          "loc": "416;9;40;8897;8928"
+          "loc": "0:416;9;40;8897;8928"
         }
       ],
       "rules": [],
-      "loc": "392;5;398;6;8340;8547"
+      "loc": "0:392;5;398;6;8340;8547"
     },
     {
       "kind": "Type",
       "name": {
         "kind": "StringLiteral",
         "value": "exhaustive",
-        "loc": "3;12;24;68;80"
+        "loc": "0:3;12;24;68;80"
       },
       "description": [
         {
           "kind": "StringLiteral",
           "value": "Some description",
-          "loc": "6;18;36;152;170"
+          "loc": "0:6;18;36;152;170"
         }
       ],
       "properties": [
@@ -2263,14 +2263,14 @@
           "name": {
             "kind": "StringLiteral",
             "value": "requiredString",
-            "loc": "30;5;21;710;726"
+            "loc": "0:30;5;21;710;726"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "30;5;36;6;710;862"
+              "loc": "0:30;5;36;6;710;862"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -2280,9 +2280,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
-                  "loc": "33;20;23;795;798"
+                  "loc": "0:33;20;23;795;798"
                 },
-                "loc": "33;7;23;782;798"
+                "loc": "0:33;7;23;782;798"
               },
               {
                 "kind": "ValidationRule",
@@ -2290,9 +2290,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
-                  "loc": "32;20;21;773;774"
+                  "loc": "0:32;20;21;773;774"
                 },
-                "loc": "32;7;21;760;774"
+                "loc": "0:32;7;21;760;774"
               },
               {
                 "kind": "ValidationRule",
@@ -2300,27 +2300,27 @@
                 "pattern": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "[9-0a-zA-Z]*",
-                  "loc": "34;18;32;817;831"
+                  "loc": "0:34;18;32;817;831"
                 },
-                "loc": "34;7;32;806;831"
+                "loc": "0:34;7;32;806;831"
               }
             ]
           },
-          "loc": "30;5;36;6;710;862"
+          "loc": "0:30;5;36;6;710;862"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalString",
-            "loc": "37;5;21;868;884"
+            "loc": "0:37;5;21;868;884"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "37;5;43;6;868;1020"
+              "loc": "0:37;5;43;6;868;1020"
             },
             "rules": [
               {
@@ -2329,9 +2329,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
-                  "loc": "40;20;23;953;956"
+                  "loc": "0:40;20;23;953;956"
                 },
-                "loc": "40;7;23;940;956"
+                "loc": "0:40;7;23;940;956"
               },
               {
                 "kind": "ValidationRule",
@@ -2339,9 +2339,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
-                  "loc": "39;20;21;931;932"
+                  "loc": "0:39;20;21;931;932"
                 },
-                "loc": "39;7;21;918;932"
+                "loc": "0:39;7;21;918;932"
               },
               {
                 "kind": "ValidationRule",
@@ -2349,27 +2349,27 @@
                 "pattern": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "[9-0a-zA-Z]*",
-                  "loc": "41;18;32;975;989"
+                  "loc": "0:41;18;32;975;989"
                 },
-                "loc": "41;7;32;964;989"
+                "loc": "0:41;7;32;964;989"
               }
             ]
           },
-          "loc": "37;5;43;6;868;1020"
+          "loc": "0:37;5;43;6;868;1020"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredStringArray",
-            "loc": "44;5;26;1026;1047"
+            "loc": "0:44;5;26;1026;1047"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "46;16;52;8;1089;1235"
+              "loc": "0:46;16;52;8;1089;1235"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -2379,9 +2379,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "53;19;20;1255;1256"
+                  "loc": "0:53;19;20;1255;1256"
                 },
-                "loc": "53;7;20;1243;1256"
+                "loc": "0:53;7;20;1243;1256"
               },
               {
                 "kind": "ValidationRule",
@@ -2389,38 +2389,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "54;19;22;1276;1279"
+                  "loc": "0:54;19;22;1276;1279"
                 },
-                "loc": "54;7;22;1264;1279"
+                "loc": "0:54;7;22;1264;1279"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "55;7;26;1287;1306"
+                "loc": "0:55;7;26;1287;1306"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "45;15;22;1065;1072"
+              "loc": "0:45;15;22;1065;1072"
             }
           },
-          "loc": "44;5;56;6;1026;1312"
+          "loc": "0:44;5;56;6;1026;1312"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalStringArray",
-            "loc": "57;5;26;1318;1339"
+            "loc": "0:57;5;26;1318;1339"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "string",
-              "loc": "59;16;65;8;1381;1527"
+              "loc": "0:59;16;65;8;1381;1527"
             },
             "rules": [
               {
@@ -2429,9 +2429,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "66;19;20;1547;1548"
+                  "loc": "0:66;19;20;1547;1548"
                 },
-                "loc": "66;7;20;1535;1548"
+                "loc": "0:66;7;20;1535;1548"
               },
               {
                 "kind": "ValidationRule",
@@ -2439,31 +2439,31 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "67;19;22;1568;1571"
+                  "loc": "0:67;19;22;1568;1571"
                 },
-                "loc": "67;7;22;1556;1571"
+                "loc": "0:67;7;22;1556;1571"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "68;7;26;1579;1598"
+                "loc": "0:68;7;26;1579;1598"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "58;15;22;1357;1364"
+              "loc": "0:58;15;22;1357;1364"
             }
           },
-          "loc": "57;5;69;6;1318;1604"
+          "loc": "0:57;5;69;6;1318;1604"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredStringEnum",
-            "loc": "71;5;25;1611;1631"
+            "loc": "0:71;5;25;1611;1631"
           },
           "value": {
             "kind": "ComplexValue",
@@ -2479,9 +2479,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
-                  "loc": "75;20;23;1738;1741"
+                  "loc": "0:75;20;23;1738;1741"
                 },
-                "loc": "75;7;23;1725;1741"
+                "loc": "0:75;7;23;1725;1741"
               },
               {
                 "kind": "ValidationRule",
@@ -2489,9 +2489,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
-                  "loc": "74;20;21;1716;1717"
+                  "loc": "0:74;20;21;1716;1717"
                 },
-                "loc": "74;7;21;1703;1717"
+                "loc": "0:74;7;21;1703;1717"
               },
               {
                 "kind": "ValidationRule",
@@ -2499,9 +2499,9 @@
                 "pattern": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "[9-0a-zA-Z]*",
-                  "loc": "76;18;32;1760;1774"
+                  "loc": "0:76;18;32;1760;1774"
                 },
-                "loc": "76;7;32;1749;1774"
+                "loc": "0:76;7;32;1749;1774"
               },
               {
                 "kind": "ValidationRule",
@@ -2510,26 +2510,26 @@
                   {
                     "kind": "StringLiteral",
                     "value": "VALUE_A",
-                    "loc": "73;16;25;1674;1683"
+                    "loc": "0:73;16;25;1674;1683"
                   },
                   {
                     "kind": "StringLiteral",
                     "value": "VALUE_B",
-                    "loc": "73;27;36;1685;1694"
+                    "loc": "0:73;27;36;1685;1694"
                   }
                 ],
-                "loc": "73;7;37;1665;1695"
+                "loc": "0:73;7;37;1665;1695"
               }
             ]
           },
-          "loc": "71;5;78;6;1611;1805"
+          "loc": "0:71;5;78;6;1611;1805"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalStringEnum",
-            "loc": "79;5;25;1811;1831"
+            "loc": "0:79;5;25;1811;1831"
           },
           "value": {
             "kind": "ComplexValue",
@@ -2544,9 +2544,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
-                  "loc": "83;20;23;1938;1941"
+                  "loc": "0:83;20;23;1938;1941"
                 },
-                "loc": "83;7;23;1925;1941"
+                "loc": "0:83;7;23;1925;1941"
               },
               {
                 "kind": "ValidationRule",
@@ -2554,9 +2554,9 @@
                 "length": {
                   "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
-                  "loc": "82;20;21;1916;1917"
+                  "loc": "0:82;20;21;1916;1917"
                 },
-                "loc": "82;7;21;1903;1917"
+                "loc": "0:82;7;21;1903;1917"
               },
               {
                 "kind": "ValidationRule",
@@ -2564,9 +2564,9 @@
                 "pattern": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "[9-0a-zA-Z]*",
-                  "loc": "84;18;32;1960;1974"
+                  "loc": "0:84;18;32;1960;1974"
                 },
-                "loc": "84;7;32;1949;1974"
+                "loc": "0:84;7;32;1949;1974"
               },
               {
                 "kind": "ValidationRule",
@@ -2575,26 +2575,26 @@
                   {
                     "kind": "StringLiteral",
                     "value": "VALUE_C",
-                    "loc": "81;16;25;1874;1883"
+                    "loc": "0:81;16;25;1874;1883"
                   },
                   {
                     "kind": "StringLiteral",
                     "value": "VALUE_D",
-                    "loc": "81;27;36;1885;1894"
+                    "loc": "0:81;27;36;1885;1894"
                   }
                 ],
-                "loc": "81;7;37;1865;1895"
+                "loc": "0:81;7;37;1865;1895"
               }
             ]
           },
-          "loc": "79;5;86;6;1811;2005"
+          "loc": "0:79;5;86;6;1811;2005"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredStringEnumArray",
-            "loc": "87;5;30;2011;2036"
+            "loc": "0:87;5;30;2011;2036"
           },
           "value": {
             "kind": "ComplexValue",
@@ -2610,9 +2610,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "97;19;20;2284;2285"
+                  "loc": "0:97;19;20;2284;2285"
                 },
-                "loc": "97;7;20;2272;2285"
+                "loc": "0:97;7;20;2272;2285"
               },
               {
                 "kind": "ValidationRule",
@@ -2620,31 +2620,31 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "98;19;22;2305;2308"
+                  "loc": "0:98;19;22;2305;2308"
                 },
-                "loc": "98;7;22;2293;2308"
+                "loc": "0:98;7;22;2293;2308"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "99;7;26;2316;2335"
+                "loc": "0:99;7;26;2316;2335"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "88;15;22;2054;2061"
+              "loc": "0:88;15;22;2054;2061"
             }
           },
-          "loc": "87;5;100;6;2011;2341"
+          "loc": "0:87;5;100;6;2011;2341"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalStringEnumArray",
-            "loc": "101;5;30;2347;2372"
+            "loc": "0:101;5;30;2347;2372"
           },
           "value": {
             "kind": "ComplexValue",
@@ -2659,9 +2659,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "111;19;20;2620;2621"
+                  "loc": "0:111;19;20;2620;2621"
                 },
-                "loc": "111;7;20;2608;2621"
+                "loc": "0:111;7;20;2608;2621"
               },
               {
                 "kind": "ValidationRule",
@@ -2669,74 +2669,74 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "112;19;22;2641;2644"
+                  "loc": "0:112;19;22;2641;2644"
                 },
-                "loc": "112;7;22;2629;2644"
+                "loc": "0:112;7;22;2629;2644"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "113;7;26;2652;2671"
+                "loc": "0:113;7;26;2652;2671"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "102;15;22;2390;2397"
+              "loc": "0:102;15;22;2390;2397"
             }
           },
-          "loc": "101;5;114;6;2347;2677"
+          "loc": "0:101;5;114;6;2347;2677"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredBoolean",
-            "loc": "116;5;22;2684;2701"
+            "loc": "0:116;5;22;2684;2701"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "boolean",
-              "loc": "116;5;45;2684;2724"
+              "loc": "0:116;5;45;2684;2724"
             },
             "rules": [{ "kind": "ValidationRule", "id": "Required" }]
           },
-          "loc": "116;5;45;2684;2724"
+          "loc": "0:116;5;45;2684;2724"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalBoolean",
-            "loc": "117;5;22;2730;2747"
+            "loc": "0:117;5;22;2730;2747"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "boolean",
-              "loc": "117;5;45;2730;2770"
+              "loc": "0:117;5;45;2730;2770"
             },
             "rules": []
           },
-          "loc": "117;5;45;2730;2770"
+          "loc": "0:117;5;45;2730;2770"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredBooleanArray",
-            "loc": "118;5;27;2776;2798"
+            "loc": "0:118;5;27;2776;2798"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "boolean",
-              "loc": "120;16;122;8;2840;2875"
+              "loc": "0:120;16;122;8;2840;2875"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -2746,9 +2746,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "123;19;20;2895;2896"
+                  "loc": "0:123;19;20;2895;2896"
                 },
-                "loc": "123;7;20;2883;2896"
+                "loc": "0:123;7;20;2883;2896"
               },
               {
                 "kind": "ValidationRule",
@@ -2756,38 +2756,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "124;19;22;2916;2919"
+                  "loc": "0:124;19;22;2916;2919"
                 },
-                "loc": "124;7;22;2904;2919"
+                "loc": "0:124;7;22;2904;2919"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "125;7;26;2927;2946"
+                "loc": "0:125;7;26;2927;2946"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "119;15;22;2816;2823"
+              "loc": "0:119;15;22;2816;2823"
             }
           },
-          "loc": "118;5;126;6;2776;2952"
+          "loc": "0:118;5;126;6;2776;2952"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalBooleanArray",
-            "loc": "127;5;27;2958;2980"
+            "loc": "0:127;5;27;2958;2980"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "boolean",
-              "loc": "129;16;131;8;3022;3057"
+              "loc": "0:129;16;131;8;3022;3057"
             },
             "rules": [
               {
@@ -2796,9 +2796,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "132;19;20;3077;3078"
+                  "loc": "0:132;19;20;3077;3078"
                 },
-                "loc": "132;7;20;3065;3078"
+                "loc": "0:132;7;20;3065;3078"
               },
               {
                 "kind": "ValidationRule",
@@ -2806,38 +2806,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "133;19;22;3098;3101"
+                  "loc": "0:133;19;22;3098;3101"
                 },
-                "loc": "133;7;22;3086;3101"
+                "loc": "0:133;7;22;3086;3101"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "134;7;26;3109;3128"
+                "loc": "0:134;7;26;3109;3128"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "128;15;22;2998;3005"
+              "loc": "0:128;15;22;2998;3005"
             }
           },
-          "loc": "127;5;135;6;2958;3134"
+          "loc": "0:127;5;135;6;2958;3134"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredNumber",
-            "loc": "137;5;21;3141;3157"
+            "loc": "0:137;5;21;3141;3157"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "number",
-              "loc": "137;5;142;6;3141;3255"
+              "loc": "0:137;5;142;6;3141;3255"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -2847,9 +2847,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "141;21;22;3248;3249"
+                  "loc": "0:141;21;22;3248;3249"
                 },
-                "loc": "141;7;22;3234;3249"
+                "loc": "0:141;7;22;3234;3249"
               },
               {
                 "kind": "ValidationRule",
@@ -2857,9 +2857,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "139;18;20;3202;3204"
+                  "loc": "0:139;18;20;3202;3204"
                 },
-                "loc": "139;7;20;3191;3204"
+                "loc": "0:139;7;20;3191;3204"
               },
               {
                 "kind": "ValidationRule",
@@ -2867,27 +2867,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "140;18;21;3223;3226"
+                  "loc": "0:140;18;21;3223;3226"
                 },
-                "loc": "140;7;21;3212;3226"
+                "loc": "0:140;7;21;3212;3226"
               }
             ]
           },
-          "loc": "137;5;142;6;3141;3255"
+          "loc": "0:137;5;142;6;3141;3255"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalNumber",
-            "loc": "143;5;21;3261;3277"
+            "loc": "0:143;5;21;3261;3277"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "number",
-              "loc": "143;5;148;6;3261;3375"
+              "loc": "0:143;5;148;6;3261;3375"
             },
             "rules": [
               {
@@ -2896,9 +2896,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "147;21;22;3368;3369"
+                  "loc": "0:147;21;22;3368;3369"
                 },
-                "loc": "147;7;22;3354;3369"
+                "loc": "0:147;7;22;3354;3369"
               },
               {
                 "kind": "ValidationRule",
@@ -2906,9 +2906,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "145;18;20;3322;3324"
+                  "loc": "0:145;18;20;3322;3324"
                 },
-                "loc": "145;7;20;3311;3324"
+                "loc": "0:145;7;20;3311;3324"
               },
               {
                 "kind": "ValidationRule",
@@ -2916,27 +2916,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "146;18;21;3343;3346"
+                  "loc": "0:146;18;21;3343;3346"
                 },
-                "loc": "146;7;21;3332;3346"
+                "loc": "0:146;7;21;3332;3346"
               }
             ]
           },
-          "loc": "143;5;148;6;3261;3375"
+          "loc": "0:143;5;148;6;3261;3375"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredNumberArray",
-            "loc": "149;5;26;3381;3402"
+            "loc": "0:149;5;26;3381;3402"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "number",
-              "loc": "151;16;156;8;3444;3550"
+              "loc": "0:151;16;156;8;3444;3550"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -2946,9 +2946,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "157;19;20;3570;3571"
+                  "loc": "0:157;19;20;3570;3571"
                 },
-                "loc": "157;7;20;3558;3571"
+                "loc": "0:157;7;20;3558;3571"
               },
               {
                 "kind": "ValidationRule",
@@ -2956,38 +2956,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "158;19;22;3591;3594"
+                  "loc": "0:158;19;22;3591;3594"
                 },
-                "loc": "158;7;22;3579;3594"
+                "loc": "0:158;7;22;3579;3594"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "159;7;26;3602;3621"
+                "loc": "0:159;7;26;3602;3621"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "150;15;22;3420;3427"
+              "loc": "0:150;15;22;3420;3427"
             }
           },
-          "loc": "149;5;160;6;3381;3627"
+          "loc": "0:149;5;160;6;3381;3627"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalNumberArray",
-            "loc": "161;5;26;3633;3654"
+            "loc": "0:161;5;26;3633;3654"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "number",
-              "loc": "163;16;168;8;3696;3802"
+              "loc": "0:163;16;168;8;3696;3802"
             },
             "rules": [
               {
@@ -2996,9 +2996,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "169;19;20;3822;3823"
+                  "loc": "0:169;19;20;3822;3823"
                 },
-                "loc": "169;7;20;3810;3823"
+                "loc": "0:169;7;20;3810;3823"
               },
               {
                 "kind": "ValidationRule",
@@ -3006,38 +3006,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "170;19;22;3843;3846"
+                  "loc": "0:170;19;22;3843;3846"
                 },
-                "loc": "170;7;22;3831;3846"
+                "loc": "0:170;7;22;3831;3846"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "171;7;26;3854;3873"
+                "loc": "0:171;7;26;3854;3873"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "162;15;22;3672;3679"
+              "loc": "0:162;15;22;3672;3679"
             }
           },
-          "loc": "161;5;172;6;3633;3879"
+          "loc": "0:161;5;172;6;3633;3879"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredInteger",
-            "loc": "174;5;22;3886;3903"
+            "loc": "0:174;5;22;3886;3903"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "integer",
-              "loc": "174;5;179;6;3886;4002"
+              "loc": "0:174;5;179;6;3886;4002"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -3047,9 +3047,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "178;21;22;3995;3996"
+                  "loc": "0:178;21;22;3995;3996"
                 },
-                "loc": "178;7;22;3981;3996"
+                "loc": "0:178;7;22;3981;3996"
               },
               {
                 "kind": "ValidationRule",
@@ -3057,9 +3057,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "176;18;20;3949;3951"
+                  "loc": "0:176;18;20;3949;3951"
                 },
-                "loc": "176;7;20;3938;3951"
+                "loc": "0:176;7;20;3938;3951"
               },
               {
                 "kind": "ValidationRule",
@@ -3067,27 +3067,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "177;18;21;3970;3973"
+                  "loc": "0:177;18;21;3970;3973"
                 },
-                "loc": "177;7;21;3959;3973"
+                "loc": "0:177;7;21;3959;3973"
               }
             ]
           },
-          "loc": "174;5;179;6;3886;4002"
+          "loc": "0:174;5;179;6;3886;4002"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalInteger",
-            "loc": "180;5;22;4008;4025"
+            "loc": "0:180;5;22;4008;4025"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "integer",
-              "loc": "180;5;185;6;4008;4124"
+              "loc": "0:180;5;185;6;4008;4124"
             },
             "rules": [
               {
@@ -3096,9 +3096,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "184;21;22;4117;4118"
+                  "loc": "0:184;21;22;4117;4118"
                 },
-                "loc": "184;7;22;4103;4118"
+                "loc": "0:184;7;22;4103;4118"
               },
               {
                 "kind": "ValidationRule",
@@ -3106,9 +3106,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "182;18;20;4071;4073"
+                  "loc": "0:182;18;20;4071;4073"
                 },
-                "loc": "182;7;20;4060;4073"
+                "loc": "0:182;7;20;4060;4073"
               },
               {
                 "kind": "ValidationRule",
@@ -3116,27 +3116,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "183;18;21;4092;4095"
+                  "loc": "0:183;18;21;4092;4095"
                 },
-                "loc": "183;7;21;4081;4095"
+                "loc": "0:183;7;21;4081;4095"
               }
             ]
           },
-          "loc": "180;5;185;6;4008;4124"
+          "loc": "0:180;5;185;6;4008;4124"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredIntegerArray",
-            "loc": "186;5;27;4130;4152"
+            "loc": "0:186;5;27;4130;4152"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "integer",
-              "loc": "188;16;193;8;4194;4301"
+              "loc": "0:188;16;193;8;4194;4301"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -3146,9 +3146,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "194;19;20;4321;4322"
+                  "loc": "0:194;19;20;4321;4322"
                 },
-                "loc": "194;7;20;4309;4322"
+                "loc": "0:194;7;20;4309;4322"
               },
               {
                 "kind": "ValidationRule",
@@ -3156,38 +3156,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "195;19;22;4342;4345"
+                  "loc": "0:195;19;22;4342;4345"
                 },
-                "loc": "195;7;22;4330;4345"
+                "loc": "0:195;7;22;4330;4345"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "196;7;26;4353;4372"
+                "loc": "0:196;7;26;4353;4372"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "187;15;22;4170;4177"
+              "loc": "0:187;15;22;4170;4177"
             }
           },
-          "loc": "186;5;197;6;4130;4378"
+          "loc": "0:186;5;197;6;4130;4378"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalIntegerArray",
-            "loc": "198;5;27;4384;4406"
+            "loc": "0:198;5;27;4384;4406"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "integer",
-              "loc": "200;16;205;8;4448;4555"
+              "loc": "0:200;16;205;8;4448;4555"
             },
             "rules": [
               {
@@ -3196,9 +3196,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "206;19;20;4575;4576"
+                  "loc": "0:206;19;20;4575;4576"
                 },
-                "loc": "206;7;20;4563;4576"
+                "loc": "0:206;7;20;4563;4576"
               },
               {
                 "kind": "ValidationRule",
@@ -3206,38 +3206,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "207;19;22;4596;4599"
+                  "loc": "0:207;19;22;4596;4599"
                 },
-                "loc": "207;7;22;4584;4599"
+                "loc": "0:207;7;22;4584;4599"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "208;7;26;4607;4626"
+                "loc": "0:208;7;26;4607;4626"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "199;15;22;4424;4431"
+              "loc": "0:199;15;22;4424;4431"
             }
           },
-          "loc": "198;5;209;6;4384;4632"
+          "loc": "0:198;5;209;6;4384;4632"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredLong",
-            "loc": "211;5;19;4639;4653"
+            "loc": "0:211;5;19;4639;4653"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "long",
-              "loc": "211;5;217;6;4639;4777"
+              "loc": "0:211;5;217;6;4639;4777"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -3247,9 +3247,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "216;21;22;4770;4771"
+                  "loc": "0:216;21;22;4770;4771"
                 },
-                "loc": "216;7;22;4756;4771"
+                "loc": "0:216;7;22;4756;4771"
               },
               {
                 "kind": "ValidationRule",
@@ -3257,9 +3257,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "214;18;20;4724;4726"
+                  "loc": "0:214;18;20;4724;4726"
                 },
-                "loc": "214;7;20;4713;4726"
+                "loc": "0:214;7;20;4713;4726"
               },
               {
                 "kind": "ValidationRule",
@@ -3267,27 +3267,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "215;18;21;4745;4748"
+                  "loc": "0:215;18;21;4745;4748"
                 },
-                "loc": "215;7;21;4734;4748"
+                "loc": "0:215;7;21;4734;4748"
               }
             ]
           },
-          "loc": "211;5;217;6;4639;4777"
+          "loc": "0:211;5;217;6;4639;4777"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalLong",
-            "loc": "218;5;19;4783;4797"
+            "loc": "0:218;5;19;4783;4797"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "long",
-              "loc": "218;5;224;6;4783;4921"
+              "loc": "0:218;5;224;6;4783;4921"
             },
             "rules": [
               {
@@ -3296,9 +3296,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "223;21;22;4914;4915"
+                  "loc": "0:223;21;22;4914;4915"
                 },
-                "loc": "223;7;22;4900;4915"
+                "loc": "0:223;7;22;4900;4915"
               },
               {
                 "kind": "ValidationRule",
@@ -3306,9 +3306,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "221;18;20;4868;4870"
+                  "loc": "0:221;18;20;4868;4870"
                 },
-                "loc": "221;7;20;4857;4870"
+                "loc": "0:221;7;20;4857;4870"
               },
               {
                 "kind": "ValidationRule",
@@ -3316,27 +3316,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "222;18;21;4889;4892"
+                  "loc": "0:222;18;21;4889;4892"
                 },
-                "loc": "222;7;21;4878;4892"
+                "loc": "0:222;7;21;4878;4892"
               }
             ]
           },
-          "loc": "218;5;224;6;4783;4921"
+          "loc": "0:218;5;224;6;4783;4921"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredLongArray",
-            "loc": "225;5;24;4927;4946"
+            "loc": "0:225;5;24;4927;4946"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "long",
-              "loc": "227;16;233;8;4988;5122"
+              "loc": "0:227;16;233;8;4988;5122"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -3346,9 +3346,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "234;19;20;5142;5143"
+                  "loc": "0:234;19;20;5142;5143"
                 },
-                "loc": "234;7;20;5130;5143"
+                "loc": "0:234;7;20;5130;5143"
               },
               {
                 "kind": "ValidationRule",
@@ -3356,38 +3356,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "235;19;22;5163;5166"
+                  "loc": "0:235;19;22;5163;5166"
                 },
-                "loc": "235;7;22;5151;5166"
+                "loc": "0:235;7;22;5151;5166"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "236;7;26;5174;5193"
+                "loc": "0:236;7;26;5174;5193"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "226;15;22;4964;4971"
+              "loc": "0:226;15;22;4964;4971"
             }
           },
-          "loc": "225;5;237;6;4927;5199"
+          "loc": "0:225;5;237;6;4927;5199"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalLongArray",
-            "loc": "238;5;24;5205;5224"
+            "loc": "0:238;5;24;5205;5224"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "long",
-              "loc": "240;16;246;8;5266;5400"
+              "loc": "0:240;16;246;8;5266;5400"
             },
             "rules": [
               {
@@ -3396,9 +3396,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "247;19;20;5420;5421"
+                  "loc": "0:247;19;20;5420;5421"
                 },
-                "loc": "247;7;20;5408;5421"
+                "loc": "0:247;7;20;5408;5421"
               },
               {
                 "kind": "ValidationRule",
@@ -3406,38 +3406,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "248;19;22;5441;5444"
+                  "loc": "0:248;19;22;5441;5444"
                 },
-                "loc": "248;7;22;5429;5444"
+                "loc": "0:248;7;22;5429;5444"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "249;7;26;5452;5471"
+                "loc": "0:249;7;26;5452;5471"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "239;15;22;5242;5249"
+              "loc": "0:239;15;22;5242;5249"
             }
           },
-          "loc": "238;5;250;6;5205;5477"
+          "loc": "0:238;5;250;6;5205;5477"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredFloat",
-            "loc": "252;5;20;5484;5499"
+            "loc": "0:252;5;20;5484;5499"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "float",
-              "loc": "252;5;258;6;5484;5622"
+              "loc": "0:252;5;258;6;5484;5622"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -3447,9 +3447,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "257;21;22;5615;5616"
+                  "loc": "0:257;21;22;5615;5616"
                 },
-                "loc": "257;7;22;5601;5616"
+                "loc": "0:257;7;22;5601;5616"
               },
               {
                 "kind": "ValidationRule",
@@ -3457,9 +3457,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "255;18;20;5569;5571"
+                  "loc": "0:255;18;20;5569;5571"
                 },
-                "loc": "255;7;20;5558;5571"
+                "loc": "0:255;7;20;5558;5571"
               },
               {
                 "kind": "ValidationRule",
@@ -3467,27 +3467,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "256;18;21;5590;5593"
+                  "loc": "0:256;18;21;5590;5593"
                 },
-                "loc": "256;7;21;5579;5593"
+                "loc": "0:256;7;21;5579;5593"
               }
             ]
           },
-          "loc": "252;5;258;6;5484;5622"
+          "loc": "0:252;5;258;6;5484;5622"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalFloat",
-            "loc": "259;5;20;5628;5643"
+            "loc": "0:259;5;20;5628;5643"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "float",
-              "loc": "259;5;265;6;5628;5766"
+              "loc": "0:259;5;265;6;5628;5766"
             },
             "rules": [
               {
@@ -3496,9 +3496,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "264;21;22;5759;5760"
+                  "loc": "0:264;21;22;5759;5760"
                 },
-                "loc": "264;7;22;5745;5760"
+                "loc": "0:264;7;22;5745;5760"
               },
               {
                 "kind": "ValidationRule",
@@ -3506,9 +3506,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "262;18;20;5713;5715"
+                  "loc": "0:262;18;20;5713;5715"
                 },
-                "loc": "262;7;20;5702;5715"
+                "loc": "0:262;7;20;5702;5715"
               },
               {
                 "kind": "ValidationRule",
@@ -3516,27 +3516,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "263;18;21;5734;5737"
+                  "loc": "0:263;18;21;5734;5737"
                 },
-                "loc": "263;7;21;5723;5737"
+                "loc": "0:263;7;21;5723;5737"
               }
             ]
           },
-          "loc": "259;5;265;6;5628;5766"
+          "loc": "0:259;5;265;6;5628;5766"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredFloatArray",
-            "loc": "266;5;25;5772;5792"
+            "loc": "0:266;5;25;5772;5792"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "float",
-              "loc": "268;16;274;8;5834;5967"
+              "loc": "0:268;16;274;8;5834;5967"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -3546,9 +3546,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "275;19;20;5987;5988"
+                  "loc": "0:275;19;20;5987;5988"
                 },
-                "loc": "275;7;20;5975;5988"
+                "loc": "0:275;7;20;5975;5988"
               },
               {
                 "kind": "ValidationRule",
@@ -3556,38 +3556,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "276;19;22;6008;6011"
+                  "loc": "0:276;19;22;6008;6011"
                 },
-                "loc": "276;7;22;5996;6011"
+                "loc": "0:276;7;22;5996;6011"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "277;7;26;6019;6038"
+                "loc": "0:277;7;26;6019;6038"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "267;15;22;5810;5817"
+              "loc": "0:267;15;22;5810;5817"
             }
           },
-          "loc": "266;5;278;6;5772;6044"
+          "loc": "0:266;5;278;6;5772;6044"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalFloatArray",
-            "loc": "279;5;25;6050;6070"
+            "loc": "0:279;5;25;6050;6070"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "float",
-              "loc": "281;16;287;8;6112;6245"
+              "loc": "0:281;16;287;8;6112;6245"
             },
             "rules": [
               {
@@ -3596,9 +3596,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "288;19;20;6265;6266"
+                  "loc": "0:288;19;20;6265;6266"
                 },
-                "loc": "288;7;20;6253;6266"
+                "loc": "0:288;7;20;6253;6266"
               },
               {
                 "kind": "ValidationRule",
@@ -3606,38 +3606,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "289;19;22;6286;6289"
+                  "loc": "0:289;19;22;6286;6289"
                 },
-                "loc": "289;7;22;6274;6289"
+                "loc": "0:289;7;22;6274;6289"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "290;7;26;6297;6316"
+                "loc": "0:290;7;26;6297;6316"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "280;15;22;6088;6095"
+              "loc": "0:280;15;22;6088;6095"
             }
           },
-          "loc": "279;5;291;6;6050;6322"
+          "loc": "0:279;5;291;6;6050;6322"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDouble",
-            "loc": "293;5;21;6329;6345"
+            "loc": "0:293;5;21;6329;6345"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "double",
-              "loc": "293;5;299;6;6329;6469"
+              "loc": "0:293;5;299;6;6329;6469"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -3647,9 +3647,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "298;21;22;6462;6463"
+                  "loc": "0:298;21;22;6462;6463"
                 },
-                "loc": "298;7;22;6448;6463"
+                "loc": "0:298;7;22;6448;6463"
               },
               {
                 "kind": "ValidationRule",
@@ -3657,9 +3657,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "296;18;20;6416;6418"
+                  "loc": "0:296;18;20;6416;6418"
                 },
-                "loc": "296;7;20;6405;6418"
+                "loc": "0:296;7;20;6405;6418"
               },
               {
                 "kind": "ValidationRule",
@@ -3667,27 +3667,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "297;18;21;6437;6440"
+                  "loc": "0:297;18;21;6437;6440"
                 },
-                "loc": "297;7;21;6426;6440"
+                "loc": "0:297;7;21;6426;6440"
               }
             ]
           },
-          "loc": "293;5;299;6;6329;6469"
+          "loc": "0:293;5;299;6;6329;6469"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDouble",
-            "loc": "300;5;21;6475;6491"
+            "loc": "0:300;5;21;6475;6491"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "double",
-              "loc": "300;5;306;6;6475;6615"
+              "loc": "0:300;5;306;6;6475;6615"
             },
             "rules": [
               {
@@ -3696,9 +3696,9 @@
                 "value": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 3,
-                  "loc": "305;21;22;6608;6609"
+                  "loc": "0:305;21;22;6608;6609"
                 },
-                "loc": "305;7;22;6594;6609"
+                "loc": "0:305;7;22;6594;6609"
               },
               {
                 "kind": "ValidationRule",
@@ -3706,9 +3706,9 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": -2,
-                  "loc": "303;18;20;6562;6564"
+                  "loc": "0:303;18;20;6562;6564"
                 },
-                "loc": "303;7;20;6551;6564"
+                "loc": "0:303;7;20;6551;6564"
               },
               {
                 "kind": "ValidationRule",
@@ -3716,27 +3716,27 @@
                 "value": {
                   "kind": "NumberLiteral",
                   "value": 100,
-                  "loc": "304;18;21;6583;6586"
+                  "loc": "0:304;18;21;6583;6586"
                 },
-                "loc": "304;7;21;6572;6586"
+                "loc": "0:304;7;21;6572;6586"
               }
             ]
           },
-          "loc": "300;5;306;6;6475;6615"
+          "loc": "0:300;5;306;6;6475;6615"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDoubleArray",
-            "loc": "307;5;26;6621;6642"
+            "loc": "0:307;5;26;6621;6642"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "double",
-              "loc": "309;16;315;8;6684;6818"
+              "loc": "0:309;16;315;8;6684;6818"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -3746,9 +3746,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "316;19;20;6838;6839"
+                  "loc": "0:316;19;20;6838;6839"
                 },
-                "loc": "316;7;20;6826;6839"
+                "loc": "0:316;7;20;6826;6839"
               },
               {
                 "kind": "ValidationRule",
@@ -3756,38 +3756,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "317;19;22;6859;6862"
+                  "loc": "0:317;19;22;6859;6862"
                 },
-                "loc": "317;7;22;6847;6862"
+                "loc": "0:317;7;22;6847;6862"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "318;7;26;6870;6889"
+                "loc": "0:318;7;26;6870;6889"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "308;15;22;6660;6667"
+              "loc": "0:308;15;22;6660;6667"
             }
           },
-          "loc": "307;5;319;6;6621;6895"
+          "loc": "0:307;5;319;6;6621;6895"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDoubleArray",
-            "loc": "320;5;26;6901;6922"
+            "loc": "0:320;5;26;6901;6922"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "double",
-              "loc": "322;16;328;8;6964;7098"
+              "loc": "0:322;16;328;8;6964;7098"
             },
             "rules": [
               {
@@ -3796,9 +3796,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "329;19;20;7118;7119"
+                  "loc": "0:329;19;20;7118;7119"
                 },
-                "loc": "329;7;20;7106;7119"
+                "loc": "0:329;7;20;7106;7119"
               },
               {
                 "kind": "ValidationRule",
@@ -3806,38 +3806,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "330;19;22;7139;7142"
+                  "loc": "0:330;19;22;7139;7142"
                 },
-                "loc": "330;7;22;7127;7142"
+                "loc": "0:330;7;22;7127;7142"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "331;7;26;7150;7169"
+                "loc": "0:331;7;26;7150;7169"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "321;15;22;6940;6947"
+              "loc": "0:321;15;22;6940;6947"
             }
           },
-          "loc": "320;5;332;6;6901;7175"
+          "loc": "0:320;5;332;6;6901;7175"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDate",
-            "loc": "334;5;19;7182;7196"
+            "loc": "0:334;5;19;7182;7196"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date",
-              "loc": "334;5;337;6;7182;7252"
+              "loc": "0:334;5;337;6;7182;7252"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -3847,27 +3847,27 @@
                 "format": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "date",
-                  "loc": "336;17;23;7240;7246"
+                  "loc": "0:336;17;23;7240;7246"
                 },
-                "loc": "336;7;23;7230;7246"
+                "loc": "0:336;7;23;7230;7246"
               }
             ]
           },
-          "loc": "334;5;337;6;7182;7252"
+          "loc": "0:334;5;337;6;7182;7252"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDate",
-            "loc": "338;5;19;7258;7272"
+            "loc": "0:338;5;19;7258;7272"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date",
-              "loc": "338;5;341;6;7258;7328"
+              "loc": "0:338;5;341;6;7258;7328"
             },
             "rules": [
               {
@@ -3876,27 +3876,27 @@
                 "format": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "date",
-                  "loc": "340;17;23;7316;7322"
+                  "loc": "0:340;17;23;7316;7322"
                 },
-                "loc": "340;7;23;7306;7322"
+                "loc": "0:340;7;23;7306;7322"
               }
             ]
           },
-          "loc": "338;5;341;6;7258;7328"
+          "loc": "0:338;5;341;6;7258;7328"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDateArray",
-            "loc": "342;5;24;7334;7353"
+            "loc": "0:342;5;24;7334;7353"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date",
-              "loc": "344;16;347;8;7395;7455"
+              "loc": "0:344;16;347;8;7395;7455"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -3906,9 +3906,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "348;19;20;7475;7476"
+                  "loc": "0:348;19;20;7475;7476"
                 },
-                "loc": "348;7;20;7463;7476"
+                "loc": "0:348;7;20;7463;7476"
               },
               {
                 "kind": "ValidationRule",
@@ -3916,38 +3916,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "349;19;22;7496;7499"
+                  "loc": "0:349;19;22;7496;7499"
                 },
-                "loc": "349;7;22;7484;7499"
+                "loc": "0:349;7;22;7484;7499"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "350;7;26;7507;7526"
+                "loc": "0:350;7;26;7507;7526"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "343;15;22;7371;7378"
+              "loc": "0:343;15;22;7371;7378"
             }
           },
-          "loc": "342;5;351;6;7334;7532"
+          "loc": "0:342;5;351;6;7334;7532"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDateArray",
-            "loc": "352;5;24;7538;7557"
+            "loc": "0:352;5;24;7538;7557"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date",
-              "loc": "354;16;357;8;7599;7659"
+              "loc": "0:354;16;357;8;7599;7659"
             },
             "rules": [
               {
@@ -3956,9 +3956,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "358;19;20;7679;7680"
+                  "loc": "0:358;19;20;7679;7680"
                 },
-                "loc": "358;7;20;7667;7680"
+                "loc": "0:358;7;20;7667;7680"
               },
               {
                 "kind": "ValidationRule",
@@ -3966,38 +3966,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "359;19;22;7700;7703"
+                  "loc": "0:359;19;22;7700;7703"
                 },
-                "loc": "359;7;22;7688;7703"
+                "loc": "0:359;7;22;7688;7703"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "360;7;26;7711;7730"
+                "loc": "0:360;7;26;7711;7730"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "353;15;22;7575;7582"
+              "loc": "0:353;15;22;7575;7582"
             }
           },
-          "loc": "352;5;361;6;7538;7736"
+          "loc": "0:352;5;361;6;7538;7736"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDateTime",
-            "loc": "363;5;23;7743;7761"
+            "loc": "0:363;5;23;7743;7761"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date-time",
-              "loc": "363;5;366;6;7743;7822"
+              "loc": "0:363;5;366;6;7743;7822"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -4007,27 +4007,27 @@
                 "format": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "date-time",
-                  "loc": "365;17;28;7805;7816"
+                  "loc": "0:365;17;28;7805;7816"
                 },
-                "loc": "365;7;28;7795;7816"
+                "loc": "0:365;7;28;7795;7816"
               }
             ]
           },
-          "loc": "363;5;366;6;7743;7822"
+          "loc": "0:363;5;366;6;7743;7822"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDateTime",
-            "loc": "367;5;23;7828;7846"
+            "loc": "0:367;5;23;7828;7846"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date-time",
-              "loc": "367;5;370;6;7828;7907"
+              "loc": "0:367;5;370;6;7828;7907"
             },
             "rules": [
               {
@@ -4036,27 +4036,27 @@
                 "format": {
                   "kind": "NonEmptyStringLiteral",
                   "value": "date-time",
-                  "loc": "369;17;28;7890;7901"
+                  "loc": "0:369;17;28;7890;7901"
                 },
-                "loc": "369;7;28;7880;7901"
+                "loc": "0:369;7;28;7880;7901"
               }
             ]
           },
-          "loc": "367;5;370;6;7828;7907"
+          "loc": "0:367;5;370;6;7828;7907"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "requiredDateTimeArray",
-            "loc": "371;5;28;7913;7936"
+            "loc": "0:371;5;28;7913;7936"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date-time",
-              "loc": "373;16;376;8;7978;8043"
+              "loc": "0:373;16;376;8;7978;8043"
             },
             "rules": [
               { "kind": "ValidationRule", "id": "Required" },
@@ -4066,9 +4066,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "377;19;20;8063;8064"
+                  "loc": "0:377;19;20;8063;8064"
                 },
-                "loc": "377;7;20;8051;8064"
+                "loc": "0:377;7;20;8051;8064"
               },
               {
                 "kind": "ValidationRule",
@@ -4076,38 +4076,38 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "378;19;22;8084;8087"
+                  "loc": "0:378;19;22;8084;8087"
                 },
-                "loc": "378;7;22;8072;8087"
+                "loc": "0:378;7;22;8072;8087"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "379;7;26;8095;8114"
+                "loc": "0:379;7;26;8095;8114"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "372;15;22;7954;7961"
+              "loc": "0:372;15;22;7954;7961"
             }
           },
-          "loc": "371;5;380;6;7913;8120"
+          "loc": "0:371;5;380;6;7913;8120"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalDateTimeArray",
-            "loc": "381;5;28;8126;8149"
+            "loc": "0:381;5;28;8126;8149"
           },
           "value": {
             "kind": "PrimitiveValue",
             "typeName": {
               "kind": "PrimitiveLiteral",
               "value": "date-time",
-              "loc": "383;16;386;8;8191;8256"
+              "loc": "0:383;16;386;8;8191;8256"
             },
             "rules": [
               {
@@ -4116,9 +4116,9 @@
                 "min": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 1,
-                  "loc": "387;19;20;8276;8277"
+                  "loc": "0:387;19;20;8276;8277"
                 },
-                "loc": "387;7;20;8264;8277"
+                "loc": "0:387;7;20;8264;8277"
               },
               {
                 "kind": "ValidationRule",
@@ -4126,31 +4126,31 @@
                 "max": {
                   "kind": "NonNegativeNumberLiteral",
                   "value": 100,
-                  "loc": "388;19;22;8297;8300"
+                  "loc": "0:388;19;22;8297;8300"
                 },
-                "loc": "388;7;22;8285;8300"
+                "loc": "0:388;7;22;8285;8300"
               },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayUniqueItems",
                 "required": true,
-                "loc": "389;7;26;8308;8327"
+                "loc": "0:389;7;26;8308;8327"
               }
             ],
             "isArray": {
               "kind": "TrueLiteral",
               "value": true,
-              "loc": "382;15;22;8167;8174"
+              "loc": "0:382;15;22;8167;8174"
             }
           },
-          "loc": "381;5;390;6;8126;8333"
+          "loc": "0:381;5;390;6;8126;8333"
         },
         {
           "kind": "Property",
           "name": {
             "kind": "StringLiteral",
             "value": "optionalItersection",
-            "loc": "392;5;26;8340;8361"
+            "loc": "0:392;5;26;8340;8361"
           },
           "value": {
             "kind": "ComplexValue",
@@ -4160,11 +4160,11 @@
             },
             "rules": []
           },
-          "loc": "392;5;398;6;8340;8547"
+          "loc": "0:392;5;398;6;8340;8547"
         }
       ],
       "rules": [],
-      "loc": "1;1;835;2;0;19466"
+      "loc": "0:1;1;835;2;0;19466"
     }
   ],
   "enums": [
@@ -4174,14 +4174,14 @@
         "kind": "StringLiteral",
         "value": "exhaustiveSubObject_requiredStringEnum"
       },
-      "loc": "512;9;519;10;11480;11702",
+      "loc": "0:512;9;519;10;11480;11702",
       "members": [
         {
           "kind": "EnumMember",
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_A",
-            "loc": "514;20;29;11551;11560"
+            "loc": "0:514;20;29;11551;11560"
           }
         },
         {
@@ -4189,7 +4189,7 @@
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_B",
-            "loc": "514;31;40;11562;11571"
+            "loc": "0:514;31;40;11562;11571"
           }
         }
       ]
@@ -4200,14 +4200,14 @@
         "kind": "StringLiteral",
         "value": "exhaustiveSubObject_optionalStringEnum"
       },
-      "loc": "520;9;527;10;11712;11934",
+      "loc": "0:520;9;527;10;11712;11934",
       "members": [
         {
           "kind": "EnumMember",
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_C",
-            "loc": "522;20;29;11783;11792"
+            "loc": "0:522;20;29;11783;11792"
           }
         },
         {
@@ -4215,7 +4215,7 @@
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_D",
-            "loc": "522;31;40;11794;11803"
+            "loc": "0:522;31;40;11794;11803"
           }
         }
       ]
@@ -4226,14 +4226,14 @@
         "kind": "StringLiteral",
         "value": "exhaustiveSubObject_requiredStringEnumArray_items"
       },
-      "loc": "530;20;537;12;12019;12233",
+      "loc": "0:530;20;537;12;12019;12233",
       "members": [
         {
           "kind": "EnumMember",
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_E",
-            "loc": "532;22;31;12072;12081"
+            "loc": "0:532;22;31;12072;12081"
           }
         },
         {
@@ -4241,7 +4241,7 @@
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_F",
-            "loc": "532;33;42;12083;12092"
+            "loc": "0:532;33;42;12083;12092"
           }
         }
       ]
@@ -4252,14 +4252,14 @@
         "kind": "StringLiteral",
         "value": "exhaustiveSubObject_optionalStringEnumArray_items"
       },
-      "loc": "544;20;551;12;12411;12625",
+      "loc": "0:544;20;551;12;12411;12625",
       "members": [
         {
           "kind": "EnumMember",
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_G",
-            "loc": "546;22;31;12464;12473"
+            "loc": "0:546;22;31;12464;12473"
           }
         },
         {
@@ -4267,7 +4267,7 @@
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_H",
-            "loc": "546;33;42;12475;12484"
+            "loc": "0:546;33;42;12475;12484"
           }
         }
       ]
@@ -4278,14 +4278,14 @@
         "kind": "StringLiteral",
         "value": "exhaustive_requiredStringEnum"
       },
-      "loc": "71;5;78;6;1611;1805",
+      "loc": "0:71;5;78;6;1611;1805",
       "members": [
         {
           "kind": "EnumMember",
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_A",
-            "loc": "73;16;25;1674;1683"
+            "loc": "0:73;16;25;1674;1683"
           }
         },
         {
@@ -4293,7 +4293,7 @@
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_B",
-            "loc": "73;27;36;1685;1694"
+            "loc": "0:73;27;36;1685;1694"
           }
         }
       ]
@@ -4304,14 +4304,14 @@
         "kind": "StringLiteral",
         "value": "exhaustive_optionalStringEnum"
       },
-      "loc": "79;5;86;6;1811;2005",
+      "loc": "0:79;5;86;6;1811;2005",
       "members": [
         {
           "kind": "EnumMember",
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_C",
-            "loc": "81;16;25;1874;1883"
+            "loc": "0:81;16;25;1874;1883"
           }
         },
         {
@@ -4319,7 +4319,7 @@
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_D",
-            "loc": "81;27;36;1885;1894"
+            "loc": "0:81;27;36;1885;1894"
           }
         }
       ]
@@ -4330,14 +4330,14 @@
         "kind": "StringLiteral",
         "value": "exhaustive_requiredStringEnumArray_items"
       },
-      "loc": "89;16;96;8;2078;2264",
+      "loc": "0:89;16;96;8;2078;2264",
       "members": [
         {
           "kind": "EnumMember",
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_E",
-            "loc": "91;18;27;2123;2132"
+            "loc": "0:91;18;27;2123;2132"
           }
         },
         {
@@ -4345,7 +4345,7 @@
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_F",
-            "loc": "91;29;38;2134;2143"
+            "loc": "0:91;29;38;2134;2143"
           }
         }
       ]
@@ -4356,14 +4356,14 @@
         "kind": "StringLiteral",
         "value": "exhaustive_optionalStringEnumArray_items"
       },
-      "loc": "103;16;110;8;2414;2600",
+      "loc": "0:103;16;110;8;2414;2600",
       "members": [
         {
           "kind": "EnumMember",
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_G",
-            "loc": "105;18;27;2459;2468"
+            "loc": "0:105;18;27;2459;2468"
           }
         },
         {
@@ -4371,7 +4371,7 @@
           "content": {
             "kind": "StringLiteral",
             "value": "VALUE_H",
-            "loc": "105;29;38;2470;2479"
+            "loc": "0:105;29;38;2470;2479"
           }
         }
       ]
@@ -4383,7 +4383,7 @@
       "name": {
         "kind": "StringLiteral",
         "value": "exampleUnion",
-        "loc": "426;5;19;9160;9174"
+        "loc": "0:426;5;19;9160;9174"
       },
       "members": [
         {
@@ -4391,7 +4391,7 @@
           "typeName": {
             "kind": "StringLiteral",
             "value": "customObjectA",
-            "loc": "401;5;20;8576;8591"
+            "loc": "0:401;5;20;8576;8591"
           },
           "rules": []
         },
@@ -4400,7 +4400,7 @@
           "typeName": {
             "kind": "StringLiteral",
             "value": "customObjectB",
-            "loc": "407;5;20;8700;8715"
+            "loc": "0:407;5;20;8700;8715"
           },
           "rules": []
         },
@@ -4409,12 +4409,12 @@
           "typeName": {
             "kind": "StringLiteral",
             "value": "customObjectC",
-            "loc": "413;5;20;8824;8839"
+            "loc": "0:413;5;20;8824;8839"
           },
           "rules": []
         }
       ],
-      "loc": "426;5;432;6;9160;9360"
+      "loc": "0:426;5;432;6;9160;9360"
     }
   ]
 }
