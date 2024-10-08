@@ -39,7 +39,7 @@ export abstract class JsonNode {
   _propertyRange(key: string): string | undefined {
     const prop = this._property(key);
 
-    return prop ? encodeRange(prop.loc) : undefined;
+    return prop ? encodeRange(0, prop.loc) : undefined;
   }
 
   protected _child<T extends JsonNode>(
@@ -89,7 +89,7 @@ export class LiteralNode<
   get asLiteral(): Literal<T> {
     return {
       value: this.value,
-      loc: this.loc ? encodeRange(this.loc) : undefined,
+      loc: this.loc ? encodeRange(0, this.loc) : undefined,
     };
   }
 
@@ -163,7 +163,7 @@ export function getName(
       if (child) {
         name = {
           value: child.key.value,
-          loc: encodeRange(child.key.loc),
+          loc: encodeRange(0, child.key.loc),
         };
         cursor = child.value;
       } else {
@@ -178,7 +178,7 @@ export function getName(
 export function range(node: parse.ASTNode | JsonNode): string | undefined {
   const loc = node.loc;
 
-  return encodeRange(loc);
+  return encodeRange(0, loc);
 }
 
 export function isObjectNode(
