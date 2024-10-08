@@ -6,7 +6,7 @@
     "value": "exhaustive",
     "loc": "0:3;12;24;68;80"
   },
-  "sourcePaths": ["schema.json"],
+  "sourcePaths": ["src/snapshot/schema.json"],
   "loc": "0:1;1;835;2;0;19466",
   "majorVersion": { "kind": "IntegerLiteral", "value": 0 },
   "interfaces": [],

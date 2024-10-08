@@ -3,24 +3,18 @@ import { join } from 'path';
 
 import { ReturnValue, validate } from 'basketry';
 import parser from '.';
+import { loadSnapshot, parseService } from './snapshot/test-utils';
 
 describe('parser', () => {
-  it('recreates a valid exhaustive snapshot', () => {
+  it('recreates a valid exhaustive snapshot', async () => {
     // ARRANGE
-    const snapshot = JSON.parse(
-      readFileSync(join('src', 'snapshot', 'snapshot.json')).toString(),
-    );
-
-    const sourcePath: string = join('src', 'snapshot', 'schema.json');
-    const sourceContent = readFileSync(sourcePath).toString();
+    const snapshot = loadSnapshot();
 
     // ACT
-    const result = JSON.parse(
-      JSON.stringify(parser(sourceContent, sourcePath).service),
-    );
+    const service = JSON.parse(JSON.stringify(await parseService()));
 
     // ASSERT
-    expect(result).toStrictEqual(snapshot);
+    expect(service).toStrictEqual(snapshot);
   });
 
   it('creates a type for every local typeName', () => {
