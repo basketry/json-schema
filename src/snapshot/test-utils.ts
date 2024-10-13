@@ -16,7 +16,7 @@ export async function parseService(): Promise<Service | undefined> {
 
   const engine = engines[0];
 
-  engine.runParser();
+  await engine.runParser();
 
   return engine.service;
 }
