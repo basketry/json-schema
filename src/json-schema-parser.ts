@@ -27,14 +27,14 @@ import {
 } from './rule-factories';
 import { toDescription, toStringLiteral } from './utils';
 
-export const jsonSchemaParser: Parser = (sourceContent, sourcePath) => {
-  const x = new JsonSchemaParser(sourceContent, sourcePath).parse();
+export const jsonSchemaParser: Parser = (sourceContent) => {
+  const x = new JsonSchemaParser(sourceContent).parse();
   return x;
 };
 
 class JsonSchemaParser {
-  constructor(sourceContent: string, sourcePath: string) {
-    this.sourcePaths = [sourcePath];
+  constructor(sourceContent: string) {
+    this.sourcePaths = ['#'];
     this.source = new AST.DocumentNode(
       parse(sourceContent, { loc: true }),
       '#',

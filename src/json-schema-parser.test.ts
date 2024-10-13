@@ -17,14 +17,14 @@ describe('parser', () => {
     expect(service).toStrictEqual(snapshot);
   });
 
-  it('creates a type for every local typeName', () => {
+  it('creates a type for every local typeName', async () => {
     // ARRANGE
 
     const sourcePath = join('src', 'snapshot', 'schema.json');
     const sourceContent = readFileSync(sourcePath).toString();
 
     // ACT
-    const result = parser(sourceContent, sourcePath).service;
+    const result = (await parser(sourceContent)).service;
 
     // ASSERT
     const fromMethodParameters = new Set(
@@ -69,14 +69,14 @@ describe('parser', () => {
     }
   });
 
-  it('creates types with unique names', () => {
+  it('creates types with unique names', async () => {
     // ARRANGE
 
     const sourcePath = join('src', 'snapshot', 'schema.json');
     const sourceContent = readFileSync(sourcePath).toString();
 
     // ACT
-    const result = parser(sourceContent, sourcePath).service;
+    const result = (await parser(sourceContent)).service;
 
     // ASSERT
     const typeNames = result.types.map((t) => t.name);
@@ -84,12 +84,12 @@ describe('parser', () => {
     expect(typeNames.length).toEqual(new Set(typeNames).size);
   });
 
-  it('creates a valid service', () => {
+  it('creates a valid service', async () => {
     // ARRANGE
     const sourcePath = join('src', 'snapshot', 'schema.json');
     const sourceContent = readFileSync(sourcePath).toString();
 
-    const service = parser(sourceContent, sourcePath).service;
+    const service = (await parser(sourceContent)).service;
 
     // ACT
     const errors = validate(service).errors;
