@@ -12,7 +12,10 @@ export type NodeConstructor<T extends JsonNode> = new (
 ) => T;
 
 export abstract class JsonNode {
-  constructor(readonly node: parse.ASTNode, readonly _pointer: string) {}
+  constructor(
+    readonly node: parse.ASTNode,
+    readonly _pointer: string,
+  ) {}
 
   abstract readonly nodeType: string;
 
