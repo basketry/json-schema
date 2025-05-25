@@ -10,7 +10,7 @@ import { parseService } from './test-utils';
     readFileSync(join(process.cwd(), '.prettierrc')).toString('utf8'),
   );
 
-  const exampleSnapshot = format(JSON.stringify(example), {
+  const exampleSnapshot = await format(JSON.stringify(example), {
     ...prettierOptions,
     parser: 'json',
   });
