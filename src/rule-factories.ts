@@ -183,7 +183,7 @@ export const arrayMinItemsFactory: ValidationRuleFactory = (node) => {
     return {
       kind: 'ValidationRule',
       id: 'ArrayMinItems',
-      min: toNonNegativeNumberLiteral(node.minItems),
+      min: toNonNegativeIntegerLiteral(node.minItems),
       loc: node._propertyRange('minItems'),
     };
   } else {
@@ -196,7 +196,7 @@ export const arrayMaxItemsFactory: ValidationRuleFactory = (node) => {
     return {
       kind: 'ValidationRule',
       id: 'ArrayMaxItems',
-      max: toNonNegativeNumberLiteral(node.maxItems),
+      max: toNonNegativeIntegerLiteral(node.maxItems),
       loc: node._propertyRange('maxItems'),
     };
   } else {

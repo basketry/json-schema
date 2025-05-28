@@ -293,40 +293,13 @@ class JsonSchemaParser {
 
         this.unions.set(name.value, union);
       } else {
-        const primitiveMemebers = members.filter(
-          (member) => member.kind === 'PrimitiveValue',
-        );
-        const complexMembers = members.filter(
-          (member) => member.kind === 'ComplexValue',
-        );
-
-        if (primitiveMemebers.length === members.length) {
-          this.unions.set(name.value, {
-            kind: 'PrimitiveUnion',
-            name,
-            description: toDescription(schema.description),
-            members: primitiveMemebers,
-            loc,
-          });
-        } else if (complexMembers.length === members.length) {
-          this.unions.set(name.value, {
-            kind: 'ComplexUnion',
-            name,
-            description: toDescription(schema.description),
-            members: complexMembers,
-            loc,
-          });
-        } else {
-          const { range, sourceIndex } = decodeRange(loc);
-          this.violations.push({
-            code: 'json-schema/unsupported-feature',
-            message:
-              'Unions with a mix of primitive and complex members is not supported.',
-            range,
-            severity: 'info',
-            sourcePath: this.sourcePaths[sourceIndex],
-          });
-        }
+        this.unions.set(name.value, {
+          kind: 'SimpleUnion',
+          name,
+          description: toDescription(schema.description),
+          members,
+          loc,
+        });
       }
 
       return {

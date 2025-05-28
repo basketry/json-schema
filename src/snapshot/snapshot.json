@@ -406,7 +406,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:494;23;24;11056;11057"
                 },
@@ -416,7 +416,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:495;23;26;11081;11084"
                 },
@@ -456,7 +456,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:507;23;24;11400;11401"
                 },
@@ -466,7 +466,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:508;23;26;11425;11428"
                 },
@@ -637,7 +637,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:538;23;24;12257;12258"
                 },
@@ -647,7 +647,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:539;23;26;12282;12285"
                 },
@@ -686,7 +686,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:552;23;24;12649;12650"
                 },
@@ -696,7 +696,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:553;23;26;12674;12677"
                 },
@@ -773,7 +773,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:564;23;24;12968;12969"
                 },
@@ -783,7 +783,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:565;23;26;12993;12996"
                 },
@@ -823,7 +823,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:573;23;24;13186;13187"
                 },
@@ -833,7 +833,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:574;23;26;13211;13214"
                 },
@@ -973,7 +973,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:598;23;24;13775;13776"
                 },
@@ -983,7 +983,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:599;23;26;13800;13803"
                 },
@@ -1023,7 +1023,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:610;23;24;14075;14076"
                 },
@@ -1033,7 +1033,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:611;23;26;14100;14103"
                 },
@@ -1173,7 +1173,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:635;23;24;14670;14671"
                 },
@@ -1183,7 +1183,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:636;23;26;14695;14698"
                 },
@@ -1223,7 +1223,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:647;23;24;14972;14973"
                 },
@@ -1233,7 +1233,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:648;23;26;14997;15000"
                 },
@@ -1373,7 +1373,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:675;23;24;15647;15648"
                 },
@@ -1383,7 +1383,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:676;23;26;15672;15675"
                 },
@@ -1423,7 +1423,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:688;23;24;15977;15978"
                 },
@@ -1433,7 +1433,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:689;23;26;16002;16005"
                 },
@@ -1573,7 +1573,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:716;23;24;16652;16653"
                 },
@@ -1583,7 +1583,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:717;23;26;16677;16680"
                 },
@@ -1623,7 +1623,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:729;23;24;16982;16983"
                 },
@@ -1633,7 +1633,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:730;23;26;17007;17010"
                 },
@@ -1773,7 +1773,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:757;23;24;17663;17664"
                 },
@@ -1783,7 +1783,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:758;23;26;17688;17691"
                 },
@@ -1823,7 +1823,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:770;23;24;17995;17996"
                 },
@@ -1833,7 +1833,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:771;23;26;18020;18023"
                 },
@@ -1933,7 +1933,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:789;23;24;18424;18425"
                 },
@@ -1943,7 +1943,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:790;23;26;18449;18452"
                 },
@@ -1983,7 +1983,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:799;23;24;18668;18669"
                 },
@@ -1993,7 +1993,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:800;23;26;18693;18696"
                 },
@@ -2093,7 +2093,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:818;23;24;19124;19125"
                 },
@@ -2103,7 +2103,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:819;23;26;19149;19152"
                 },
@@ -2143,7 +2143,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:828;23;24;19377;19378"
                 },
@@ -2153,7 +2153,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:829;23;26;19402;19405"
                 },
@@ -2377,7 +2377,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:53;19;20;1255;1256"
                 },
@@ -2387,7 +2387,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:54;19;22;1276;1279"
                 },
@@ -2427,7 +2427,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:66;19;20;1547;1548"
                 },
@@ -2437,7 +2437,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:67;19;22;1568;1571"
                 },
@@ -2608,7 +2608,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:97;19;20;2284;2285"
                 },
@@ -2618,7 +2618,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:98;19;22;2305;2308"
                 },
@@ -2657,7 +2657,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:111;19;20;2620;2621"
                 },
@@ -2667,7 +2667,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:112;19;22;2641;2644"
                 },
@@ -2744,7 +2744,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:123;19;20;2895;2896"
                 },
@@ -2754,7 +2754,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:124;19;22;2916;2919"
                 },
@@ -2794,7 +2794,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:132;19;20;3077;3078"
                 },
@@ -2804,7 +2804,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:133;19;22;3098;3101"
                 },
@@ -2944,7 +2944,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:157;19;20;3570;3571"
                 },
@@ -2954,7 +2954,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:158;19;22;3591;3594"
                 },
@@ -2994,7 +2994,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:169;19;20;3822;3823"
                 },
@@ -3004,7 +3004,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:170;19;22;3843;3846"
                 },
@@ -3144,7 +3144,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:194;19;20;4321;4322"
                 },
@@ -3154,7 +3154,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:195;19;22;4342;4345"
                 },
@@ -3194,7 +3194,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:206;19;20;4575;4576"
                 },
@@ -3204,7 +3204,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:207;19;22;4596;4599"
                 },
@@ -3344,7 +3344,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:234;19;20;5142;5143"
                 },
@@ -3354,7 +3354,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:235;19;22;5163;5166"
                 },
@@ -3394,7 +3394,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:247;19;20;5420;5421"
                 },
@@ -3404,7 +3404,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:248;19;22;5441;5444"
                 },
@@ -3544,7 +3544,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:275;19;20;5987;5988"
                 },
@@ -3554,7 +3554,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:276;19;22;6008;6011"
                 },
@@ -3594,7 +3594,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:288;19;20;6265;6266"
                 },
@@ -3604,7 +3604,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:289;19;22;6286;6289"
                 },
@@ -3744,7 +3744,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:316;19;20;6838;6839"
                 },
@@ -3754,7 +3754,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:317;19;22;6859;6862"
                 },
@@ -3794,7 +3794,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:329;19;20;7118;7119"
                 },
@@ -3804,7 +3804,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:330;19;22;7139;7142"
                 },
@@ -3904,7 +3904,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:348;19;20;7475;7476"
                 },
@@ -3914,7 +3914,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:349;19;22;7496;7499"
                 },
@@ -3954,7 +3954,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:358;19;20;7679;7680"
                 },
@@ -3964,7 +3964,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:359;19;22;7700;7703"
                 },
@@ -4064,7 +4064,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:377;19;20;8063;8064"
                 },
@@ -4074,7 +4074,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:378;19;22;8084;8087"
                 },
@@ -4114,7 +4114,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
                 "min": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 1,
                   "loc": "0:387;19;20;8276;8277"
                 },
@@ -4124,7 +4124,7 @@
                 "kind": "ValidationRule",
                 "id": "ArrayMaxItems",
                 "max": {
-                  "kind": "NonNegativeNumberLiteral",
+                  "kind": "NonNegativeIntegerLiteral",
                   "value": 100,
                   "loc": "0:388;19;22;8297;8300"
                 },
@@ -4379,7 +4379,7 @@
   ],
   "unions": [
     {
-      "kind": "ComplexUnion",
+      "kind": "SimpleUnion",
       "name": {
         "kind": "StringLiteral",
         "value": "exampleUnion",
