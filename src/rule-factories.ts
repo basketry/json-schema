@@ -29,7 +29,6 @@ export function* parseValidationRules(
     stringMinLengthFactory,
     stringPatternFactory,
     stringFormatFactory,
-    stringEnumFactory,
     numberMultipleOfFactory,
     numberGreaterThanFactory,
     numberLessThanFactory,
@@ -111,25 +110,6 @@ export const stringFormatFactory: ValidationRuleFactory = (node) => {
       id: 'StringFormat',
       format: toNonEmptyStringLiteral(node.format),
       loc: node._propertyRange('format'),
-    };
-  } else {
-    return;
-  }
-};
-
-export const stringEnumFactory: ValidationRuleFactory = (node) => {
-  if (
-    AST.isStringType(node.type) &&
-    Array.isArray(node.enum) &&
-    node.enum.every(
-      (n): n is LiteralNode<string> => typeof n.value === 'string',
-    )
-  ) {
-    return {
-      kind: 'ValidationRule',
-      id: 'StringEnum',
-      values: node.enum.map<StringLiteral>(toStringLiteral),
-      loc: node._propertyRange('enum'),
     };
   } else {
     return;
