@@ -33,6 +33,7 @@
               "value": "string",
               "loc": "0:404;9;40;8649;8680"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:404;9;40;8649;8680"
@@ -63,6 +64,7 @@
               "value": "string",
               "loc": "0:410;9;40;8773;8804"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:410;9;40;8773;8804"
@@ -93,6 +95,7 @@
               "value": "string",
               "loc": "0:416;9;40;8897;8928"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:416;9;40;8897;8928"
@@ -123,6 +126,7 @@
               "value": "string",
               "loc": "0:404;9;40;8649;8680"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:404;9;40;8649;8680"
@@ -141,6 +145,7 @@
               "value": "string",
               "loc": "0:410;9;40;8773;8804"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:410;9;40;8773;8804"
@@ -159,6 +164,7 @@
               "value": "string",
               "loc": "0:416;9;40;8897;8928"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:416;9;40;8897;8928"
@@ -188,6 +194,7 @@
               "value": "string",
               "loc": "0:404;9;40;8649;8680"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:404;9;40;8649;8680"
@@ -206,6 +213,7 @@
               "value": "string",
               "loc": "0:410;9;40;8773;8804"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:410;9;40;8773;8804"
@@ -224,6 +232,7 @@
               "value": "string",
               "loc": "0:416;9;40;8897;8928"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:416;9;40;8897;8928"
@@ -254,6 +263,7 @@
               "value": "string",
               "loc": "0:436;9;37;9446;9474"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:436;9;37;9446;9474"
@@ -271,7 +281,8 @@
               "kind": "StringLiteral",
               "value": "typeWithIntersection_optionalIntersection"
             },
-            "rules": []
+            "rules": [],
+            "isOptional": { "kind": "TrueLiteral", "value": true }
           },
           "loc": "0:437;9;443;10;9484;9716"
         }
@@ -302,7 +313,6 @@
               "loc": "0:471;9;477;10;10419;10595"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "StringMaxLength",
@@ -351,6 +361,7 @@
               "value": "string",
               "loc": "0:478;9;484;10;10605;10781"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -401,7 +412,6 @@
               "loc": "0:487;20;493;12;10862;11032"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -451,6 +461,7 @@
               "value": "string",
               "loc": "0:500;20;506;12;11206;11376"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -501,7 +512,6 @@
               "value": "exhaustiveSubObject_requiredStringEnum"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "StringMaxLength",
@@ -531,23 +541,6 @@
                   "loc": "0:517;22;36;11649;11663"
                 },
                 "loc": "0:517;11;36;11638;11663"
-              },
-              {
-                "kind": "ValidationRule",
-                "id": "StringEnum",
-                "values": [
-                  {
-                    "kind": "StringLiteral",
-                    "value": "VALUE_A",
-                    "loc": "0:514;20;29;11551;11560"
-                  },
-                  {
-                    "kind": "StringLiteral",
-                    "value": "VALUE_B",
-                    "loc": "0:514;31;40;11562;11571"
-                  }
-                ],
-                "loc": "0:514;11;41;11542;11572"
               }
             ]
           },
@@ -596,25 +589,9 @@
                   "loc": "0:525;22;36;11881;11895"
                 },
                 "loc": "0:525;11;36;11870;11895"
-              },
-              {
-                "kind": "ValidationRule",
-                "id": "StringEnum",
-                "values": [
-                  {
-                    "kind": "StringLiteral",
-                    "value": "VALUE_C",
-                    "loc": "0:522;20;29;11783;11792"
-                  },
-                  {
-                    "kind": "StringLiteral",
-                    "value": "VALUE_D",
-                    "loc": "0:522;31;40;11794;11803"
-                  }
-                ],
-                "loc": "0:522;11;41;11774;11804"
               }
-            ]
+            ],
+            "isOptional": { "kind": "TrueLiteral", "value": true }
           },
           "loc": "0:520;9;527;10;11712;11934"
         },
@@ -632,7 +609,6 @@
               "value": "exhaustiveSubObject_requiredStringEnumArray_items"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -713,7 +689,8 @@
               "kind": "TrueLiteral",
               "value": true,
               "loc": "0:543;19;26;12383;12390"
-            }
+            },
+            "isOptional": { "kind": "TrueLiteral", "value": true }
           },
           "loc": "0:542;9;555;10;12336;12718"
         },
@@ -731,7 +708,7 @@
               "value": "boolean",
               "loc": "0:557;9;49;12729;12769"
             },
-            "rules": [{ "kind": "ValidationRule", "id": "Required" }]
+            "rules": []
           },
           "loc": "0:557;9;49;12729;12769"
         },
@@ -749,6 +726,7 @@
               "value": "boolean",
               "loc": "0:558;9;49;12779;12819"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:558;9;49;12779;12819"
@@ -768,7 +746,6 @@
               "loc": "0:561;20;563;12;12901;12944"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -818,6 +795,7 @@
               "value": "boolean",
               "loc": "0:570;20;572;12;13119;13162"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -869,7 +847,6 @@
               "loc": "0:578;9;583;10;13266;13400"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "NumberMultipleOf",
@@ -918,6 +895,7 @@
               "value": "number",
               "loc": "0:584;9;589;10;13410;13544"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -968,7 +946,6 @@
               "loc": "0:592;20;597;12;13625;13751"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -1018,6 +995,7 @@
               "value": "number",
               "loc": "0:604;20;609;12;13925;14051"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -1069,7 +1047,6 @@
               "loc": "0:615;9;620;10;14155;14291"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "NumberMultipleOf",
@@ -1118,6 +1095,7 @@
               "value": "integer",
               "loc": "0:621;9;626;10;14301;14437"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -1168,7 +1146,6 @@
               "loc": "0:629;20;634;12;14519;14646"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -1218,6 +1195,7 @@
               "value": "integer",
               "loc": "0:641;20;646;12;14821;14948"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -1269,7 +1247,6 @@
               "loc": "0:652;9;658;10;15052;15214"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "NumberMultipleOf",
@@ -1318,6 +1295,7 @@
               "value": "long",
               "loc": "0:659;9;665;10;15224;15386"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -1368,7 +1346,6 @@
               "loc": "0:668;20;674;12;15465;15623"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -1418,6 +1395,7 @@
               "value": "long",
               "loc": "0:681;20;687;12;15795;15953"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -1469,7 +1447,6 @@
               "loc": "0:693;9;699;10;16057;16219"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "NumberMultipleOf",
@@ -1518,6 +1495,7 @@
               "value": "float",
               "loc": "0:700;9;706;10;16229;16391"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -1568,7 +1546,6 @@
               "loc": "0:709;20;715;12;16471;16628"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -1618,6 +1595,7 @@
               "value": "float",
               "loc": "0:722;20;728;12;16801;16958"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -1669,7 +1647,6 @@
               "loc": "0:734;9;740;10;17062;17226"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "NumberMultipleOf",
@@ -1718,6 +1695,7 @@
               "value": "double",
               "loc": "0:741;9;747;10;17236;17400"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -1768,7 +1746,6 @@
               "loc": "0:750;20;756;12;17481;17639"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -1818,6 +1795,7 @@
               "value": "double",
               "loc": "0:763;20;769;12;17813;17971"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -1869,7 +1847,6 @@
               "loc": "0:775;9;778;10;18075;18157"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "StringFormat",
@@ -1898,6 +1875,7 @@
               "value": "date",
               "loc": "0:779;9;782;10;18167;18249"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -1928,7 +1906,6 @@
               "loc": "0:785;20;788;12;18328;18400"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -1978,6 +1955,7 @@
               "value": "date",
               "loc": "0:795;20;798;12;18572;18644"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -2029,7 +2007,6 @@
               "loc": "0:804;9;807;10;18748;18839"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "StringFormat",
@@ -2058,6 +2035,7 @@
               "value": "date-time",
               "loc": "0:808;9;811;10;18849;18940"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -2088,7 +2066,6 @@
               "loc": "0:814;20;817;12;19023;19100"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -2138,6 +2115,7 @@
               "value": "date-time",
               "loc": "0:824;20;827;12;19276;19353"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -2199,6 +2177,7 @@
               "value": "string",
               "loc": "0:404;9;40;8649;8680"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:404;9;40;8649;8680"
@@ -2217,6 +2196,7 @@
               "value": "string",
               "loc": "0:410;9;40;8773;8804"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:410;9;40;8773;8804"
@@ -2235,6 +2215,7 @@
               "value": "string",
               "loc": "0:416;9;40;8897;8928"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:416;9;40;8897;8928"
@@ -2273,7 +2254,6 @@
               "loc": "0:30;5;36;6;710;862"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "StringMaxLength",
@@ -2322,6 +2302,7 @@
               "value": "string",
               "loc": "0:37;5;43;6;868;1020"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -2372,7 +2353,6 @@
               "loc": "0:46;16;52;8;1089;1235"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -2422,6 +2402,7 @@
               "value": "string",
               "loc": "0:59;16;65;8;1381;1527"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -2472,7 +2453,6 @@
               "value": "exhaustive_requiredStringEnum"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "StringMaxLength",
@@ -2502,23 +2482,6 @@
                   "loc": "0:76;18;32;1760;1774"
                 },
                 "loc": "0:76;7;32;1749;1774"
-              },
-              {
-                "kind": "ValidationRule",
-                "id": "StringEnum",
-                "values": [
-                  {
-                    "kind": "StringLiteral",
-                    "value": "VALUE_A",
-                    "loc": "0:73;16;25;1674;1683"
-                  },
-                  {
-                    "kind": "StringLiteral",
-                    "value": "VALUE_B",
-                    "loc": "0:73;27;36;1685;1694"
-                  }
-                ],
-                "loc": "0:73;7;37;1665;1695"
               }
             ]
           },
@@ -2567,25 +2530,9 @@
                   "loc": "0:84;18;32;1960;1974"
                 },
                 "loc": "0:84;7;32;1949;1974"
-              },
-              {
-                "kind": "ValidationRule",
-                "id": "StringEnum",
-                "values": [
-                  {
-                    "kind": "StringLiteral",
-                    "value": "VALUE_C",
-                    "loc": "0:81;16;25;1874;1883"
-                  },
-                  {
-                    "kind": "StringLiteral",
-                    "value": "VALUE_D",
-                    "loc": "0:81;27;36;1885;1894"
-                  }
-                ],
-                "loc": "0:81;7;37;1865;1895"
               }
-            ]
+            ],
+            "isOptional": { "kind": "TrueLiteral", "value": true }
           },
           "loc": "0:79;5;86;6;1811;2005"
         },
@@ -2603,7 +2550,6 @@
               "value": "exhaustive_requiredStringEnumArray_items"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -2684,7 +2630,8 @@
               "kind": "TrueLiteral",
               "value": true,
               "loc": "0:102;15;22;2390;2397"
-            }
+            },
+            "isOptional": { "kind": "TrueLiteral", "value": true }
           },
           "loc": "0:101;5;114;6;2347;2677"
         },
@@ -2702,7 +2649,7 @@
               "value": "boolean",
               "loc": "0:116;5;45;2684;2724"
             },
-            "rules": [{ "kind": "ValidationRule", "id": "Required" }]
+            "rules": []
           },
           "loc": "0:116;5;45;2684;2724"
         },
@@ -2720,6 +2667,7 @@
               "value": "boolean",
               "loc": "0:117;5;45;2730;2770"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": []
           },
           "loc": "0:117;5;45;2730;2770"
@@ -2739,7 +2687,6 @@
               "loc": "0:120;16;122;8;2840;2875"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -2789,6 +2736,7 @@
               "value": "boolean",
               "loc": "0:129;16;131;8;3022;3057"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -2840,7 +2788,6 @@
               "loc": "0:137;5;142;6;3141;3255"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "NumberMultipleOf",
@@ -2889,6 +2836,7 @@
               "value": "number",
               "loc": "0:143;5;148;6;3261;3375"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -2939,7 +2887,6 @@
               "loc": "0:151;16;156;8;3444;3550"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -2989,6 +2936,7 @@
               "value": "number",
               "loc": "0:163;16;168;8;3696;3802"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -3040,7 +2988,6 @@
               "loc": "0:174;5;179;6;3886;4002"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "NumberMultipleOf",
@@ -3089,6 +3036,7 @@
               "value": "integer",
               "loc": "0:180;5;185;6;4008;4124"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -3139,7 +3087,6 @@
               "loc": "0:188;16;193;8;4194;4301"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -3189,6 +3136,7 @@
               "value": "integer",
               "loc": "0:200;16;205;8;4448;4555"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -3240,7 +3188,6 @@
               "loc": "0:211;5;217;6;4639;4777"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "NumberMultipleOf",
@@ -3289,6 +3236,7 @@
               "value": "long",
               "loc": "0:218;5;224;6;4783;4921"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -3339,7 +3287,6 @@
               "loc": "0:227;16;233;8;4988;5122"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -3389,6 +3336,7 @@
               "value": "long",
               "loc": "0:240;16;246;8;5266;5400"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -3440,7 +3388,6 @@
               "loc": "0:252;5;258;6;5484;5622"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "NumberMultipleOf",
@@ -3489,6 +3436,7 @@
               "value": "float",
               "loc": "0:259;5;265;6;5628;5766"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -3539,7 +3487,6 @@
               "loc": "0:268;16;274;8;5834;5967"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -3589,6 +3536,7 @@
               "value": "float",
               "loc": "0:281;16;287;8;6112;6245"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -3640,7 +3588,6 @@
               "loc": "0:293;5;299;6;6329;6469"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "NumberMultipleOf",
@@ -3689,6 +3636,7 @@
               "value": "double",
               "loc": "0:300;5;306;6;6475;6615"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -3739,7 +3687,6 @@
               "loc": "0:309;16;315;8;6684;6818"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -3789,6 +3736,7 @@
               "value": "double",
               "loc": "0:322;16;328;8;6964;7098"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -3840,7 +3788,6 @@
               "loc": "0:334;5;337;6;7182;7252"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "StringFormat",
@@ -3869,6 +3816,7 @@
               "value": "date",
               "loc": "0:338;5;341;6;7258;7328"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -3899,7 +3847,6 @@
               "loc": "0:344;16;347;8;7395;7455"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -3949,6 +3896,7 @@
               "value": "date",
               "loc": "0:354;16;357;8;7599;7659"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -4000,7 +3948,6 @@
               "loc": "0:363;5;366;6;7743;7822"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "StringFormat",
@@ -4029,6 +3976,7 @@
               "value": "date-time",
               "loc": "0:367;5;370;6;7828;7907"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -4059,7 +4007,6 @@
               "loc": "0:373;16;376;8;7978;8043"
             },
             "rules": [
-              { "kind": "ValidationRule", "id": "Required" },
               {
                 "kind": "ValidationRule",
                 "id": "ArrayMinItems",
@@ -4109,6 +4056,7 @@
               "value": "date-time",
               "loc": "0:383;16;386;8;8191;8256"
             },
+            "isOptional": { "kind": "TrueLiteral", "value": true },
             "rules": [
               {
                 "kind": "ValidationRule",
@@ -4158,7 +4106,8 @@
               "kind": "StringLiteral",
               "value": "exhaustive_optionalItersection"
             },
-            "rules": []
+            "rules": [],
+            "isOptional": { "kind": "TrueLiteral", "value": true }
           },
           "loc": "0:392;5;398;6;8340;8547"
         }

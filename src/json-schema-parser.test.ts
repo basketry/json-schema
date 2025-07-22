@@ -5,6 +5,8 @@ import { ReturnValue, validate } from 'basketry';
 import parser from '.';
 import { loadSnapshot, parseService } from './snapshot/test-utils';
 
+const absoluteSourcePath = '/test/path.ext';
+
 describe('parser', () => {
   it('recreates a valid exhaustive snapshot', async () => {
     // ARRANGE
@@ -24,7 +26,7 @@ describe('parser', () => {
     const sourceContent = readFileSync(sourcePath).toString();
 
     // ACT
-    const result = (await parser(sourceContent)).service;
+    const result = (await parser(sourceContent, absoluteSourcePath)).service;
 
     // ASSERT
     const fromMethodParameters = new Set(
@@ -76,7 +78,7 @@ describe('parser', () => {
     const sourceContent = readFileSync(sourcePath).toString();
 
     // ACT
-    const result = (await parser(sourceContent)).service;
+    const result = (await parser(sourceContent, absoluteSourcePath)).service;
 
     // ASSERT
     const typeNames = result.types.map((t) => t.name);
@@ -89,7 +91,7 @@ describe('parser', () => {
     const sourcePath = join('src', 'snapshot', 'schema.json');
     const sourceContent = readFileSync(sourcePath).toString();
 
-    const service = (await parser(sourceContent)).service;
+    const service = (await parser(sourceContent, absoluteSourcePath)).service;
 
     // ACT
     const errors = validate(service).errors;

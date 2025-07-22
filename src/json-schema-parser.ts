@@ -13,6 +13,7 @@ import {
   Property,
   Service,
   StringLiteral,
+  TrueLiteral,
   Type,
   Union,
   ValidationRule,
@@ -177,6 +178,7 @@ class JsonSchemaParser {
         inheritedDescription,
       };
     } else if (Array.isArray(schema.type)) {
+      // TODO: parse nullable here; any array that's [<type>, null] is a nullable <type>
       return {
         memberValue: this.parseTypeArrayUnion(schema, loc),
         inheritedDescription,
@@ -480,6 +482,8 @@ class JsonSchemaParser {
       description.push(...inheritedDescription);
     }
 
+    const isOptional = this.parseIsOptional(child.value);
+
     if (memberValue.kind === 'PrimitiveValue') {
       return {
         kind: 'Property',
@@ -488,6 +492,7 @@ class JsonSchemaParser {
         value: {
           ...memberValue,
           constant: toPrimitiveValueConstant(child.value.const),
+          isOptional,
           rules: this.parseRules(child.value),
         },
         loc: encodeRange(0, child.loc),
@@ -499,6 +504,7 @@ class JsonSchemaParser {
         description: description.length ? description : undefined,
         value: {
           ...memberValue,
+          isOptional,
           rules: this.parseRules(child.value),
         },
         loc: encodeRange(0, child.loc),
@@ -519,6 +525,7 @@ class JsonSchemaParser {
         typeName: { kind: 'PrimitiveLiteral', value: primitive, loc },
         // constant: schema.const?.asLiteral, // TODO
         // default: schema.default?.asLiteral, // TODO
+        isOptional: this.parseIsOptional(schema),
         rules,
       });
 
@@ -601,16 +608,18 @@ class JsonSchemaParser {
     return untyped();
   }
 
+  parseIsOptional(schema: AST.AbstractSchemaNode): TrueLiteral | undefined {
+    if (this.parseIsRequired(schema)) return undefined;
+
+    return {
+      kind: 'TrueLiteral',
+      value: true,
+      // TODO: add loc
+    };
+  }
+
   parseRules(schema: AST.AbstractSchemaNode): ValidationRule[] {
-    const rules: ValidationRule[] = [];
-
-    if (this.parseIsRequired(schema)) {
-      rules.push({ kind: 'ValidationRule', id: 'Required' });
-    }
-
-    rules.push(...parseValidationRules(schema));
-
-    return rules;
+    return Array.from(parseValidationRules(schema));
   }
 }
 
