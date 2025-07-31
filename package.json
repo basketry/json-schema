@@ -1,6 +1,6 @@
 {
   "name": "@basketry/json-schema",
-  "version": "0.2.0-alpha.5",
+  "version": "0.2.0-rc.0",
   "description": "Basketry parser for JSON schema documents",
   "main": "./lib/index.js",
   "scripts": {
