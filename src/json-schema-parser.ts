@@ -49,6 +49,7 @@ class JsonSchemaParser {
   private readonly types = new Map<string, Type>();
   private readonly enums = new Map<string, Enum>();
   private readonly unions = new Map<string, Union>();
+  private readonly resolvingRefs = new Set<string>();
   private readonly violations: Violation[] = [];
 
   parse(): { service: Service; violations: Violation[] } {
@@ -208,25 +209,48 @@ class JsonSchemaParser {
     loc: string | undefined,
   ): { memberValue: MemberValue; inheritedDescription: StringLiteral[] } {
     if (schema.ref) {
-      const resolved = resolve(
-        this.source.node,
-        schema.ref.value,
-        AST.SchemaNode,
-      );
-
-      if (resolved) {
-        return this.parseType(resolved, loc);
-      } else {
-        const { range, sourceIndex } = decodeRange(
-          encodeRange(0, schema.ref.loc),
+      if (this.resolvingRefs.has(schema.ref.value)) {
+        const resolved = resolve(
+          this.source.node,
+          schema.ref.value,
+          AST.SchemaNode,
         );
-        this.violations.push({
-          code: 'PARSER_ERROR',
-          message: `Cannot resolve ref '${schema.ref.value}'`,
-          severity: 'error',
-          range,
-          sourcePath: this.sourcePaths[sourceIndex],
-        });
+        const typeName = this.parseTypeName(resolved);
+
+        if (typeName) {
+          return {
+            memberValue: { kind: 'ComplexValue', typeName, rules: [] },
+            inheritedDescription: [],
+          };
+        }
+
+        return { memberValue: untyped(), inheritedDescription: [] };
+      }
+
+      this.resolvingRefs.add(schema.ref.value);
+      try {
+        const resolved = resolve(
+          this.source.node,
+          schema.ref.value,
+          AST.SchemaNode,
+        );
+
+        if (resolved) {
+          return this.parseType(resolved, loc);
+        } else {
+          const { range, sourceIndex } = decodeRange(
+            encodeRange(0, schema.ref.loc),
+          );
+          this.violations.push({
+            code: 'PARSER_ERROR',
+            message: `Cannot resolve ref '${schema.ref.value}'`,
+            severity: 'error',
+            range,
+            sourcePath: this.sourcePaths[sourceIndex],
+          });
+        }
+      } finally {
+        this.resolvingRefs.delete(schema.ref.value);
       }
     }
 
