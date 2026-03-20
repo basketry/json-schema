@@ -99,4 +99,39 @@ describe('parser', () => {
     // ASSERT
     expect(errors).toEqual([]);
   });
+
+  it('parses a schema with a circular reference', async () => {
+    // ARRANGE
+    const schema = {
+      $schema: 'http://json-schema.org/draft-07/schema#',
+      $id: 'https://example.com/mutual.schema.json',
+      $ref: '#/definitions/A',
+      definitions: {
+        A: {
+          type: 'object',
+          properties: {
+            b: {
+              $ref: '#/definitions/B',
+            },
+          },
+        },
+        B: {
+          type: 'object',
+          properties: {
+            a: {
+              $ref: '#/definitions/A',
+            },
+          },
+        },
+      },
+    };
+
+    const sourceContent = JSON.stringify(schema);
+
+    // ACT
+    const service = (await parser(sourceContent, absoluteSourcePath)).service;
+
+    // ASSERT
+    expect(service).toBeTruthy();
+  });
 });
