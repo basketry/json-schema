@@ -5,6 +5,8 @@ import {
   Enum,
   EnumMember,
   IntegerLiteral,
+  MapProperties,
+  MapValue,
   MemberValue,
   Parser,
   Primitive,
@@ -20,7 +22,7 @@ import {
   Violation,
 } from 'basketry';
 import parse = require('json-to-ast');
-import { getName, resolve, LiteralNode, Literal } from './json';
+import { getName, isLiteralNode, resolve, LiteralNode, Literal } from './json';
 import * as AST from './json-schema';
 import {
   parseObjectValidationRules,
@@ -324,6 +326,7 @@ class JsonSchemaParser {
           name,
           description: toDescription(schema.description),
           members,
+          disjunction: { kind: 'DisjunctionKindLiteral', value: 'exclusive' },
           loc,
         });
       }
@@ -354,7 +357,28 @@ class JsonSchemaParser {
     loc: string | undefined,
   ): MemberValue {
     if (schema.anyOf) {
-      // TODO
+      const members: MemberValue[] = schema.anyOf.map(
+        (member) =>
+          this.parseType(member, encodeRange(0, member.loc)).memberValue,
+      );
+      const name = this.parseTypeName(schema);
+
+      if (!name) return untyped();
+
+      this.unions.set(name.value, {
+        kind: 'SimpleUnion',
+        name,
+        description: toDescription(schema.description),
+        members,
+        disjunction: { kind: 'DisjunctionKindLiteral', value: 'inclusive' },
+        loc,
+      });
+
+      return {
+        kind: 'ComplexValue',
+        typeName: name,
+        rules: [],
+      };
     }
 
     return untyped();
@@ -469,11 +493,14 @@ class JsonSchemaParser {
           .map((child) => this.parseProperty(child))
           .filter((prop): prop is Property => !!prop);
 
+        const mapProperties = this.parseMapProperties(schema, typeName);
+
         this.types.set(typeName.value, {
           kind: 'Type',
           name: typeName,
           description: toDescription(schema.description),
           properties: properties || [],
+          mapProperties,
           rules: Array.from(parseObjectValidationRules(schema)),
           loc,
         });
@@ -630,6 +657,104 @@ class JsonSchemaParser {
       };
     }
     return untyped();
+  }
+
+  private parseMapProperties(
+    schema: AST.AbstractSchemaNode,
+    typeName: StringLiteral,
+  ): MapProperties | undefined {
+    const ap = schema.additionalProperties;
+    if (!ap) return undefined;
+
+    // Handle boolean literal additionalProperties (true/false)
+    if (isLiteralNode(ap.node)) {
+      // false is handled by objectAdditionalPropertiesRule; true means untyped map
+      if (ap.node.value !== true) return undefined;
+      return {
+        kind: 'MapProperties',
+        key: {
+          kind: 'MapKey',
+          value: {
+            kind: 'PrimitiveValue',
+            typeName: { kind: 'PrimitiveLiteral', value: 'string' },
+            rules: [],
+          },
+        },
+        requiredKeys: [],
+        value: {
+          kind: 'MapValue',
+          value: untyped(),
+        },
+      };
+    }
+
+    return {
+      kind: 'MapProperties',
+      key: {
+        kind: 'MapKey',
+        value: {
+          kind: 'PrimitiveValue',
+          typeName: { kind: 'PrimitiveLiteral', value: 'string' },
+          rules: [],
+        },
+      },
+      requiredKeys: [],
+      value: this.parseMapValue(ap, typeName.value),
+    };
+  }
+
+  private parseMapValue(
+    schema: AST.AbstractSchemaNode,
+    parentName: string,
+  ): MapValue {
+    const isInline = !schema.ref;
+    const { memberValue } = this.parseType(schema, encodeRange(0, schema.loc));
+
+    if (isInline && memberValue.kind === 'ComplexValue') {
+      const autoName = memberValue.typeName.value;
+
+      const desiredName =
+        schema.oneOf || schema.anyOf
+          ? `${parentName}MapValues`
+          : schema.enum
+            ? `${parentName}MapValue`
+            : `${parentName}MapValues`;
+
+      if (autoName !== desiredName) {
+        if (this.enums.has(autoName)) {
+          const existing = this.enums.get(autoName)!;
+          this.enums.set(desiredName, {
+            ...existing,
+            name: { kind: 'StringLiteral', value: desiredName },
+          });
+          this.enums.delete(autoName);
+        } else if (this.unions.has(autoName)) {
+          const existing = this.unions.get(autoName)!;
+          this.unions.set(desiredName, {
+            ...existing,
+            name: { kind: 'StringLiteral', value: desiredName },
+          });
+          this.unions.delete(autoName);
+        } else if (this.types.has(autoName)) {
+          const existing = this.types.get(autoName)!;
+          this.types.set(desiredName, {
+            ...existing,
+            name: { kind: 'StringLiteral', value: desiredName },
+          });
+          this.types.delete(autoName);
+        }
+
+        return {
+          kind: 'MapValue',
+          value: {
+            ...memberValue,
+            typeName: { kind: 'StringLiteral', value: desiredName },
+          },
+        };
+      }
+    }
+
+    return { kind: 'MapValue', value: memberValue };
   }
 
   parseIsOptional(schema: AST.AbstractSchemaNode): TrueLiteral | undefined {
